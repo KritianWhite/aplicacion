@@ -1,0 +1,24 @@
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\bin\Debug\aplicacion.exe.config
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\bin\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\bin\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\bin\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.AssemblyReference.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.Form1.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.Resources.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.GenerateResource.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.CoreCompileInputs.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Documents\GitHub\inventory-control\aplicacion\aplicacion\obj\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\bin\Debug\aplicacion.exe.config
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\bin\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\bin\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\bin\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.AssemblyReference.cache
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.Form1.resources
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.Resources.resources
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.GenerateResource.cache
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.CoreCompileInputs.cache
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.pdb
