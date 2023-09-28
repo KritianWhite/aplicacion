@@ -73,11 +73,66 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="AgregarActivo.Designer.vb">
+      <DependentUpon>AgregarActivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarActivo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="AgregarCliente.Designer.vb">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarEquipo.Designer.vb">
+      <DependentUpon>AgregarEquipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarEquipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarSIM.Designer.vb">
+      <DependentUpon>AgregarSIM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarSIM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.vb">
+      <DependentUpon>AgregarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares.vb" />
+    <Compile Include="BajaEquipos.Designer.vb">
+      <DependentUpon>BajaEquipos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BajaEquipos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.vb">
+      <DependentUpon>FormAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigracionSIM.Designer.vb">
+      <DependentUpon>MigracionSIM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MigracionSIM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MigrarSIM.Designer.vb">
+      <DependentUpon>MigrarSIM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MigrarSIM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -98,8 +153,35 @@
     <Compile Include="Encrypted.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="AgregarActivo.resx">
+      <DependentUpon>AgregarActivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarEquipo.resx">
+      <DependentUpon>AgregarEquipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarSIM.resx">
+      <DependentUpon>AgregarSIM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BajaEquipos.resx">
+      <DependentUpon>BajaEquipos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigracionSIM.resx">
+      <DependentUpon>MigracionSIM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MigrarSIM.resx">
+      <DependentUpon>MigrarSIM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

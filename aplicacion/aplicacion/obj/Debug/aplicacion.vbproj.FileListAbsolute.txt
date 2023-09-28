@@ -22,3 +22,24 @@ C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\
 C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.exe
 C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.xml
 C:\Users\kriti\OneDrive\Escritorio\Work\Nueva carpeta\aplicacion\aplicacion\obj\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\bin\Debug\aplicacion.exe.config
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\bin\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\bin\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\bin\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.AssemblyReference.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.Resources.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.GenerateResource.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.vbproj.CoreCompileInputs.cache
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.exe
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.xml
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.pdb
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.FormAdmin.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.Login.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarCliente.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarActivo.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarEquipo.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarSIM.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarUsuario.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.BajaEquipos.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.MigrarSIM.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.MigracionSIM.resources
