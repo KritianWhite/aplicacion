@@ -103,6 +103,24 @@
     <Compile Include="AgregarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AsignarActivos.Designer.vb">
+      <DependentUpon>AsignarActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignarEquipo.Designer.vb">
+      <DependentUpon>AsignarEquipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarEquipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignarSIM.Designer.vb">
+      <DependentUpon>AsignarSIM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarSIM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Auxiliares.vb" />
     <Compile Include="BajaEquipos.Designer.vb">
       <DependentUpon>BajaEquipos.vb</DependentUpon>
@@ -167,6 +185,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignarActivos.resx">
+      <DependentUpon>AsignarActivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignarEquipo.resx">
+      <DependentUpon>AsignarEquipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignarSIM.resx">
+      <DependentUpon>AsignarSIM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BajaEquipos.resx">
       <DependentUpon>BajaEquipos.vb</DependentUpon>

@@ -34,11 +34,11 @@ Partial Class FormAdmin
         Me.PanelCliente = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.BTN_AgregarCliente = New System.Windows.Forms.Button()
+        Me.BTN_eliminarClientes = New System.Windows.Forms.Button()
+        Me.BTN_editarClientes = New System.Windows.Forms.Button()
+        Me.BTN_agregarClientes = New System.Windows.Forms.Button()
         Me.TB_buscar = New System.Windows.Forms.TextBox()
-        Me.BTN_buscar = New System.Windows.Forms.Button()
+        Me.BTN_buscarClientes = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Nombre_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -46,11 +46,11 @@ Partial Class FormAdmin
         Me.PanelActivos = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.BTN_eliminarActivos = New System.Windows.Forms.Button()
+        Me.BTN_editarActivos = New System.Windows.Forms.Button()
+        Me.BTN_agregarActivos = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.BTN_buscarActivos = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.Placa_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Chasis_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,11 +61,11 @@ Partial Class FormAdmin
         Me.PanelEquipos = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.BTN_bajaEquipos = New System.Windows.Forms.Button()
+        Me.BTN_editarEquipos = New System.Windows.Forms.Button()
+        Me.BTN_agregarEquipos = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button11 = New System.Windows.Forms.Button()
+        Me.BTN_buscarEquipos = New System.Windows.Forms.Button()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.IMEI_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modelo_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,6 +73,7 @@ Partial Class FormAdmin
         Me.PanelSIM = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
@@ -96,7 +97,9 @@ Partial Class FormAdmin
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BTN_asignarActivo_Clientes = New System.Windows.Forms.Button()
+        Me.BTN_asignarEquipo_Activos = New System.Windows.Forms.Button()
+        Me.BTN_asignarSIM_Equipos = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelCliente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -146,7 +149,7 @@ Partial Class FormAdmin
         'BajaDeEquiposToolStripMenuItem
         '
         Me.BajaDeEquiposToolStripMenuItem.Name = "BajaDeEquiposToolStripMenuItem"
-        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.BajaDeEquiposToolStripMenuItem.Text = "Baja de equipos"
         '
         'SIMToolStripMenuItem
@@ -159,7 +162,7 @@ Partial Class FormAdmin
         'MigracionesDeSIMToolStripMenuItem
         '
         Me.MigracionesDeSIMToolStripMenuItem.Name = "MigracionesDeSIMToolStripMenuItem"
-        Me.MigracionesDeSIMToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MigracionesDeSIMToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.MigracionesDeSIMToolStripMenuItem.Text = "Migraciones de SIM"
         '
         'UsuariosToolStripMenuItem
@@ -198,11 +201,12 @@ Partial Class FormAdmin
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.BTN_AgregarCliente)
+        Me.GroupBox1.Controls.Add(Me.BTN_asignarActivo_Clientes)
+        Me.GroupBox1.Controls.Add(Me.BTN_eliminarClientes)
+        Me.GroupBox1.Controls.Add(Me.BTN_editarClientes)
+        Me.GroupBox1.Controls.Add(Me.BTN_agregarClientes)
         Me.GroupBox1.Controls.Add(Me.TB_buscar)
-        Me.GroupBox1.Controls.Add(Me.BTN_buscar)
+        Me.GroupBox1.Controls.Add(Me.BTN_buscarClientes)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox1.Name = "GroupBox1"
@@ -210,32 +214,32 @@ Partial Class FormAdmin
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
-        'Button3
+        'BTN_eliminarClientes
         '
-        Me.Button3.Location = New System.Drawing.Point(83, 250)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(109, 27)
-        Me.Button3.TabIndex = 7
-        Me.Button3.Text = "Eliminar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BTN_eliminarClientes.Location = New System.Drawing.Point(83, 250)
+        Me.BTN_eliminarClientes.Name = "BTN_eliminarClientes"
+        Me.BTN_eliminarClientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_eliminarClientes.TabIndex = 7
+        Me.BTN_eliminarClientes.Text = "Eliminar"
+        Me.BTN_eliminarClientes.UseVisualStyleBackColor = True
         '
-        'Button2
+        'BTN_editarClientes
         '
-        Me.Button2.Location = New System.Drawing.Point(83, 205)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(109, 27)
-        Me.Button2.TabIndex = 6
-        Me.Button2.Text = "Editar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BTN_editarClientes.Location = New System.Drawing.Point(83, 205)
+        Me.BTN_editarClientes.Name = "BTN_editarClientes"
+        Me.BTN_editarClientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_editarClientes.TabIndex = 6
+        Me.BTN_editarClientes.Text = "Editar"
+        Me.BTN_editarClientes.UseVisualStyleBackColor = True
         '
-        'BTN_AgregarCliente
+        'BTN_agregarClientes
         '
-        Me.BTN_AgregarCliente.Location = New System.Drawing.Point(83, 157)
-        Me.BTN_AgregarCliente.Name = "BTN_AgregarCliente"
-        Me.BTN_AgregarCliente.Size = New System.Drawing.Size(109, 27)
-        Me.BTN_AgregarCliente.TabIndex = 3
-        Me.BTN_AgregarCliente.Text = "Agregar"
-        Me.BTN_AgregarCliente.UseVisualStyleBackColor = True
+        Me.BTN_agregarClientes.Location = New System.Drawing.Point(83, 157)
+        Me.BTN_agregarClientes.Name = "BTN_agregarClientes"
+        Me.BTN_agregarClientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_agregarClientes.TabIndex = 3
+        Me.BTN_agregarClientes.Text = "Agregar"
+        Me.BTN_agregarClientes.UseVisualStyleBackColor = True
         '
         'TB_buscar
         '
@@ -244,14 +248,14 @@ Partial Class FormAdmin
         Me.TB_buscar.Size = New System.Drawing.Size(230, 20)
         Me.TB_buscar.TabIndex = 5
         '
-        'BTN_buscar
+        'BTN_buscarClientes
         '
-        Me.BTN_buscar.Location = New System.Drawing.Point(604, 55)
-        Me.BTN_buscar.Name = "BTN_buscar"
-        Me.BTN_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscar.TabIndex = 4
-        Me.BTN_buscar.Text = "Buscar"
-        Me.BTN_buscar.UseVisualStyleBackColor = True
+        Me.BTN_buscarClientes.Location = New System.Drawing.Point(604, 55)
+        Me.BTN_buscarClientes.Name = "BTN_buscarClientes"
+        Me.BTN_buscarClientes.Size = New System.Drawing.Size(75, 23)
+        Me.BTN_buscarClientes.TabIndex = 4
+        Me.BTN_buscarClientes.Text = "Buscar"
+        Me.BTN_buscarClientes.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -264,7 +268,7 @@ Partial Class FormAdmin
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(623, 308)
+        Me.DataGridView1.Size = New System.Drawing.Size(623, 291)
         Me.DataGridView1.StandardTab = True
         Me.DataGridView1.TabIndex = 3
         '
@@ -310,11 +314,12 @@ Partial Class FormAdmin
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.GroupBox2.Controls.Add(Me.Button4)
-        Me.GroupBox2.Controls.Add(Me.Button5)
-        Me.GroupBox2.Controls.Add(Me.Button6)
+        Me.GroupBox2.Controls.Add(Me.BTN_asignarEquipo_Activos)
+        Me.GroupBox2.Controls.Add(Me.BTN_eliminarActivos)
+        Me.GroupBox2.Controls.Add(Me.BTN_editarActivos)
+        Me.GroupBox2.Controls.Add(Me.BTN_agregarActivos)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.Button7)
+        Me.GroupBox2.Controls.Add(Me.BTN_buscarActivos)
         Me.GroupBox2.Controls.Add(Me.DataGridView2)
         Me.GroupBox2.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox2.Name = "GroupBox2"
@@ -322,32 +327,32 @@ Partial Class FormAdmin
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         '
-        'Button4
+        'BTN_eliminarActivos
         '
-        Me.Button4.Location = New System.Drawing.Point(83, 250)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(109, 27)
-        Me.Button4.TabIndex = 7
-        Me.Button4.Text = "Eliminar"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.BTN_eliminarActivos.Location = New System.Drawing.Point(83, 250)
+        Me.BTN_eliminarActivos.Name = "BTN_eliminarActivos"
+        Me.BTN_eliminarActivos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_eliminarActivos.TabIndex = 7
+        Me.BTN_eliminarActivos.Text = "Eliminar"
+        Me.BTN_eliminarActivos.UseVisualStyleBackColor = True
         '
-        'Button5
+        'BTN_editarActivos
         '
-        Me.Button5.Location = New System.Drawing.Point(83, 205)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(109, 27)
-        Me.Button5.TabIndex = 6
-        Me.Button5.Text = "Editar"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.BTN_editarActivos.Location = New System.Drawing.Point(83, 205)
+        Me.BTN_editarActivos.Name = "BTN_editarActivos"
+        Me.BTN_editarActivos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_editarActivos.TabIndex = 6
+        Me.BTN_editarActivos.Text = "Editar"
+        Me.BTN_editarActivos.UseVisualStyleBackColor = True
         '
-        'Button6
+        'BTN_agregarActivos
         '
-        Me.Button6.Location = New System.Drawing.Point(83, 157)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(109, 27)
-        Me.Button6.TabIndex = 3
-        Me.Button6.Text = "Agregar"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.BTN_agregarActivos.Location = New System.Drawing.Point(83, 157)
+        Me.BTN_agregarActivos.Name = "BTN_agregarActivos"
+        Me.BTN_agregarActivos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_agregarActivos.TabIndex = 3
+        Me.BTN_agregarActivos.Text = "Agregar"
+        Me.BTN_agregarActivos.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -356,14 +361,14 @@ Partial Class FormAdmin
         Me.TextBox1.Size = New System.Drawing.Size(230, 20)
         Me.TextBox1.TabIndex = 5
         '
-        'Button7
+        'BTN_buscarActivos
         '
-        Me.Button7.Location = New System.Drawing.Point(604, 55)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 23)
-        Me.Button7.TabIndex = 4
-        Me.Button7.Text = "Buscar"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.BTN_buscarActivos.Location = New System.Drawing.Point(604, 55)
+        Me.BTN_buscarActivos.Name = "BTN_buscarActivos"
+        Me.BTN_buscarActivos.Size = New System.Drawing.Size(75, 23)
+        Me.BTN_buscarActivos.TabIndex = 4
+        Me.BTN_buscarActivos.Text = "Buscar"
+        Me.BTN_buscarActivos.UseVisualStyleBackColor = True
         '
         'DataGridView2
         '
@@ -376,7 +381,7 @@ Partial Class FormAdmin
         Me.DataGridView2.MultiSelect = False
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(623, 308)
+        Me.DataGridView2.Size = New System.Drawing.Size(623, 294)
         Me.DataGridView2.StandardTab = True
         Me.DataGridView2.TabIndex = 3
         '
@@ -434,11 +439,12 @@ Partial Class FormAdmin
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.GroupBox3.Controls.Add(Me.Button8)
-        Me.GroupBox3.Controls.Add(Me.Button9)
-        Me.GroupBox3.Controls.Add(Me.Button10)
+        Me.GroupBox3.Controls.Add(Me.BTN_asignarSIM_Equipos)
+        Me.GroupBox3.Controls.Add(Me.BTN_bajaEquipos)
+        Me.GroupBox3.Controls.Add(Me.BTN_editarEquipos)
+        Me.GroupBox3.Controls.Add(Me.BTN_agregarEquipos)
         Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.Button11)
+        Me.GroupBox3.Controls.Add(Me.BTN_buscarEquipos)
         Me.GroupBox3.Controls.Add(Me.DataGridView3)
         Me.GroupBox3.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox3.Name = "GroupBox3"
@@ -446,32 +452,32 @@ Partial Class FormAdmin
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         '
-        'Button8
+        'BTN_bajaEquipos
         '
-        Me.Button8.Location = New System.Drawing.Point(83, 250)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(109, 27)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Eliminar"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.BTN_bajaEquipos.Location = New System.Drawing.Point(83, 250)
+        Me.BTN_bajaEquipos.Name = "BTN_bajaEquipos"
+        Me.BTN_bajaEquipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_bajaEquipos.TabIndex = 7
+        Me.BTN_bajaEquipos.Text = "Dar de baja"
+        Me.BTN_bajaEquipos.UseVisualStyleBackColor = True
         '
-        'Button9
+        'BTN_editarEquipos
         '
-        Me.Button9.Location = New System.Drawing.Point(83, 205)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(109, 27)
-        Me.Button9.TabIndex = 6
-        Me.Button9.Text = "Editar"
-        Me.Button9.UseVisualStyleBackColor = True
+        Me.BTN_editarEquipos.Location = New System.Drawing.Point(83, 205)
+        Me.BTN_editarEquipos.Name = "BTN_editarEquipos"
+        Me.BTN_editarEquipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_editarEquipos.TabIndex = 6
+        Me.BTN_editarEquipos.Text = "Editar"
+        Me.BTN_editarEquipos.UseVisualStyleBackColor = True
         '
-        'Button10
+        'BTN_agregarEquipos
         '
-        Me.Button10.Location = New System.Drawing.Point(83, 157)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(109, 27)
-        Me.Button10.TabIndex = 3
-        Me.Button10.Text = "Agregar"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.BTN_agregarEquipos.Location = New System.Drawing.Point(83, 157)
+        Me.BTN_agregarEquipos.Name = "BTN_agregarEquipos"
+        Me.BTN_agregarEquipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_agregarEquipos.TabIndex = 3
+        Me.BTN_agregarEquipos.Text = "Agregar"
+        Me.BTN_agregarEquipos.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
@@ -480,14 +486,14 @@ Partial Class FormAdmin
         Me.TextBox2.Size = New System.Drawing.Size(230, 20)
         Me.TextBox2.TabIndex = 5
         '
-        'Button11
+        'BTN_buscarEquipos
         '
-        Me.Button11.Location = New System.Drawing.Point(604, 55)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(75, 23)
-        Me.Button11.TabIndex = 4
-        Me.Button11.Text = "Buscar"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.BTN_buscarEquipos.Location = New System.Drawing.Point(604, 55)
+        Me.BTN_buscarEquipos.Name = "BTN_buscarEquipos"
+        Me.BTN_buscarEquipos.Size = New System.Drawing.Size(75, 23)
+        Me.BTN_buscarEquipos.TabIndex = 4
+        Me.BTN_buscarEquipos.Text = "Buscar"
+        Me.BTN_buscarEquipos.UseVisualStyleBackColor = True
         '
         'DataGridView3
         '
@@ -500,7 +506,7 @@ Partial Class FormAdmin
         Me.DataGridView3.MultiSelect = False
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(623, 308)
+        Me.DataGridView3.Size = New System.Drawing.Size(623, 291)
         Me.DataGridView3.StandardTab = True
         Me.DataGridView3.TabIndex = 3
         '
@@ -555,6 +561,15 @@ Partial Class FormAdmin
         Me.GroupBox4.Size = New System.Drawing.Size(964, 417)
         Me.GroupBox4.TabIndex = 3
         Me.GroupBox4.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(831, 384)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(109, 27)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Migrar SIM"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Button12
         '
@@ -649,7 +664,7 @@ Partial Class FormAdmin
         Me.PanelUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.PanelUsuario.Controls.Add(Me.Label5)
         Me.PanelUsuario.Controls.Add(Me.GroupBox5)
-        Me.PanelUsuario.Location = New System.Drawing.Point(130, 22)
+        Me.PanelUsuario.Location = New System.Drawing.Point(86, 22)
         Me.PanelUsuario.Name = "PanelUsuario"
         Me.PanelUsuario.Size = New System.Drawing.Size(1088, 614)
         Me.PanelUsuario.TabIndex = 7
@@ -748,14 +763,32 @@ Partial Class FormAdmin
         Me.Rol_U.HeaderText = "Rol"
         Me.Rol_U.Name = "Rol_U"
         '
-        'Button1
+        'BTN_asignarActivo_Clientes
         '
-        Me.Button1.Location = New System.Drawing.Point(831, 384)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(109, 27)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Migrar SIM"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BTN_asignarActivo_Clientes.Location = New System.Drawing.Point(832, 384)
+        Me.BTN_asignarActivo_Clientes.Name = "BTN_asignarActivo_Clientes"
+        Me.BTN_asignarActivo_Clientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarActivo_Clientes.TabIndex = 8
+        Me.BTN_asignarActivo_Clientes.Text = "Asignar activos"
+        Me.BTN_asignarActivo_Clientes.UseVisualStyleBackColor = True
+        '
+        'BTN_asignarEquipo_Activos
+        '
+        Me.BTN_asignarEquipo_Activos.Location = New System.Drawing.Point(832, 384)
+        Me.BTN_asignarEquipo_Activos.Name = "BTN_asignarEquipo_Activos"
+        Me.BTN_asignarEquipo_Activos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarEquipo_Activos.TabIndex = 8
+        Me.BTN_asignarEquipo_Activos.Text = "Asignar equipo"
+        Me.BTN_asignarEquipo_Activos.UseVisualStyleBackColor = True
+        '
+        'BTN_asignarSIM_Equipos
+        '
+        Me.BTN_asignarSIM_Equipos.Location = New System.Drawing.Point(832, 381)
+        Me.BTN_asignarSIM_Equipos.Name = "BTN_asignarSIM_Equipos"
+        Me.BTN_asignarSIM_Equipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarSIM_Equipos.TabIndex = 8
+        Me.BTN_asignarSIM_Equipos.Text = "Asignar SIM"
+        Me.BTN_asignarSIM_Equipos.UseVisualStyleBackColor = True
         '
         'FormAdmin
         '
@@ -815,29 +848,29 @@ Partial Class FormAdmin
     Friend WithEvents PanelCliente As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents BTN_AgregarCliente As Button
+    Friend WithEvents BTN_eliminarClientes As Button
+    Friend WithEvents BTN_editarClientes As Button
+    Friend WithEvents BTN_agregarClientes As Button
     Friend WithEvents TB_buscar As TextBox
-    Friend WithEvents BTN_buscar As Button
+    Friend WithEvents BTN_buscarClientes As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents PanelActivos As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
+    Friend WithEvents BTN_eliminarActivos As Button
+    Friend WithEvents BTN_editarActivos As Button
+    Friend WithEvents BTN_agregarActivos As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button7 As Button
+    Friend WithEvents BTN_buscarActivos As Button
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents PanelEquipos As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
-    Friend WithEvents Button10 As Button
+    Friend WithEvents BTN_bajaEquipos As Button
+    Friend WithEvents BTN_editarEquipos As Button
+    Friend WithEvents BTN_agregarEquipos As Button
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button11 As Button
+    Friend WithEvents BTN_buscarEquipos As Button
     Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents Nombre_C As DataGridViewTextBoxColumn
     Friend WithEvents Telefono_C As DataGridViewTextBoxColumn
@@ -878,4 +911,7 @@ Partial Class FormAdmin
     Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
     Friend WithEvents Rol_U As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents BTN_asignarActivo_Clientes As Button
+    Friend WithEvents BTN_asignarEquipo_Activos As Button
+    Friend WithEvents BTN_asignarSIM_Equipos As Button
 End Class

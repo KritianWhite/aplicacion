@@ -71,15 +71,15 @@
         End If
     End Sub
 
-    Private Sub BTN_AgregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_AgregarCliente.Click
+    Private Sub BTN_AgregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarClientes.Click
         AgregarCliente.Show()
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
         AgregarActivo.Show()
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
         AgregarEquipo.Show()
     End Sub
 
@@ -101,5 +101,17 @@
 
     Private Sub MigracionesDeSIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MigracionesDeSIMToolStripMenuItem.Click
         MigracionSIM.Show()
+    End Sub
+
+    Private Sub BTN_asignarActivo_Cliente_Click(sender As Object, e As EventArgs) Handles BTN_asignarActivo_Clientes.Click
+        AsignarActivos.Show()
+    End Sub
+
+    Private Sub BTN_asignarEquipo_Activos_Click(sender As Object, e As EventArgs) Handles BTN_asignarEquipo_Activos.Click
+        AsignarEquipo.Show()
+    End Sub
+
+    Private Sub BTN_asignarSIM_Equipos_Click(sender As Object, e As EventArgs) Handles BTN_asignarSIM_Equipos.Click
+        AsignarSIM.Show()
     End Sub
 End Class
