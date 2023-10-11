@@ -1,10 +1,9 @@
-﻿Imports System.Text.RegularExpressions
-
-Public Class AgregarCliente
+﻿Public Class AgregarCliente
 
     Dim numeroValido As New Auxiliares()
+    Dim controlador As New Controlador()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
-        Me.Hide()
+        Me.Close()
         FormAdmin.Show()
     End Sub
 
@@ -16,8 +15,16 @@ Public Class AgregarCliente
         If (TB_nombreCliente.Text <> String.Empty And TB_telefonoCliente.Text <> String.Empty And TB_correoCliente.Text <> String.Empty) Then
             Dim numero = TB_telefonoCliente.Text
             If (numeroValido.ValidarTelefono(numero)) Then
-                MessageBox.Show("Se agregó el cliente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                LimpiarInputs()
+
+                Try
+                    If controlador.AgregarCliente(TB_nombreCliente.Text, TB_telefonoCliente.Text, TB_correoCliente.Text) Then
+                        MessageBox.Show("Se agregó el cliente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        LimpiarInputs()
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+
             Else
                 MessageBox.Show("Número no válido. Ingrese un número válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 TB_telefonoCliente.Clear()
@@ -32,4 +39,5 @@ Public Class AgregarCliente
         TB_telefonoCliente.Clear()
         TB_correoCliente.Clear()
     End Sub
+
 End Class

@@ -36,7 +36,7 @@ Partial Class AgregarSIM
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TB_plandatosSim = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTime = New System.Windows.Forms.DateTimePicker()
         Me.SuspendLayout()
         '
         'TB_companiaSim
@@ -168,21 +168,21 @@ Partial Class AgregarSIM
         Me.Label6.TabIndex = 53
         Me.Label6.Text = "Plan de datos:"
         '
-        'DateTimePicker1
+        'DateTime
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(629, 346)
-        Me.DateTimePicker1.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 57
-        Me.DateTimePicker1.Value = New Date(2023, 9, 27, 21, 16, 24, 0)
+        Me.DateTime.Location = New System.Drawing.Point(629, 346)
+        Me.DateTime.MaxDate = New Date(2100, 12, 31, 0, 0, 0, 0)
+        Me.DateTime.Name = "DateTime"
+        Me.DateTime.Size = New System.Drawing.Size(200, 20)
+        Me.DateTime.TabIndex = 57
+        Me.DateTime.Value = New Date(2023, 9, 27, 21, 16, 24, 0)
         '
         'AgregarSIM
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 525)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.DateTime)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.TB_plandatosSim)
         Me.Controls.Add(Me.Label6)
@@ -219,5 +219,5 @@ Partial Class AgregarSIM
     Friend WithEvents Label5 As Label
     Friend WithEvents TB_plandatosSim As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DateTime As DateTimePicker
 End Class

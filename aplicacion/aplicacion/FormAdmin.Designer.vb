@@ -34,39 +34,43 @@ Partial Class FormAdmin
         Me.PanelCliente = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BTN_asignarActivo_Clientes = New System.Windows.Forms.Button()
         Me.BTN_eliminarClientes = New System.Windows.Forms.Button()
         Me.BTN_editarClientes = New System.Windows.Forms.Button()
         Me.BTN_agregarClientes = New System.Windows.Forms.Button()
         Me.TB_buscar = New System.Windows.Forms.TextBox()
         Me.BTN_buscarClientes = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV_clientes = New System.Windows.Forms.DataGridView()
         Me.Nombre_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Correo_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelActivos = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BTN_asignarEquipo_Activos = New System.Windows.Forms.Button()
         Me.BTN_eliminarActivos = New System.Windows.Forms.Button()
         Me.BTN_editarActivos = New System.Windows.Forms.Button()
         Me.BTN_agregarActivos = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.BTN_buscarActivos = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DGV_Activos = New System.Windows.Forms.DataGridView()
         Me.Placa_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Chasis_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Marca_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modelo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Color_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Anio_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PanelEquipos = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.BTN_asignarSIM_Equipos = New System.Windows.Forms.Button()
         Me.BTN_bajaEquipos = New System.Windows.Forms.Button()
         Me.BTN_editarEquipos = New System.Windows.Forms.Button()
         Me.BTN_agregarEquipos = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.BTN_buscarEquipos = New System.Windows.Forms.Button()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.DGV_Equipos = New System.Windows.Forms.DataGridView()
         Me.IMEI_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modelo_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Marca_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -74,12 +78,12 @@ Partial Class FormAdmin
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
+        Me.BTN_eliminarSim = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.DGV_Sim = New System.Windows.Forms.DataGridView()
         Me.ICC_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Numero_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Propietario_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -89,33 +93,30 @@ Partial Class FormAdmin
         Me.PanelUsuario = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Button16 = New System.Windows.Forms.Button()
+        Me.BTN_eliminarUsuarios = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Button19 = New System.Windows.Forms.Button()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
+        Me.DGV_Usuarios = New System.Windows.Forms.DataGridView()
         Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BTN_asignarActivo_Clientes = New System.Windows.Forms.Button()
-        Me.BTN_asignarEquipo_Activos = New System.Windows.Forms.Button()
-        Me.BTN_asignarSIM_Equipos = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelCliente.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelActivos.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelEquipos.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Equipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelSIM.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Sim, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelUsuario.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -207,12 +208,21 @@ Partial Class FormAdmin
         Me.GroupBox1.Controls.Add(Me.BTN_agregarClientes)
         Me.GroupBox1.Controls.Add(Me.TB_buscar)
         Me.GroupBox1.Controls.Add(Me.BTN_buscarClientes)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DGV_clientes)
         Me.GroupBox1.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(964, 417)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
+        '
+        'BTN_asignarActivo_Clientes
+        '
+        Me.BTN_asignarActivo_Clientes.Location = New System.Drawing.Point(832, 384)
+        Me.BTN_asignarActivo_Clientes.Name = "BTN_asignarActivo_Clientes"
+        Me.BTN_asignarActivo_Clientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarActivo_Clientes.TabIndex = 8
+        Me.BTN_asignarActivo_Clientes.Text = "Asignar activos"
+        Me.BTN_asignarActivo_Clientes.UseVisualStyleBackColor = True
         '
         'BTN_eliminarClientes
         '
@@ -257,20 +267,20 @@ Partial Class FormAdmin
         Me.BTN_buscarClientes.Text = "Buscar"
         Me.BTN_buscarClientes.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGV_clientes
         '
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_C, Me.Telefono_C, Me.Correo_C})
-        Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView1.Location = New System.Drawing.Point(318, 84)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(623, 291)
-        Me.DataGridView1.StandardTab = True
-        Me.DataGridView1.TabIndex = 3
+        Me.DGV_clientes.AllowUserToResizeColumns = False
+        Me.DGV_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_C, Me.Telefono_C, Me.Correo_C})
+        Me.DGV_clientes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_clientes.Location = New System.Drawing.Point(318, 84)
+        Me.DGV_clientes.MultiSelect = False
+        Me.DGV_clientes.Name = "DGV_clientes"
+        Me.DGV_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_clientes.Size = New System.Drawing.Size(623, 291)
+        Me.DGV_clientes.StandardTab = True
+        Me.DGV_clientes.TabIndex = 3
         '
         'Nombre_C
         '
@@ -320,12 +330,21 @@ Partial Class FormAdmin
         Me.GroupBox2.Controls.Add(Me.BTN_agregarActivos)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.BTN_buscarActivos)
-        Me.GroupBox2.Controls.Add(Me.DataGridView2)
+        Me.GroupBox2.Controls.Add(Me.DGV_Activos)
         Me.GroupBox2.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(964, 417)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
+        '
+        'BTN_asignarEquipo_Activos
+        '
+        Me.BTN_asignarEquipo_Activos.Location = New System.Drawing.Point(832, 384)
+        Me.BTN_asignarEquipo_Activos.Name = "BTN_asignarEquipo_Activos"
+        Me.BTN_asignarEquipo_Activos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarEquipo_Activos.TabIndex = 8
+        Me.BTN_asignarEquipo_Activos.Text = "Asignar equipo"
+        Me.BTN_asignarEquipo_Activos.UseVisualStyleBackColor = True
         '
         'BTN_eliminarActivos
         '
@@ -370,20 +389,20 @@ Partial Class FormAdmin
         Me.BTN_buscarActivos.Text = "Buscar"
         Me.BTN_buscarActivos.UseVisualStyleBackColor = True
         '
-        'DataGridView2
+        'DGV_Activos
         '
-        Me.DataGridView2.AllowUserToResizeColumns = False
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Placa_A, Me.Chasis_A, Me.Tipo_A, Me.Marca_A, Me.Modelo_A, Me.Anio_A})
-        Me.DataGridView2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView2.Location = New System.Drawing.Point(318, 84)
-        Me.DataGridView2.MultiSelect = False
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView2.Size = New System.Drawing.Size(623, 294)
-        Me.DataGridView2.StandardTab = True
-        Me.DataGridView2.TabIndex = 3
+        Me.DGV_Activos.AllowUserToResizeColumns = False
+        Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Placa_A, Me.Chasis_A, Me.Tipo_A, Me.Marca_A, Me.Modelo_A, Me.Color_A, Me.Anio_A})
+        Me.DGV_Activos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Activos.Location = New System.Drawing.Point(318, 84)
+        Me.DGV_Activos.MultiSelect = False
+        Me.DGV_Activos.Name = "DGV_Activos"
+        Me.DGV_Activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Activos.Size = New System.Drawing.Size(623, 294)
+        Me.DGV_Activos.StandardTab = True
+        Me.DGV_Activos.TabIndex = 3
         '
         'Placa_A
         '
@@ -409,6 +428,11 @@ Partial Class FormAdmin
         '
         Me.Modelo_A.HeaderText = "Modelo"
         Me.Modelo_A.Name = "Modelo_A"
+        '
+        'Color_A
+        '
+        Me.Color_A.HeaderText = "Color"
+        Me.Color_A.Name = "Color_A"
         '
         'Anio_A
         '
@@ -445,12 +469,21 @@ Partial Class FormAdmin
         Me.GroupBox3.Controls.Add(Me.BTN_agregarEquipos)
         Me.GroupBox3.Controls.Add(Me.TextBox2)
         Me.GroupBox3.Controls.Add(Me.BTN_buscarEquipos)
-        Me.GroupBox3.Controls.Add(Me.DataGridView3)
+        Me.GroupBox3.Controls.Add(Me.DGV_Equipos)
         Me.GroupBox3.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(964, 417)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
+        '
+        'BTN_asignarSIM_Equipos
+        '
+        Me.BTN_asignarSIM_Equipos.Location = New System.Drawing.Point(832, 381)
+        Me.BTN_asignarSIM_Equipos.Name = "BTN_asignarSIM_Equipos"
+        Me.BTN_asignarSIM_Equipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_asignarSIM_Equipos.TabIndex = 8
+        Me.BTN_asignarSIM_Equipos.Text = "Asignar SIM"
+        Me.BTN_asignarSIM_Equipos.UseVisualStyleBackColor = True
         '
         'BTN_bajaEquipos
         '
@@ -495,20 +528,20 @@ Partial Class FormAdmin
         Me.BTN_buscarEquipos.Text = "Buscar"
         Me.BTN_buscarEquipos.UseVisualStyleBackColor = True
         '
-        'DataGridView3
+        'DGV_Equipos
         '
-        Me.DataGridView3.AllowUserToResizeColumns = False
-        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI_E, Me.Modelo_E, Me.Marca_E})
-        Me.DataGridView3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView3.Location = New System.Drawing.Point(318, 84)
-        Me.DataGridView3.MultiSelect = False
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView3.Size = New System.Drawing.Size(623, 291)
-        Me.DataGridView3.StandardTab = True
-        Me.DataGridView3.TabIndex = 3
+        Me.DGV_Equipos.AllowUserToResizeColumns = False
+        Me.DGV_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI_E, Me.Modelo_E, Me.Marca_E})
+        Me.DGV_Equipos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Equipos.Location = New System.Drawing.Point(318, 84)
+        Me.DGV_Equipos.MultiSelect = False
+        Me.DGV_Equipos.Name = "DGV_Equipos"
+        Me.DGV_Equipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Equipos.Size = New System.Drawing.Size(623, 291)
+        Me.DGV_Equipos.StandardTab = True
+        Me.DGV_Equipos.TabIndex = 3
         '
         'IMEI_E
         '
@@ -550,12 +583,12 @@ Partial Class FormAdmin
         '
         Me.GroupBox4.BackColor = System.Drawing.SystemColors.ControlLight
         Me.GroupBox4.Controls.Add(Me.Button1)
-        Me.GroupBox4.Controls.Add(Me.Button12)
+        Me.GroupBox4.Controls.Add(Me.BTN_eliminarSim)
         Me.GroupBox4.Controls.Add(Me.Button13)
         Me.GroupBox4.Controls.Add(Me.Button14)
         Me.GroupBox4.Controls.Add(Me.TextBox3)
         Me.GroupBox4.Controls.Add(Me.Button15)
-        Me.GroupBox4.Controls.Add(Me.DataGridView4)
+        Me.GroupBox4.Controls.Add(Me.DGV_Sim)
         Me.GroupBox4.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(964, 417)
@@ -571,14 +604,14 @@ Partial Class FormAdmin
         Me.Button1.Text = "Migrar SIM"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button12
+        'BTN_eliminarSim
         '
-        Me.Button12.Location = New System.Drawing.Point(83, 250)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(109, 27)
-        Me.Button12.TabIndex = 7
-        Me.Button12.Text = "Eliminar"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.BTN_eliminarSim.Location = New System.Drawing.Point(83, 250)
+        Me.BTN_eliminarSim.Name = "BTN_eliminarSim"
+        Me.BTN_eliminarSim.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_eliminarSim.TabIndex = 7
+        Me.BTN_eliminarSim.Text = "Eliminar"
+        Me.BTN_eliminarSim.UseVisualStyleBackColor = True
         '
         'Button13
         '
@@ -614,20 +647,20 @@ Partial Class FormAdmin
         Me.Button15.Text = "Buscar"
         Me.Button15.UseVisualStyleBackColor = True
         '
-        'DataGridView4
+        'DGV_Sim
         '
-        Me.DataGridView4.AllowUserToResizeColumns = False
-        Me.DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICC_S, Me.Numero_S, Me.Propietario_S, Me.Vence_S, Me.Plan_Datos_S, Me.Compania_S})
-        Me.DataGridView4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView4.Location = New System.Drawing.Point(318, 84)
-        Me.DataGridView4.MultiSelect = False
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView4.Size = New System.Drawing.Size(623, 288)
-        Me.DataGridView4.StandardTab = True
-        Me.DataGridView4.TabIndex = 3
+        Me.DGV_Sim.AllowUserToResizeColumns = False
+        Me.DGV_Sim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Sim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICC_S, Me.Numero_S, Me.Propietario_S, Me.Vence_S, Me.Plan_Datos_S, Me.Compania_S})
+        Me.DGV_Sim.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Sim.Location = New System.Drawing.Point(318, 84)
+        Me.DGV_Sim.MultiSelect = False
+        Me.DGV_Sim.Name = "DGV_Sim"
+        Me.DGV_Sim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Sim.Size = New System.Drawing.Size(623, 288)
+        Me.DGV_Sim.StandardTab = True
+        Me.DGV_Sim.TabIndex = 3
         '
         'ICC_S
         '
@@ -683,26 +716,26 @@ Partial Class FormAdmin
         'GroupBox5
         '
         Me.GroupBox5.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.GroupBox5.Controls.Add(Me.Button16)
+        Me.GroupBox5.Controls.Add(Me.BTN_eliminarUsuarios)
         Me.GroupBox5.Controls.Add(Me.Button17)
         Me.GroupBox5.Controls.Add(Me.Button18)
         Me.GroupBox5.Controls.Add(Me.TextBox4)
         Me.GroupBox5.Controls.Add(Me.Button19)
-        Me.GroupBox5.Controls.Add(Me.DataGridView5)
+        Me.GroupBox5.Controls.Add(Me.DGV_Usuarios)
         Me.GroupBox5.Location = New System.Drawing.Point(62, 137)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(964, 417)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         '
-        'Button16
+        'BTN_eliminarUsuarios
         '
-        Me.Button16.Location = New System.Drawing.Point(83, 250)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(109, 27)
-        Me.Button16.TabIndex = 7
-        Me.Button16.Text = "Eliminar"
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.BTN_eliminarUsuarios.Location = New System.Drawing.Point(83, 250)
+        Me.BTN_eliminarUsuarios.Name = "BTN_eliminarUsuarios"
+        Me.BTN_eliminarUsuarios.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_eliminarUsuarios.TabIndex = 7
+        Me.BTN_eliminarUsuarios.Text = "Eliminar"
+        Me.BTN_eliminarUsuarios.UseVisualStyleBackColor = True
         '
         'Button17
         '
@@ -738,20 +771,20 @@ Partial Class FormAdmin
         Me.Button19.Text = "Buscar"
         Me.Button19.UseVisualStyleBackColor = True
         '
-        'DataGridView5
+        'DGV_Usuarios
         '
-        Me.DataGridView5.AllowUserToResizeColumns = False
-        Me.DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_U, Me.Rol_U})
-        Me.DataGridView5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView5.Location = New System.Drawing.Point(318, 84)
-        Me.DataGridView5.MultiSelect = False
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView5.Size = New System.Drawing.Size(623, 308)
-        Me.DataGridView5.StandardTab = True
-        Me.DataGridView5.TabIndex = 3
+        Me.DGV_Usuarios.AllowUserToResizeColumns = False
+        Me.DGV_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_U, Me.Rol_U})
+        Me.DGV_Usuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Usuarios.Location = New System.Drawing.Point(318, 84)
+        Me.DGV_Usuarios.MultiSelect = False
+        Me.DGV_Usuarios.Name = "DGV_Usuarios"
+        Me.DGV_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Usuarios.Size = New System.Drawing.Size(623, 308)
+        Me.DGV_Usuarios.StandardTab = True
+        Me.DGV_Usuarios.TabIndex = 3
         '
         'Nombre_U
         '
@@ -762,33 +795,6 @@ Partial Class FormAdmin
         '
         Me.Rol_U.HeaderText = "Rol"
         Me.Rol_U.Name = "Rol_U"
-        '
-        'BTN_asignarActivo_Clientes
-        '
-        Me.BTN_asignarActivo_Clientes.Location = New System.Drawing.Point(832, 384)
-        Me.BTN_asignarActivo_Clientes.Name = "BTN_asignarActivo_Clientes"
-        Me.BTN_asignarActivo_Clientes.Size = New System.Drawing.Size(109, 27)
-        Me.BTN_asignarActivo_Clientes.TabIndex = 8
-        Me.BTN_asignarActivo_Clientes.Text = "Asignar activos"
-        Me.BTN_asignarActivo_Clientes.UseVisualStyleBackColor = True
-        '
-        'BTN_asignarEquipo_Activos
-        '
-        Me.BTN_asignarEquipo_Activos.Location = New System.Drawing.Point(832, 384)
-        Me.BTN_asignarEquipo_Activos.Name = "BTN_asignarEquipo_Activos"
-        Me.BTN_asignarEquipo_Activos.Size = New System.Drawing.Size(109, 27)
-        Me.BTN_asignarEquipo_Activos.TabIndex = 8
-        Me.BTN_asignarEquipo_Activos.Text = "Asignar equipo"
-        Me.BTN_asignarEquipo_Activos.UseVisualStyleBackColor = True
-        '
-        'BTN_asignarSIM_Equipos
-        '
-        Me.BTN_asignarSIM_Equipos.Location = New System.Drawing.Point(832, 381)
-        Me.BTN_asignarSIM_Equipos.Name = "BTN_asignarSIM_Equipos"
-        Me.BTN_asignarSIM_Equipos.Size = New System.Drawing.Size(109, 27)
-        Me.BTN_asignarSIM_Equipos.TabIndex = 8
-        Me.BTN_asignarSIM_Equipos.Text = "Asignar SIM"
-        Me.BTN_asignarSIM_Equipos.UseVisualStyleBackColor = True
         '
         'FormAdmin
         '
@@ -811,27 +817,27 @@ Partial Class FormAdmin
         Me.PanelCliente.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelActivos.ResumeLayout(False)
         Me.PanelActivos.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelEquipos.ResumeLayout(False)
         Me.PanelEquipos.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Equipos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelSIM.ResumeLayout(False)
         Me.PanelSIM.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Sim, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelUsuario.ResumeLayout(False)
         Me.PanelUsuario.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Usuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -853,7 +859,7 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarClientes As Button
     Friend WithEvents TB_buscar As TextBox
     Friend WithEvents BTN_buscarClientes As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGV_clientes As DataGridView
     Friend WithEvents PanelActivos As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox2 As GroupBox
@@ -862,7 +868,7 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarActivos As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents BTN_buscarActivos As Button
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DGV_Activos As DataGridView
     Friend WithEvents PanelEquipos As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox3 As GroupBox
@@ -871,28 +877,22 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarEquipos As Button
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents BTN_buscarEquipos As Button
-    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents DGV_Equipos As DataGridView
     Friend WithEvents Nombre_C As DataGridViewTextBoxColumn
     Friend WithEvents Telefono_C As DataGridViewTextBoxColumn
     Friend WithEvents Correo_C As DataGridViewTextBoxColumn
-    Friend WithEvents Placa_A As DataGridViewTextBoxColumn
-    Friend WithEvents Chasis_A As DataGridViewTextBoxColumn
-    Friend WithEvents Tipo_A As DataGridViewTextBoxColumn
-    Friend WithEvents Marca_A As DataGridViewTextBoxColumn
-    Friend WithEvents Modelo_A As DataGridViewTextBoxColumn
-    Friend WithEvents Anio_A As DataGridViewTextBoxColumn
     Friend WithEvents IMEI_E As DataGridViewTextBoxColumn
     Friend WithEvents Modelo_E As DataGridViewTextBoxColumn
     Friend WithEvents Marca_E As DataGridViewTextBoxColumn
     Friend WithEvents PanelSIM As Panel
     Friend WithEvents Label4 As Label
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents Button12 As Button
+    Friend WithEvents BTN_eliminarSim As Button
     Friend WithEvents Button13 As Button
     Friend WithEvents Button14 As Button
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Button15 As Button
-    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents DGV_Sim As DataGridView
     Friend WithEvents ICC_S As DataGridViewTextBoxColumn
     Friend WithEvents Numero_S As DataGridViewTextBoxColumn
     Friend WithEvents Propietario_S As DataGridViewTextBoxColumn
@@ -902,16 +902,23 @@ Partial Class FormAdmin
     Friend WithEvents PanelUsuario As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents Button16 As Button
+    Friend WithEvents BTN_eliminarUsuarios As Button
     Friend WithEvents Button17 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Button19 As Button
-    Friend WithEvents DataGridView5 As DataGridView
+    Friend WithEvents DGV_Usuarios As DataGridView
     Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
     Friend WithEvents Rol_U As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
     Friend WithEvents BTN_asignarActivo_Clientes As Button
     Friend WithEvents BTN_asignarEquipo_Activos As Button
     Friend WithEvents BTN_asignarSIM_Equipos As Button
+    Friend WithEvents Placa_A As DataGridViewTextBoxColumn
+    Friend WithEvents Chasis_A As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_A As DataGridViewTextBoxColumn
+    Friend WithEvents Marca_A As DataGridViewTextBoxColumn
+    Friend WithEvents Modelo_A As DataGridViewTextBoxColumn
+    Friend WithEvents Color_A As DataGridViewTextBoxColumn
+    Friend WithEvents Anio_A As DataGridViewTextBoxColumn
 End Class

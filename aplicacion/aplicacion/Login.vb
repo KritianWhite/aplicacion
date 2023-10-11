@@ -4,6 +4,7 @@ Imports System.Security.Cryptography
 Public Class Login
     Dim aes As New RijndaelManaged()
     Dim encryp As New Encrypted()
+    Dim conn As New Conexion()
 
     Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
 
@@ -23,5 +24,9 @@ Public Class Login
     Private Sub Limpiar()
         TB_usuario.Text = ""
         TB_contrasena.Text = ""
+    End Sub
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

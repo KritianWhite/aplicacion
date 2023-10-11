@@ -37,6 +37,8 @@ Partial Class AgregarActivo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TB_chasisActivo = New System.Windows.Forms.TextBox()
+        Me.TB_colorActivo = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -176,11 +178,31 @@ Partial Class AgregarActivo
         Me.TB_chasisActivo.Size = New System.Drawing.Size(211, 28)
         Me.TB_chasisActivo.TabIndex = 18
         '
+        'TB_colorActivo
+        '
+        Me.TB_colorActivo.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_colorActivo.Location = New System.Drawing.Point(176, 386)
+        Me.TB_colorActivo.Name = "TB_colorActivo"
+        Me.TB_colorActivo.Size = New System.Drawing.Size(211, 28)
+        Me.TB_colorActivo.TabIndex = 30
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(75, 389)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(55, 21)
+        Me.Label8.TabIndex = 29
+        Me.Label8.Text = "Color:"
+        '
         'AgregarActivo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 525)
+        Me.Controls.Add(Me.TB_colorActivo)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TB_anioActivo)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.TB_modeloActivo)
@@ -218,4 +240,6 @@ Partial Class AgregarActivo
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents TB_chasisActivo As TextBox
+    Friend WithEvents TB_colorActivo As TextBox
+    Friend WithEvents Label8 As Label
 End Class

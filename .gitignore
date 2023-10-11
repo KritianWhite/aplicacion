@@ -1,1 +1,4 @@
-## 
+/database/ControlInventario.zip
+/database/ControlInventario/*
+/aplicacion/packages/*
+*.vs*
