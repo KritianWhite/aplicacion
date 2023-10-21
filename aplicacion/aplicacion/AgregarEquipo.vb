@@ -6,10 +6,10 @@
         FormAdmin.Show()
     End Sub
 
-    Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click
-        If (TB_modeloEquipo.Text <> String.Empty And TB_imeiEquipo.Text <> String.Empty And TB_marcaEquipo.Text <> String.Empty) Then
+    Private Sub BTN_agregarEquipo_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipo.Click
+        If (TB_imeiEquipo.Text <> String.Empty And CB_modelo.Text <> String.Empty) Then
             Try
-                If controlador.AgregarEquipo(TB_imeiEquipo.Text, TB_modeloEquipo.Text, TB_marcaEquipo.Text) Then
+                If controlador.AgregarEquipo_(TB_imeiEquipo.Text, CB_modelo.Text) Then
                     MessageBox.Show("Se agregó el equipo correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     LimpiarInputs()
                 End If
@@ -22,8 +22,12 @@
     End Sub
 
     Private Sub LimpiarInputs()
-        TB_modeloEquipo.Clear()
+        CB_modelo.Text = "Seleccione un modelo"
         TB_imeiEquipo.Clear()
-        TB_marcaEquipo.Clear()
+    End Sub
+
+    Private Sub AgregarEquipo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        controlador.CargarModeloEquipo()
+        CB_modelo.DropDownStyle = ComboBoxStyle.DropDownList ' Bloqueamos el combo box, para que no sea editable por el usuario
     End Sub
 End Class

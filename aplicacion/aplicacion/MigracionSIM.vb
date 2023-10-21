@@ -12,4 +12,9 @@
             MessageBox.Show("Ingrese el ICC actual para buscar el SIM", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub MigracionSIM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGV_migracionesSim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5")
+        DGV_migracionesSim.EnableHeadersVisualStyles = False
+    End Sub
 End Class

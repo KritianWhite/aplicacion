@@ -1,12 +1,11 @@
 ﻿Public Class AgregarSIM
     Dim numeroValido As New Auxiliares()
     Dim controlador As New Controlador()
+
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
-        FormAdmin.Show()
     End Sub
-
-    Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click
+    Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
         If (TB_iccSim.Text <> String.Empty And TB_numeroSim.Text <> String.Empty And TB_companiaSim.Text <> String.Empty And
             TB_propietarioSim.Text <> String.Empty And TB_plandatosSim.Text <> String.Empty) Then
             If (numeroValido.ValidarTelefono(TB_numeroSim.Text)) Then

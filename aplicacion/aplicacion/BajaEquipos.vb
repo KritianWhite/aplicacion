@@ -12,4 +12,9 @@
             MessageBox.Show("Ingrese el IMEI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub BajaEquipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DGV_bajaEquipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5")
+        DGV_bajaEquipos.EnableHeadersVisualStyles = False
+    End Sub
 End Class

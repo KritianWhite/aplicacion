@@ -4,7 +4,6 @@
     Dim controlador As New Controlador()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
-        FormAdmin.Show()
     End Sub
 
     Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click

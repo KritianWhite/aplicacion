@@ -1,24 +1,17 @@
-﻿
-Imports System.Security.Cryptography
-
-Public Class Login
-    Dim aes As New RijndaelManaged()
+﻿Public Class Login
     Dim encryp As New Encrypted()
-    Dim conn As New Conexion()
+    Dim controlador As New Controlador()
 
-    Private Sub button1_Click(sender As Object, e As EventArgs) Handles button1.Click
-
-
+    Private Sub BTN_iniciarSesion_Click(sender As Object, e As EventArgs) Handles BTN_iniciarSesion.Click
         If (TB_usuario.Text <> String.Empty And TB_contrasena.Text <> String.Empty) Then
-            Dim encrypted As String = encryp.EncryptString(TB_contrasena.Text, aes.Key, aes.IV)
-            MessageBox.Show("Usted inició sesión correctamente", "Acceso de authenticacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Limpiar()
-            Me.Hide()
-            FormAdmin.Show()
-        Else
-            MessageBox.Show("Ingrese su usuario y/o contraseña.", "Error de authenticacion", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Dim encrypted As String = encryp.EncriptarSHA1(TB_contrasena.Text)
+            'controlador.Login(TB_usuario.Text, encrypted)
+            If controlador.IniciarSesion(TB_usuario.Text, encrypted) Then
+                Limpiar()
+            Else
+                TB_contrasena.Text = ""
+            End If
         End If
-
     End Sub
 
     Private Sub Limpiar()
@@ -27,6 +20,6 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.BackColor = ColorTranslator.FromHtml("#0080AA")
     End Sub
 End Class

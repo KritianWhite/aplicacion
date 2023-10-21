@@ -2,6 +2,8 @@
 
     ' LLamamos a nuestro controlador
     Dim controlador As New Controlador()
+    Dim conn As New Conexion()
+    Dim aux As New Auxiliares()
     ' Variable global para la seleccion de dato en cualquier tabla
     Dim valorSeleccionado As String = ""
 
@@ -11,20 +13,17 @@
     End Sub
 
     ' Navegación de los paneles
-    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
-        If (PanelActivos.Visible = False) Then
-            PanelCliente.Visible = False
-            PanelEquipos.Visible = False
-            PanelSIM.Visible = False
-            PanelUsuario.Visible = False
-            PanelActivos.Visible = True
-            PanelActivos.Location = New Point(0, 0)
-            PanelActivos.Dock = DockStyle.Fill
-        End If
-    End Sub
-
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         If (PanelCliente.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelEquipos.Visible = False
             PanelSIM.Visible = False
@@ -34,9 +33,37 @@
             PanelCliente.Dock = DockStyle.Fill
         End If
     End Sub
-
+    Private Sub ActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ActivosToolStripMenuItem.Click
+        If (PanelActivos.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            'Ocultamos o mostramos los paneles
+            PanelCliente.Visible = False
+            PanelEquipos.Visible = False
+            PanelSIM.Visible = False
+            PanelUsuario.Visible = False
+            PanelActivos.Visible = True
+            PanelActivos.Location = New Point(0, 0)
+            PanelActivos.Dock = DockStyle.Fill
+        End If
+    End Sub
     Private Sub EquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EquiposToolStripMenuItem.Click
         If (PanelEquipos.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelSIM.Visible = False
@@ -49,6 +76,15 @@
 
     Private Sub SIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SIMToolStripMenuItem.Click
         If (PanelSIM.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelEquipos.Visible = False
@@ -61,6 +97,15 @@
 
     Private Sub UsuariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuariosToolStripMenuItem.Click
         If (PanelUsuario.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelEquipos.Visible = False
@@ -74,56 +119,80 @@
     ' Navegación hacia otras pestañas
     Private Sub BTN_AgregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarClientes.Click
         AgregarCliente.Show()
+        AgregarCliente.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
         AgregarActivo.Show()
+        AgregarActivo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
         AgregarEquipo.Show()
+        AgregarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         AgregarSIM.Show()
+        AgregarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+    Private Sub BTN_agregarUsuari_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
         AgregarUsuario.Show()
+        AgregarUsuario.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BajaDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeEquiposToolStripMenuItem.Click
         BajaEquipos.Show()
+        BajaEquipos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        MigrarSIM.Show()
+        'MigrarSIM.Show()
+        aux.MigrarSim(valorSeleccionado)
+        MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub MigracionesDeSIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MigracionesDeSIMToolStripMenuItem.Click
         MigracionSIM.Show()
+        MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BTN_asignarActivo_Cliente_Click(sender As Object, e As EventArgs) Handles BTN_asignarActivo_Clientes.Click
         AsignarActivos.Show()
+        AsignarActivos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+        Me.Hide()
     End Sub
 
     Private Sub BTN_asignarEquipo_Activos_Click(sender As Object, e As EventArgs) Handles BTN_asignarEquipo_Activos.Click
         AsignarEquipo.Show()
+        AsignarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+        Me.Hide()
     End Sub
 
     Private Sub BTN_asignarSIM_Equipos_Click(sender As Object, e As EventArgs) Handles BTN_asignarSIM_Equipos.Click
         AsignarSIM.Show()
+        AsignarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+        Me.Hide()
     End Sub
 
     ' En este metodo se cargan todas las tablas al iniciar sesión
     Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (PanelCliente.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ' Ocultamos o mostramos los paneles
+            PanelCliente.Visible = True
             PanelActivos.Visible = False
             PanelEquipos.Visible = False
             PanelSIM.Visible = False
             PanelUsuario.Visible = False
-            PanelCliente.Visible = True
             PanelCliente.Location = New Point(0, 0)
             PanelCliente.Dock = DockStyle.Fill
         End If
@@ -155,7 +224,6 @@
         DGV_clientes.Columns("Correo_C").ReadOnly = False
 
     End Sub
-
     Private Sub DGV_clientes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_clientes.CellEndEdit
 
         If e.ColumnIndex = DGV_clientes.Columns("Telefono_C").Index OrElse
@@ -168,45 +236,165 @@
                     Dim correo = DGV_clientes.CurrentRow.Cells("Correo_C").Value
                     If (controlador.Editarcliente(valorSeleccionado, telefono, correo)) Then
                         MessageBox.Show("Se editó la información del cliente " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        DGV_clientes.ReadOnly = True
+                        'DGV_clientes.ReadOnly = True
+                        bloquearCeldasClientes()
                     End If
+                Else
+                    conn.desconexion()
+                    bloquearCeldasClientes()
+                    controlador.CargarTablaClientes()
                 End If
             Catch ex As Exception
                 MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                bloquearCeldasClientes()
             End Try
-
+            'DGV_clientes.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
         End If
-
-        'DGV_clientes.CurrentCell = DGV_clientes(e.ColumnIndex, e.RowIndex)
-        'DGV_clientes.ClearSelection()
-        'DGV_clientes.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
-
     End Sub
 
-    'Private Sub DGV_clientes_KeyDown(sender As Object, e As KeyEventArgs) Handles DGV_clientes.KeyDown
-    '    'Obtenemos valores
+    Private Sub bloquearCeldasClientes()
+        DGV_clientes.Columns("Telefono_C").ReadOnly = True
+        DGV_clientes.Columns("Correo_C").ReadOnly = True
+    End Sub
 
-    '    ' Validación de confirmar edición o no
-    '    ' Recordemos que valorSeleccionado siempre toma el valor de la primera columna (nombre)
-    '    ' de la fila seleccionada.
-    '    Try
-    '        ' Obtener el KeyChar a partir del objeto e (CellEventArgs)
-    '        If e.KeyCode = Keys.Enter Then
-    '            Dim resultado = MessageBox.Show("¿Desea editar la información del cliente " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
-    '            If resultado = DialogResult.OK Then
-    '                Dim telefono = DGV_clientes.CurrentRow.Cells("Telefono_C").Value
-    '                Dim correo = DGV_clientes.CurrentRow.Cells("Correo_C").Value
-    '                If (controlador.Editarcliente(valorSeleccionado, telefono, correo)) Then
-    '                    DGV_clientes.ReadOnly = True
-    '                    MessageBox.Show("Se editó la información del cliente " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '                End If
-    '            End If
-    '        End If
-    '    Catch ex As Exception
-    '        MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
+    Private Sub BTN_editarActivos_Click(sender As Object, e As EventArgs) Handles BTN_editarActivos.Click
+        DGV_Activos.ReadOnly = False
+        DGV_Activos.Columns("Placa_A").ReadOnly = True
+        DGV_Activos.Columns("Chasis_A").ReadOnly = False
+        DGV_Activos.Columns("Tipo_A").ReadOnly = False
+        DGV_Activos.Columns("Marca_A").ReadOnly = False
+        DGV_Activos.Columns("Modelo_A").ReadOnly = False
+        DGV_Activos.Columns("Color_A").ReadOnly = False
+        DGV_Activos.Columns("Anio_A").ReadOnly = False
+    End Sub
+    Private Sub DGV_Activos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellEndEdit
 
-    'End Sub
+        If e.ColumnIndex = DGV_Activos.Columns("Chasis_A").Index OrElse e.ColumnIndex = DGV_Activos.Columns("Tipo_A").Index OrElse
+            e.ColumnIndex = DGV_Activos.Columns("Marca_A").Index OrElse e.ColumnIndex = DGV_Activos.Columns("Modelo_A").Index OrElse
+            e.ColumnIndex = DGV_Activos.Columns("Color_A").Index OrElse e.ColumnIndex = DGV_Activos.Columns("Anio_A").Index Then
+            'Aquí va tu código para guardar cambios
+            Try
+                Dim resultado = MessageBox.Show("¿Desea editar la información del activo con placa " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                If resultado = DialogResult.OK Then
+                    Dim chasis = DGV_Activos.CurrentRow.Cells("Chasis_A").Value
+                    Dim tipo = DGV_Activos.CurrentRow.Cells("Tipo_A").Value
+                    Dim marca = DGV_Activos.CurrentRow.Cells("Marca_A").Value
+                    Dim modelo = DGV_Activos.CurrentRow.Cells("Modelo_A").Value
+                    Dim color = DGV_Activos.CurrentRow.Cells("Color_A").Value
+                    Dim anio = DGV_Activos.CurrentRow.Cells("Anio_A").Value
+                    If (controlador.EditarActivo(valorSeleccionado, chasis, tipo, marca, modelo, color, anio)) Then
+                        MessageBox.Show("Se editó la información del activo con placa: " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'DGV_clientes.ReadOnly = True
+                        bloquearCeldasActivos()
+                    End If
+                Else
+                    conn.desconexion()
+                    bloquearCeldasActivos()
+                    controlador.CargarTablaActivos()
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                bloquearCeldasActivos()
+            End Try
+            'DGV_Activos.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
+        End If
+
+    End Sub
+    Public Sub bloquearCeldasActivos()
+        DGV_Activos.Columns("Chasis_A").ReadOnly = True
+        DGV_Activos.Columns("Tipo_A").ReadOnly = True
+        DGV_Activos.Columns("Marca_A").ReadOnly = True
+        DGV_Activos.Columns("Modelo_A").ReadOnly = True
+        DGV_Activos.Columns("Color_A").ReadOnly = True
+        DGV_Activos.Columns("Anio_A").ReadOnly = True
+    End Sub
+
+    Private Sub BTN_editarSIM_Click(sender As Object, e As EventArgs) Handles BTN_editarSIM.Click
+        DGV_Sim.ReadOnly = False
+        DGV_Sim.Columns("ICC_S").ReadOnly = True
+        DGV_Sim.Columns("Numero_S").ReadOnly = False
+        DGV_Sim.Columns("Propietario_S").ReadOnly = False
+        DGV_Sim.Columns("Vence_S").ReadOnly = False
+        DGV_Sim.Columns("Plan_Datos_S").ReadOnly = False
+        DGV_Sim.Columns("Compania_S").ReadOnly = False
+    End Sub
+
+    Private Sub DGV_Sim_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Sim.CellEndEdit
+
+        If e.ColumnIndex = DGV_Sim.Columns("ICC_S").Index OrElse e.ColumnIndex = DGV_Sim.Columns("Numero_S").Index OrElse
+            e.ColumnIndex = DGV_Sim.Columns("Propietario_S").Index OrElse e.ColumnIndex = DGV_Sim.Columns("Vence_S").Index OrElse
+            e.ColumnIndex = DGV_Sim.Columns("Plan_Datos_S").Index OrElse e.ColumnIndex = DGV_Sim.Columns("Compania_S").Index Then
+            'Aquí va tu código para guardar cambios
+            Try
+                Dim resultado = MessageBox.Show("¿Desea editar la información del SIM con ICC " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                If resultado = DialogResult.OK Then
+                    Dim icc = DGV_Sim.CurrentRow.Cells("ICC_S").Value
+                    Dim numero = DGV_Sim.CurrentRow.Cells("Numero_S").Value
+                    Dim propietario = DGV_Sim.CurrentRow.Cells("Propietario_S").Value
+                    Dim vence = DGV_Sim.CurrentRow.Cells("Vence_S").Value
+                    Dim plan_datos = DGV_Sim.CurrentRow.Cells("Plan_Datos_S").Value
+                    Dim compania = DGV_Sim.CurrentRow.Cells("Compania_S").Value
+                    If (controlador.EditarSim(icc, numero, propietario, vence, plan_datos, compania)) Then
+                        MessageBox.Show("Se editó la información del SIM con ICC: " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'DGV_clientes.ReadOnly = True
+                        bloquearCeldasSIM()
+                    End If
+                Else
+                    conn.desconexion()
+                    bloquearCeldasSIM()
+                    controlador.CargarTablaActivos()
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                bloquearCeldasSIM()
+            End Try
+            'DGV_Activos.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
+        End If
+    End Sub
+    Private Sub bloquearCeldasSIM()
+        DGV_Sim.Columns("Numero_S").ReadOnly = True
+        DGV_Sim.Columns("Propietario_S").ReadOnly = True
+        DGV_Sim.Columns("Vence_S").ReadOnly = True
+        DGV_Sim.Columns("Plan_Datos_S").ReadOnly = True
+        DGV_Sim.Columns("Compania_S").ReadOnly = True
+    End Sub
+
+    Private Sub BTN_editarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_editarUsuario.Click
+        DGV_Usuarios.ReadOnly = False
+        DGV_Usuarios.Columns("Nombre_U").ReadOnly = False
+        DGV_Usuarios.Columns("Rol_U").ReadOnly = False
+    End Sub
+    Private Sub DGV_Usuarios_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellEndEdit
+
+        If e.ColumnIndex = DGV_Usuarios.Columns("Nombre_U").Index OrElse
+            e.ColumnIndex = DGV_Usuarios.Columns("Rol_U").Index Then
+            'Aquí va tu código para guardar cambios
+            Try
+                Dim resultado = MessageBox.Show("¿Desea editar la información del usuario " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                If resultado = DialogResult.OK Then
+                    Dim usuario = DGV_Usuarios.CurrentRow.Cells("Nombre_U").Value
+                    Dim rol = DGV_Usuarios.CurrentRow.Cells("Rol_U").Value
+                    If (controlador.EditarUsuario(valorSeleccionado, usuario, rol)) Then
+                        MessageBox.Show("Se editó la información del usuario " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        'DGV_Usuarios.ReadOnly = True
+                        bloquearCeldasUsuarios()
+                    End If
+                Else
+                    conn.desconexion()
+                    bloquearCeldasUsuarios()
+                    controlador.CargarTablaClientes()
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                bloquearCeldasUsuarios()
+            End Try
+            'DGV_Usuarios.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
+        End If
+    End Sub
+    Private Sub bloquearCeldasUsuarios()
+        DGV_Usuarios.Columns("Nombre_U").ReadOnly = True
+        DGV_Usuarios.Columns("Rol_U").ReadOnly = True
+    End Sub
 
     ' Funcionalidades de los botonoes eliminar
     Private Sub BTN_eliminarClientes_Click(sender As Object, e As EventArgs) Handles BTN_eliminarClientes.Click
@@ -274,6 +462,36 @@
     End Sub
     Private Sub DGV_Usuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellClick
         valorSeleccionado = DGV_Usuarios.CurrentRow.Cells(0).Value
+    End Sub
+
+    Private Sub PanelCliente_Paint(sender As Object, e As PaintEventArgs) Handles PanelCliente.Paint
+        PanelCliente.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
+        DGV_clientes.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_clientes.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+    Private Sub PanelActivos_Paint(sender As Object, e As PaintEventArgs) Handles PanelActivos.Paint
+        PanelActivos.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
+        DGV_Activos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Activos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+    Private Sub PanelEquipos_Paint(sender As Object, e As PaintEventArgs) Handles PanelEquipos.Paint
+        PanelEquipos.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
+        DGV_Equipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Equipos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+    Private Sub PanelSIM_Paint(sender As Object, e As PaintEventArgs) Handles PanelSIM.Paint
+        PanelSIM.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
+        DGV_Sim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Sim.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+    Private Sub PanelUsuario_Paint(sender As Object, e As PaintEventArgs) Handles PanelUsuario.Paint
+        PanelUsuario.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
+        DGV_Usuarios.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Usuarios.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
 End Class
