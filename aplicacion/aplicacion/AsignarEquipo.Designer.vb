@@ -30,10 +30,9 @@ Partial Class AsignarEquipo
         Me.LB_equipoSeleccionado = New System.Windows.Forms.Label()
         Me.BTN_seleccionarEquipo = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarEquipo = New System.Windows.Forms.Button()
+        Me.TB_buscarEquipos = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.DGV_activos = New System.Windows.Forms.DataGridView()
+        Me.DGV_Activos = New System.Windows.Forms.DataGridView()
         Me.PlacaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasisActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,27 +40,25 @@ Partial Class AsignarEquipo
         Me.LB_activoSeleccionado = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BTN_seleccionarActivo = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarActivo = New System.Windows.Forms.Button()
+        Me.TB_buscarActivos = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarEquipo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarAsignacion = New System.Windows.Forms.Button()
+        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DGV_activos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,8 +72,7 @@ Partial Class AsignarEquipo
         Me.Panel6.Controls.Add(Me.LB_equipoSeleccionado)
         Me.Panel6.Controls.Add(Me.BTN_seleccionarEquipo)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Controls.Add(Me.TextBox2)
-        Me.Panel6.Controls.Add(Me.BTN_buscarEquipo)
+        Me.Panel6.Controls.Add(Me.TB_buscarEquipos)
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel6.Location = New System.Drawing.Point(516, 18)
@@ -88,6 +84,7 @@ Partial Class AsignarEquipo
         '
         Me.DGV_equipos.AllowUserToAddRows = False
         Me.DGV_equipos.AllowUserToDeleteRows = False
+        Me.DGV_equipos.AllowUserToResizeRows = False
         Me.DGV_equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_equipos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -146,23 +143,13 @@ Partial Class AsignarEquipo
         Me.Label7.TabIndex = 31
         Me.Label7.Text = "Equipo seleccionado:"
         '
-        'TextBox2
+        'TB_buscarEquipos
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(291, 8)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox2.TabIndex = 30
-        '
-        'BTN_buscarEquipo
-        '
-        Me.BTN_buscarEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarEquipo.Location = New System.Drawing.Point(210, 8)
-        Me.BTN_buscarEquipo.Name = "BTN_buscarEquipo"
-        Me.BTN_buscarEquipo.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarEquipo.TabIndex = 29
-        Me.BTN_buscarEquipo.Text = "Buscar"
-        Me.BTN_buscarEquipo.UseVisualStyleBackColor = True
+        Me.TB_buscarEquipos.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarEquipos.Location = New System.Drawing.Point(291, 8)
+        Me.TB_buscarEquipos.Name = "TB_buscarEquipos"
+        Me.TB_buscarEquipos.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarEquipos.TabIndex = 30
         '
         'Label3
         '
@@ -174,19 +161,20 @@ Partial Class AsignarEquipo
         Me.Label3.TabIndex = 28
         Me.Label3.Text = "Equipos"
         '
-        'DGV_activos
+        'DGV_Activos
         '
-        Me.DGV_activos.AllowUserToAddRows = False
-        Me.DGV_activos.AllowUserToDeleteRows = False
-        Me.DGV_activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV_activos.BackgroundColor = System.Drawing.Color.White
-        Me.DGV_activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.MarcaActivo})
-        Me.DGV_activos.Location = New System.Drawing.Point(19, 41)
-        Me.DGV_activos.Name = "DGV_activos"
-        Me.DGV_activos.ReadOnly = True
-        Me.DGV_activos.Size = New System.Drawing.Size(440, 202)
-        Me.DGV_activos.TabIndex = 30
+        Me.DGV_Activos.AllowUserToAddRows = False
+        Me.DGV_Activos.AllowUserToDeleteRows = False
+        Me.DGV_Activos.AllowUserToResizeRows = False
+        Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Activos.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.MarcaActivo})
+        Me.DGV_Activos.Location = New System.Drawing.Point(19, 41)
+        Me.DGV_Activos.Name = "DGV_Activos"
+        Me.DGV_Activos.ReadOnly = True
+        Me.DGV_Activos.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_Activos.TabIndex = 30
         '
         'PlacaActivo
         '
@@ -212,9 +200,8 @@ Partial Class AsignarEquipo
         Me.Panel5.Controls.Add(Me.LB_activoSeleccionado)
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.BTN_seleccionarActivo)
-        Me.Panel5.Controls.Add(Me.TextBox1)
-        Me.Panel5.Controls.Add(Me.BTN_buscarActivo)
-        Me.Panel5.Controls.Add(Me.DGV_activos)
+        Me.Panel5.Controls.Add(Me.TB_buscarActivos)
+        Me.Panel5.Controls.Add(Me.DGV_Activos)
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(22, 18)
@@ -252,23 +239,13 @@ Partial Class AsignarEquipo
         Me.BTN_seleccionarActivo.Text = "Seleccionar"
         Me.BTN_seleccionarActivo.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TB_buscarActivos
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(291, 8)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox1.TabIndex = 28
-        '
-        'BTN_buscarActivo
-        '
-        Me.BTN_buscarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarActivo.Location = New System.Drawing.Point(210, 8)
-        Me.BTN_buscarActivo.Name = "BTN_buscarActivo"
-        Me.BTN_buscarActivo.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarActivo.TabIndex = 27
-        Me.BTN_buscarActivo.Text = "Buscar"
-        Me.BTN_buscarActivo.UseVisualStyleBackColor = True
+        Me.TB_buscarActivos.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarActivos.Location = New System.Drawing.Point(291, 8)
+        Me.TB_buscarActivos.Name = "TB_buscarActivos"
+        Me.TB_buscarActivos.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarActivos.TabIndex = 28
         '
         'Label2
         '
@@ -287,8 +264,7 @@ Partial Class AsignarEquipo
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.BTN_desasignarEquipo)
         Me.Panel3.Controls.Add(Me.DGV_asignaciones)
-        Me.Panel3.Controls.Add(Me.TextBox3)
-        Me.Panel3.Controls.Add(Me.BTN_buscarAsignacion)
+        Me.Panel3.Controls.Add(Me.TB_buscarAsignaciones)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel3.Location = New System.Drawing.Point(35, 442)
@@ -320,6 +296,7 @@ Partial Class AsignarEquipo
         '
         Me.DGV_asignaciones.AllowUserToAddRows = False
         Me.DGV_asignaciones.AllowUserToDeleteRows = False
+        Me.DGV_asignaciones.AllowUserToResizeRows = False
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -330,23 +307,37 @@ Partial Class AsignarEquipo
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
         '
-        'TextBox3
+        'PlacaAsignacion
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(752, 13)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox3.TabIndex = 33
+        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
+        Me.PlacaAsignacion.Name = "PlacaAsignacion"
+        Me.PlacaAsignacion.ReadOnly = True
         '
-        'BTN_buscarAsignacion
+        'IMEIAsignacion
         '
-        Me.BTN_buscarAsignacion.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarAsignacion.Location = New System.Drawing.Point(671, 12)
-        Me.BTN_buscarAsignacion.Name = "BTN_buscarAsignacion"
-        Me.BTN_buscarAsignacion.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarAsignacion.TabIndex = 32
-        Me.BTN_buscarAsignacion.Text = "Buscar"
-        Me.BTN_buscarAsignacion.UseVisualStyleBackColor = True
+        Me.IMEIAsignacion.HeaderText = "IMEI"
+        Me.IMEIAsignacion.Name = "IMEIAsignacion"
+        Me.IMEIAsignacion.ReadOnly = True
+        '
+        'ModeloAsignacion
+        '
+        Me.ModeloAsignacion.HeaderText = "Modelo"
+        Me.ModeloAsignacion.Name = "ModeloAsignacion"
+        Me.ModeloAsignacion.ReadOnly = True
+        '
+        'MarcaAsignacion
+        '
+        Me.MarcaAsignacion.HeaderText = "Marca"
+        Me.MarcaAsignacion.Name = "MarcaAsignacion"
+        Me.MarcaAsignacion.ReadOnly = True
+        '
+        'TB_buscarAsignaciones
+        '
+        Me.TB_buscarAsignaciones.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarAsignaciones.Location = New System.Drawing.Point(752, 13)
+        Me.TB_buscarAsignaciones.Name = "TB_buscarAsignaciones"
+        Me.TB_buscarAsignaciones.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarAsignaciones.TabIndex = 33
         '
         'Panel4
         '
@@ -398,30 +389,6 @@ Partial Class AsignarEquipo
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "ASIGNACION DE EQUIPOS"
         '
-        'PlacaAsignacion
-        '
-        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
-        Me.PlacaAsignacion.Name = "PlacaAsignacion"
-        Me.PlacaAsignacion.ReadOnly = True
-        '
-        'IMEIAsignacion
-        '
-        Me.IMEIAsignacion.HeaderText = "IMEI"
-        Me.IMEIAsignacion.Name = "IMEIAsignacion"
-        Me.IMEIAsignacion.ReadOnly = True
-        '
-        'ModeloAsignacion
-        '
-        Me.ModeloAsignacion.HeaderText = "Modelo"
-        Me.ModeloAsignacion.Name = "ModeloAsignacion"
-        Me.ModeloAsignacion.ReadOnly = True
-        '
-        'MarcaAsignacion
-        '
-        Me.MarcaAsignacion.HeaderText = "Marca"
-        Me.MarcaAsignacion.Name = "MarcaAsignacion"
-        Me.MarcaAsignacion.ReadOnly = True
-        '
         'AsignarEquipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -440,7 +407,7 @@ Partial Class AsignarEquipo
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DGV_activos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
@@ -456,25 +423,22 @@ Partial Class AsignarEquipo
     Friend WithEvents LB_equipoSeleccionado As Label
     Friend WithEvents BTN_seleccionarEquipo As Button
     Friend WithEvents Label7 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents DGV_activos As DataGridView
+    Friend WithEvents TB_buscarEquipos As TextBox
+    Friend WithEvents DGV_Activos As DataGridView
     Friend WithEvents PlacaActivo As DataGridViewTextBoxColumn
     Friend WithEvents ChasisActivo As DataGridViewTextBoxColumn
     Friend WithEvents MarcaActivo As DataGridViewTextBoxColumn
-    Friend WithEvents BTN_buscarEquipo As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents LB_activoSeleccionado As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents BTN_seleccionarActivo As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents BTN_buscarActivo As Button
+    Friend WithEvents TB_buscarActivos As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BTN_desasignarEquipo As Button
     Friend WithEvents DGV_asignaciones As DataGridView
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents BTN_buscarAsignacion As Button
+    Friend WithEvents TB_buscarAsignaciones As TextBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents BTN_asignar As Button

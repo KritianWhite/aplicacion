@@ -28,9 +28,8 @@ Partial Class MigracionSIM
         Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Propietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Compania = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BTN_buscar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
-        Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
+        Me.TB_buscarSim = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DGV_migracionesSim, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,16 +70,6 @@ Partial Class MigracionSIM
         Me.Compania.HeaderText = "Compañia"
         Me.Compania.Name = "Compania"
         '
-        'BTN_buscar
-        '
-        Me.BTN_buscar.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscar.Location = New System.Drawing.Point(460, 180)
-        Me.BTN_buscar.Name = "BTN_buscar"
-        Me.BTN_buscar.Size = New System.Drawing.Size(112, 26)
-        Me.BTN_buscar.TabIndex = 42
-        Me.BTN_buscar.Text = "Buscar"
-        Me.BTN_buscar.UseVisualStyleBackColor = True
-        '
         'BTN_regresar
         '
         Me.BTN_regresar.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -91,13 +80,13 @@ Partial Class MigracionSIM
         Me.BTN_regresar.Text = "Regresar"
         Me.BTN_regresar.UseVisualStyleBackColor = True
         '
-        'TB_buscarBajaEquipo
+        'TB_buscarSim
         '
-        Me.TB_buscarBajaEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarBajaEquipo.Location = New System.Drawing.Point(610, 178)
-        Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
-        Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 26)
-        Me.TB_buscarBajaEquipo.TabIndex = 40
+        Me.TB_buscarSim.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarSim.Location = New System.Drawing.Point(610, 178)
+        Me.TB_buscarSim.Name = "TB_buscarSim"
+        Me.TB_buscarSim.Size = New System.Drawing.Size(211, 26)
+        Me.TB_buscarSim.TabIndex = 40
         '
         'Label1
         '
@@ -115,9 +104,8 @@ Partial Class MigracionSIM
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(912, 525)
         Me.Controls.Add(Me.DGV_migracionesSim)
-        Me.Controls.Add(Me.BTN_buscar)
         Me.Controls.Add(Me.BTN_regresar)
-        Me.Controls.Add(Me.TB_buscarBajaEquipo)
+        Me.Controls.Add(Me.TB_buscarSim)
         Me.Controls.Add(Me.Label1)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -132,9 +120,8 @@ Partial Class MigracionSIM
     End Sub
 
     Friend WithEvents DGV_migracionesSim As DataGridView
-    Friend WithEvents BTN_buscar As Button
     Friend WithEvents BTN_regresar As Button
-    Friend WithEvents TB_buscarBajaEquipo As TextBox
+    Friend WithEvents TB_buscarSim As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ICC_anterior As DataGridViewTextBoxColumn
     Friend WithEvents ICC_actual As DataGridViewTextBoxColumn

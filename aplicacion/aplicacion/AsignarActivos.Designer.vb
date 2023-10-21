@@ -25,14 +25,6 @@ Partial Class AsignarActivos
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BTN_asignar = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.BTN_desasignarActivo = New System.Windows.Forms.Button()
-        Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarAsignacion = New System.Windows.Forms.Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.LB_clienteSeleccionado = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -41,32 +33,37 @@ Partial Class AsignarActivos
         Me.NombreCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CorreoCliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarCliente = New System.Windows.Forms.Button()
+        Me.TB_buscarCliente = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.LB_activoSeleccionado = New System.Windows.Forms.Label()
         Me.BTN_seleccionarActivo = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TB_buscarActivo = New System.Windows.Forms.TextBox()
         Me.DGV_Activos = New System.Windows.Forms.DataGridView()
         Me.PlacaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasisActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BTN_buscarActivo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.BTN_desasignarActivo = New System.Windows.Forms.Button()
+        Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
         Me.ClienteAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasiaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        Me.Panel3.SuspendLayout()
-        CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         CType(Me.DGV_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BTN_regresar
@@ -102,91 +99,6 @@ Partial Class AsignarActivos
         Me.Panel1.Size = New System.Drawing.Size(1020, 356)
         Me.Panel1.TabIndex = 0
         '
-        'BTN_asignar
-        '
-        Me.BTN_asignar.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_asignar.Location = New System.Drawing.Point(434, 317)
-        Me.BTN_asignar.Name = "BTN_asignar"
-        Me.BTN_asignar.Size = New System.Drawing.Size(136, 27)
-        Me.BTN_asignar.TabIndex = 29
-        Me.BTN_asignar.Text = "Finalizar asignación"
-        Me.BTN_asignar.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
-        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.Label5)
-        Me.Panel3.Controls.Add(Me.BTN_desasignarActivo)
-        Me.Panel3.Controls.Add(Me.DGV_asignaciones)
-        Me.Panel3.Controls.Add(Me.TextBox3)
-        Me.Panel3.Controls.Add(Me.BTN_buscarAsignacion)
-        Me.Panel3.Controls.Add(Me.Panel4)
-        Me.Panel3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel3.Location = New System.Drawing.Point(35, 442)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1020, 294)
-        Me.Panel3.TabIndex = 2
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Vensim Sans Tamil", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(83, 11)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(224, 17)
-        Me.Label5.TabIndex = 31
-        Me.Label5.Text = "Asignación de activos al cliente:"
-        '
-        'BTN_desasignarActivo
-        '
-        Me.BTN_desasignarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_desasignarActivo.Location = New System.Drawing.Point(793, 257)
-        Me.BTN_desasignarActivo.Name = "BTN_desasignarActivo"
-        Me.BTN_desasignarActivo.Size = New System.Drawing.Size(127, 27)
-        Me.BTN_desasignarActivo.TabIndex = 35
-        Me.BTN_desasignarActivo.Text = "Desasignar activo"
-        Me.BTN_desasignarActivo.UseVisualStyleBackColor = True
-        '
-        'DGV_asignaciones
-        '
-        Me.DGV_asignaciones.AllowUserToAddRows = False
-        Me.DGV_asignaciones.AllowUserToDeleteRows = False
-        Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
-        Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteAsignacion, Me.PlacaAsignacion, Me.ChasiaAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
-        Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
-        Me.DGV_asignaciones.Name = "DGV_asignaciones"
-        Me.DGV_asignaciones.ReadOnly = True
-        Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
-        Me.DGV_asignaciones.TabIndex = 34
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(752, 13)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox3.TabIndex = 33
-        '
-        'BTN_buscarAsignacion
-        '
-        Me.BTN_buscarAsignacion.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarAsignacion.Location = New System.Drawing.Point(671, 12)
-        Me.BTN_buscarAsignacion.Name = "BTN_buscarAsignacion"
-        Me.BTN_buscarAsignacion.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarAsignacion.TabIndex = 32
-        Me.BTN_buscarAsignacion.Text = "Buscar"
-        Me.BTN_buscarAsignacion.UseVisualStyleBackColor = True
-        '
-        'Panel4
-        '
-        Me.Panel4.Location = New System.Drawing.Point(0, 311)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(960, 227)
-        Me.Panel4.TabIndex = 1
-        '
         'Panel5
         '
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -194,8 +106,7 @@ Partial Class AsignarActivos
         Me.Panel5.Controls.Add(Me.Label4)
         Me.Panel5.Controls.Add(Me.BTN_seleccionarCliente)
         Me.Panel5.Controls.Add(Me.DGV_Clientes)
-        Me.Panel5.Controls.Add(Me.TextBox1)
-        Me.Panel5.Controls.Add(Me.BTN_buscarCliente)
+        Me.Panel5.Controls.Add(Me.TB_buscarCliente)
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(22, 18)
@@ -237,6 +148,7 @@ Partial Class AsignarActivos
         '
         Me.DGV_Clientes.AllowUserToAddRows = False
         Me.DGV_Clientes.AllowUserToDeleteRows = False
+        Me.DGV_Clientes.AllowUserToResizeRows = False
         Me.DGV_Clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Clientes.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -265,23 +177,13 @@ Partial Class AsignarActivos
         Me.CorreoCliente.Name = "CorreoCliente"
         Me.CorreoCliente.ReadOnly = True
         '
-        'TextBox1
+        'TB_buscarCliente
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(291, 8)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox1.TabIndex = 28
-        '
-        'BTN_buscarCliente
-        '
-        Me.BTN_buscarCliente.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarCliente.Location = New System.Drawing.Point(210, 8)
-        Me.BTN_buscarCliente.Name = "BTN_buscarCliente"
-        Me.BTN_buscarCliente.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarCliente.TabIndex = 27
-        Me.BTN_buscarCliente.Text = "Buscar"
-        Me.BTN_buscarCliente.UseVisualStyleBackColor = True
+        Me.TB_buscarCliente.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarCliente.Location = New System.Drawing.Point(291, 8)
+        Me.TB_buscarCliente.Name = "TB_buscarCliente"
+        Me.TB_buscarCliente.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarCliente.TabIndex = 28
         '
         'Label2
         '
@@ -293,15 +195,24 @@ Partial Class AsignarActivos
         Me.Label2.TabIndex = 27
         Me.Label2.Text = "Clientes:"
         '
+        'BTN_asignar
+        '
+        Me.BTN_asignar.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_asignar.Location = New System.Drawing.Point(434, 317)
+        Me.BTN_asignar.Name = "BTN_asignar"
+        Me.BTN_asignar.Size = New System.Drawing.Size(136, 27)
+        Me.BTN_asignar.TabIndex = 29
+        Me.BTN_asignar.Text = "Finalizar asignación"
+        Me.BTN_asignar.UseVisualStyleBackColor = True
+        '
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.LB_activoSeleccionado)
         Me.Panel6.Controls.Add(Me.BTN_seleccionarActivo)
         Me.Panel6.Controls.Add(Me.Label7)
-        Me.Panel6.Controls.Add(Me.TextBox2)
+        Me.Panel6.Controls.Add(Me.TB_buscarActivo)
         Me.Panel6.Controls.Add(Me.DGV_Activos)
-        Me.Panel6.Controls.Add(Me.BTN_buscarActivo)
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Location = New System.Drawing.Point(516, 18)
         Me.Panel6.Name = "Panel6"
@@ -338,13 +249,13 @@ Partial Class AsignarActivos
         Me.Label7.TabIndex = 31
         Me.Label7.Text = "Activo seleccionado:"
         '
-        'TextBox2
+        'TB_buscarActivo
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(294, 7)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(168, 22)
-        Me.TextBox2.TabIndex = 30
+        Me.TB_buscarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarActivo.Location = New System.Drawing.Point(294, 7)
+        Me.TB_buscarActivo.Name = "TB_buscarActivo"
+        Me.TB_buscarActivo.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarActivo.TabIndex = 30
         '
         'DGV_Activos
         '
@@ -378,16 +289,6 @@ Partial Class AsignarActivos
         Me.MarcaActivo.Name = "MarcaActivo"
         Me.MarcaActivo.ReadOnly = True
         '
-        'BTN_buscarActivo
-        '
-        Me.BTN_buscarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_buscarActivo.Location = New System.Drawing.Point(213, 7)
-        Me.BTN_buscarActivo.Name = "BTN_buscarActivo"
-        Me.BTN_buscarActivo.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarActivo.TabIndex = 29
-        Me.BTN_buscarActivo.Text = "Buscar"
-        Me.BTN_buscarActivo.UseVisualStyleBackColor = True
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -397,6 +298,55 @@ Partial Class AsignarActivos
         Me.Label3.Size = New System.Drawing.Size(49, 15)
         Me.Label3.TabIndex = 28
         Me.Label3.Text = "Activos"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.Label5)
+        Me.Panel3.Controls.Add(Me.BTN_desasignarActivo)
+        Me.Panel3.Controls.Add(Me.DGV_asignaciones)
+        Me.Panel3.Controls.Add(Me.TB_buscarAsignaciones)
+        Me.Panel3.Controls.Add(Me.Panel4)
+        Me.Panel3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel3.Location = New System.Drawing.Point(35, 442)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(1020, 294)
+        Me.Panel3.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Vensim Sans Tamil", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(83, 11)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(224, 17)
+        Me.Label5.TabIndex = 31
+        Me.Label5.Text = "Asignación de activos al cliente:"
+        '
+        'BTN_desasignarActivo
+        '
+        Me.BTN_desasignarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_desasignarActivo.Location = New System.Drawing.Point(793, 257)
+        Me.BTN_desasignarActivo.Name = "BTN_desasignarActivo"
+        Me.BTN_desasignarActivo.Size = New System.Drawing.Size(127, 27)
+        Me.BTN_desasignarActivo.TabIndex = 35
+        Me.BTN_desasignarActivo.Text = "Desasignar activo"
+        Me.BTN_desasignarActivo.UseVisualStyleBackColor = True
+        '
+        'DGV_asignaciones
+        '
+        Me.DGV_asignaciones.AllowUserToAddRows = False
+        Me.DGV_asignaciones.AllowUserToDeleteRows = False
+        Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteAsignacion, Me.PlacaAsignacion, Me.ChasiaAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
+        Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
+        Me.DGV_asignaciones.Name = "DGV_asignaciones"
+        Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
+        Me.DGV_asignaciones.TabIndex = 34
         '
         'ClienteAsignacion
         '
@@ -428,6 +378,21 @@ Partial Class AsignarActivos
         Me.FechaAsignacion.Name = "FechaAsignacion"
         Me.FechaAsignacion.ReadOnly = True
         '
+        'TB_buscarAsignaciones
+        '
+        Me.TB_buscarAsignaciones.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarAsignaciones.Location = New System.Drawing.Point(752, 13)
+        Me.TB_buscarAsignaciones.Name = "TB_buscarAsignaciones"
+        Me.TB_buscarAsignaciones.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarAsignaciones.TabIndex = 33
+        '
+        'Panel4
+        '
+        Me.Panel4.Location = New System.Drawing.Point(0, 311)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(960, 227)
+        Me.Panel4.TabIndex = 1
+        '
         'AsignarActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -444,15 +409,15 @@ Partial Class AsignarActivos
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Asignacion de activos"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
-        CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.DGV_Clientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -468,18 +433,15 @@ Partial Class AsignarActivos
     Friend WithEvents BTN_asignar As Button
     Friend WithEvents BTN_seleccionarCliente As Button
     Friend WithEvents DGV_Clientes As DataGridView
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents BTN_buscarCliente As Button
+    Friend WithEvents TB_buscarCliente As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BTN_seleccionarActivo As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TB_buscarActivo As TextBox
     Friend WithEvents DGV_Activos As DataGridView
-    Friend WithEvents BTN_buscarActivo As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents BTN_desasignarActivo As Button
     Friend WithEvents DGV_asignaciones As DataGridView
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents BTN_buscarAsignacion As Button
+    Friend WithEvents TB_buscarAsignaciones As TextBox
     Friend WithEvents NombreCliente As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoCliente As DataGridViewTextBoxColumn
     Friend WithEvents CorreoCliente As DataGridViewTextBoxColumn

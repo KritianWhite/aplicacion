@@ -512,6 +512,7 @@ Public Class Controlador
         End Try
     End Function
 
+    ' Query para cargar el combobox para agregar el modelo al equipo (En agregar equipo)
     Function CargarModeloEquipo() As Boolean
         Try
             conn.conexion()
@@ -524,6 +525,97 @@ Public Class Controlador
             Next
             conn.desconexion()
             Return True
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    ' Querys para llenar tablas de asignacion de activos (clientes, activos y asignaciones)
+    Function CargarTablaClientes_Activo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT NOMBRE, TELEFONO, CORREO FROM cliente", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarActivos.DGV_Clientes.Columns("NombreCliente").DataPropertyName = "NOMBRE"
+            AsignarActivos.DGV_Clientes.Columns("TelefonoCliente").DataPropertyName = "TELEFONO"
+            AsignarActivos.DGV_Clientes.Columns("CorreoCliente").DataPropertyName = "CORREO"
+            AsignarActivos.DGV_Clientes.DataSource = table
+            conn.desconexion()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    Function CargarTablaActivos_Activo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarActivos.DGV_Activos.Columns("PlacaActivo").DataPropertyName = "PLACA"
+            AsignarActivos.DGV_Activos.Columns("ChasisActivo").DataPropertyName = "CHASIS"
+            AsignarActivos.DGV_Activos.Columns("MarcaActivo").DataPropertyName = "MARCA"
+            AsignarActivos.DGV_Activos.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    Function CargarTablaAsignaciones_Activo() As Boolean
+
+    End Function
+
+    ' Querys para llenar tablas de asignacion de equipo (clientes, activos y asignaciones)
+    Function CargarTablaActivos_Equipo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarEquipo.DGV_Activos.Columns("PlacaActivo").DataPropertyName = "PLACA"
+            AsignarEquipo.DGV_Activos.Columns("ChasisActivo").DataPropertyName = "CHASIS"
+            AsignarEquipo.DGV_Activos.Columns("MarcaActivo").DataPropertyName = "MARCA"
+            AsignarEquipo.DGV_Activos.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    ' Querys para llenar tablas de asignacion de sim (equipo, sim y asignaciones)
+    Function CargarTablaSim_Sim() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT ICC, NUMERO, PROPIETARIO, COMPANIA FROM sim", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarSIM.DGV_sim.Columns("ICCSim").DataPropertyName = "ICC"
+            AsignarSIM.DGV_sim.Columns("NumeroSim").DataPropertyName = "NUMERO"
+            AsignarSIM.DGV_sim.Columns("PropietarioSim").DataPropertyName = "PROPIETARIO"
+            AsignarSIM.DGV_sim.Columns("CompaniaSim").DataPropertyName = "COMPANIA"
+            AsignarSIM.DGV_sim.DataSource = table
+            conn.desconexion()
+            Return True
+
         Catch ex As Exception
             MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()

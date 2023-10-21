@@ -41,7 +41,6 @@ C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\De
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarSIM.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AgregarUsuario.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.BajaEquipos.resources
-C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.MigrarSIM.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.MigracionSIM.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AsignarActivos.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AsignarEquipo.resources

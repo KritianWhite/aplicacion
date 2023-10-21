@@ -167,6 +167,12 @@
     <Compile Include="AsignarEquipo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AsignarPlataforma.Designer.vb">
+      <DependentUpon>AsignarPlataforma.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AsignarPlataforma.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AsignarSIM.Designer.vb">
       <DependentUpon>AsignarSIM.vb</DependentUpon>
     </Compile>
@@ -199,12 +205,6 @@
       <DependentUpon>MigracionSIM.vb</DependentUpon>
     </Compile>
     <Compile Include="MigracionSIM.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MigrarSIM.Designer.vb">
-      <DependentUpon>MigrarSIM.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MigrarSIM.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -260,9 +260,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MigracionSIM.resx">
       <DependentUpon>MigracionSIM.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MigrarSIM.resx">
-      <DependentUpon>MigrarSIM.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

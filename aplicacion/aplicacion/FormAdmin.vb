@@ -403,6 +403,7 @@
             If resultado = DialogResult.OK Then
                 If (controlador.EliminarCliente(valorSeleccionado)) Then
                     MessageBox.Show("Se eliminó al cliente " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarClientes.Text = ""
                 End If
             End If
         Catch ex As Exception
@@ -415,6 +416,7 @@
             If resultado = DialogResult.OK Then
                 If (controlador.EliminarActivo(valorSeleccionado)) Then
                     MessageBox.Show("Se eliminó el activo con placa " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarActivos.Text = ""
                 End If
             End If
         Catch ex As Exception
@@ -427,6 +429,7 @@
             If resultado = DialogResult.OK Then
                 If (controlador.EliminarSim(valorSeleccionado.ToString())) Then
                     MessageBox.Show("Se eliminó la sim con icc " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarSim.Text = ""
                 End If
             End If
         Catch ex As Exception
@@ -439,6 +442,7 @@
             If resultado = DialogResult.OK Then
                 If (controlador.EliminarUsuario(valorSeleccionado)) Then
                     MessageBox.Show("Se eliminó al usuario " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarUsuario.Text = ""
                 End If
             End If
         Catch ex As Exception
@@ -494,4 +498,106 @@
         DGV_Usuarios.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
+    ' Busquedas en las tablas
+    Private Sub TB_buscarClientes_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarClientes.TextChanged
+        Dim searchText As String = TB_buscarClientes.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
+
+        ' Iterar a través de las filas del DataGridView
+        For Each row As DataGridViewRow In DGV_clientes.Rows
+            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+                ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
+                ' Obtener los valores de las celdas en la primera (Nombre)
+                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+
+                ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
+                If cellValue1.Contains(searchText) Then
+                    row.Visible = True ' Mostrar la fila si se encuentra una coincidencia
+                Else
+                    row.Visible = False ' Ocultar la fila si no hay coincidencia
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Sub TB_buscarActivos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarActivos.TextChanged
+        Dim searchText As String = TB_buscarActivos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
+
+        ' Iterar a través de las filas del DataGridView
+        For Each row As DataGridViewRow In DGV_Activos.Rows
+            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+                ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
+                ' Obtener los valores de las celdas en la primera y segunda columna (Placa o Chásis)
+                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue2 As String = row.Cells(1).Value.ToString().ToLower()
+
+                ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
+                If cellValue1.Contains(searchText) Or cellValue2.Contains(searchText) Then
+                    row.Visible = True ' Mostrar la fila si se encuentra una coincidencia
+                Else
+                    row.Visible = False ' Ocultar la fila si no hay coincidencia
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Sub TB_buscarEquipos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarEquipos.TextChanged
+        Dim searchText As String = TB_buscarEquipos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
+
+        ' Iterar a través de las filas del DataGridView
+        For Each row As DataGridViewRow In DGV_Equipos.Rows
+            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+                ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
+                ' Obtener los valores de las celdas en la primera (IMEI)
+                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+
+                ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
+                If cellValue1.Contains(searchText) Then
+                    row.Visible = True ' Mostrar la fila si se encuentra una coincidencia
+                Else
+                    row.Visible = False ' Ocultar la fila si no hay coincidencia
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Sub TB_buscarSim_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarSim.TextChanged
+        Dim searchText As String = TB_buscarSim.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
+
+        ' Iterar a través de las filas del DataGridView
+        For Each row As DataGridViewRow In DGV_Sim.Rows
+            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+                ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
+                ' Obtener los valores de las celdas en la primera y segunda columna (Icc y numero)
+                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue2 As String = row.Cells(1).Value.ToString().ToLower()
+
+                ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
+                If cellValue1.Contains(searchText) Or cellValue2.Contains(searchText) Then
+                    row.Visible = True ' Mostrar la fila si se encuentra una coincidencia
+                Else
+                    row.Visible = False ' Ocultar la fila si no hay coincidencia
+                End If
+            End If
+        Next
+    End Sub
+
+    Private Sub TB_buscarUsuario_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarUsuario.TextChanged
+        Dim searchText As String = TB_buscarUsuario.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
+
+        ' Iterar a través de las filas del DataGridView
+        For Each row As DataGridViewRow In DGV_Usuarios.Rows
+            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+                ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
+                ' Obtener los valores de las celdas en la primera (Nombre de usuario)
+                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+
+                ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
+                If cellValue1.Contains(searchText) Then
+                    row.Visible = True ' Mostrar la fila si se encuentra una coincidencia
+                Else
+                    row.Visible = False ' Ocultar la fila si no hay coincidencia
+                End If
+            End If
+        Next
+    End Sub
 End Class

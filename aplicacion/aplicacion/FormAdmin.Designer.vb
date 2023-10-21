@@ -38,8 +38,7 @@ Partial Class FormAdmin
         Me.BTN_eliminarClientes = New System.Windows.Forms.Button()
         Me.BTN_editarClientes = New System.Windows.Forms.Button()
         Me.BTN_agregarClientes = New System.Windows.Forms.Button()
-        Me.TB_buscar = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarClientes = New System.Windows.Forms.Button()
+        Me.TB_buscarClientes = New System.Windows.Forms.TextBox()
         Me.DGV_clientes = New System.Windows.Forms.DataGridView()
         Me.Nombre_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Telefono_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,8 +50,7 @@ Partial Class FormAdmin
         Me.BTN_eliminarActivos = New System.Windows.Forms.Button()
         Me.BTN_editarActivos = New System.Windows.Forms.Button()
         Me.BTN_agregarActivos = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarActivos = New System.Windows.Forms.Button()
+        Me.TB_buscarActivos = New System.Windows.Forms.TextBox()
         Me.DGV_Activos = New System.Windows.Forms.DataGridView()
         Me.Placa_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Chasis_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -67,8 +65,7 @@ Partial Class FormAdmin
         Me.BTN_asignarSIM_Equipos = New System.Windows.Forms.Button()
         Me.BTN_bajaEquipos = New System.Windows.Forms.Button()
         Me.BTN_agregarEquipos = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.BTN_buscarEquipos = New System.Windows.Forms.Button()
+        Me.TB_buscarEquipos = New System.Windows.Forms.TextBox()
         Me.DGV_Equipos = New System.Windows.Forms.DataGridView()
         Me.IMEI_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modelo_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -80,8 +77,7 @@ Partial Class FormAdmin
         Me.BTN_eliminarSim = New System.Windows.Forms.Button()
         Me.BTN_editarSIM = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button15 = New System.Windows.Forms.Button()
+        Me.TB_buscarSim = New System.Windows.Forms.TextBox()
         Me.DGV_Sim = New System.Windows.Forms.DataGridView()
         Me.ICC_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Numero_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -95,8 +91,7 @@ Partial Class FormAdmin
         Me.BTN_eliminarUsuarios = New System.Windows.Forms.Button()
         Me.BTN_editarUsuario = New System.Windows.Forms.Button()
         Me.BTN_agregarUsuario = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.TB_buscarUsuario = New System.Windows.Forms.TextBox()
         Me.DGV_Usuarios = New System.Windows.Forms.DataGridView()
         Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -207,8 +202,7 @@ Partial Class FormAdmin
         Me.GroupBox1.Controls.Add(Me.BTN_eliminarClientes)
         Me.GroupBox1.Controls.Add(Me.BTN_editarClientes)
         Me.GroupBox1.Controls.Add(Me.BTN_agregarClientes)
-        Me.GroupBox1.Controls.Add(Me.TB_buscar)
-        Me.GroupBox1.Controls.Add(Me.BTN_buscarClientes)
+        Me.GroupBox1.Controls.Add(Me.TB_buscarClientes)
         Me.GroupBox1.Controls.Add(Me.DGV_clientes)
         Me.GroupBox1.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(62, 137)
@@ -253,21 +247,12 @@ Partial Class FormAdmin
         Me.BTN_agregarClientes.Text = "Agregar"
         Me.BTN_agregarClientes.UseVisualStyleBackColor = True
         '
-        'TB_buscar
+        'TB_buscarClientes
         '
-        Me.TB_buscar.Location = New System.Drawing.Point(711, 51)
-        Me.TB_buscar.Name = "TB_buscar"
-        Me.TB_buscar.Size = New System.Drawing.Size(230, 22)
-        Me.TB_buscar.TabIndex = 5
-        '
-        'BTN_buscarClientes
-        '
-        Me.BTN_buscarClientes.Location = New System.Drawing.Point(630, 51)
-        Me.BTN_buscarClientes.Name = "BTN_buscarClientes"
-        Me.BTN_buscarClientes.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarClientes.TabIndex = 4
-        Me.BTN_buscarClientes.Text = "Buscar"
-        Me.BTN_buscarClientes.UseVisualStyleBackColor = True
+        Me.TB_buscarClientes.Location = New System.Drawing.Point(711, 51)
+        Me.TB_buscarClientes.Name = "TB_buscarClientes"
+        Me.TB_buscarClientes.Size = New System.Drawing.Size(230, 22)
+        Me.TB_buscarClientes.TabIndex = 5
         '
         'DGV_clientes
         '
@@ -333,8 +318,7 @@ Partial Class FormAdmin
         Me.GroupBox2.Controls.Add(Me.BTN_eliminarActivos)
         Me.GroupBox2.Controls.Add(Me.BTN_editarActivos)
         Me.GroupBox2.Controls.Add(Me.BTN_agregarActivos)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.BTN_buscarActivos)
+        Me.GroupBox2.Controls.Add(Me.TB_buscarActivos)
         Me.GroupBox2.Controls.Add(Me.DGV_Activos)
         Me.GroupBox2.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(62, 137)
@@ -379,21 +363,12 @@ Partial Class FormAdmin
         Me.BTN_agregarActivos.Text = "Agregar"
         Me.BTN_agregarActivos.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TB_buscarActivos
         '
-        Me.TextBox1.Location = New System.Drawing.Point(711, 51)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox1.TabIndex = 5
-        '
-        'BTN_buscarActivos
-        '
-        Me.BTN_buscarActivos.Location = New System.Drawing.Point(630, 51)
-        Me.BTN_buscarActivos.Name = "BTN_buscarActivos"
-        Me.BTN_buscarActivos.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarActivos.TabIndex = 4
-        Me.BTN_buscarActivos.Text = "Buscar"
-        Me.BTN_buscarActivos.UseVisualStyleBackColor = True
+        Me.TB_buscarActivos.Location = New System.Drawing.Point(711, 51)
+        Me.TB_buscarActivos.Name = "TB_buscarActivos"
+        Me.TB_buscarActivos.Size = New System.Drawing.Size(230, 22)
+        Me.TB_buscarActivos.TabIndex = 5
         '
         'DGV_Activos
         '
@@ -483,8 +458,7 @@ Partial Class FormAdmin
         Me.GroupBox3.Controls.Add(Me.BTN_asignarSIM_Equipos)
         Me.GroupBox3.Controls.Add(Me.BTN_bajaEquipos)
         Me.GroupBox3.Controls.Add(Me.BTN_agregarEquipos)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Controls.Add(Me.BTN_buscarEquipos)
+        Me.GroupBox3.Controls.Add(Me.TB_buscarEquipos)
         Me.GroupBox3.Controls.Add(Me.DGV_Equipos)
         Me.GroupBox3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(62, 137)
@@ -520,21 +494,12 @@ Partial Class FormAdmin
         Me.BTN_agregarEquipos.Text = "Agregar"
         Me.BTN_agregarEquipos.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'TB_buscarEquipos
         '
-        Me.TextBox2.Location = New System.Drawing.Point(711, 51)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox2.TabIndex = 5
-        '
-        'BTN_buscarEquipos
-        '
-        Me.BTN_buscarEquipos.Location = New System.Drawing.Point(630, 51)
-        Me.BTN_buscarEquipos.Name = "BTN_buscarEquipos"
-        Me.BTN_buscarEquipos.Size = New System.Drawing.Size(75, 23)
-        Me.BTN_buscarEquipos.TabIndex = 4
-        Me.BTN_buscarEquipos.Text = "Buscar"
-        Me.BTN_buscarEquipos.UseVisualStyleBackColor = True
+        Me.TB_buscarEquipos.Location = New System.Drawing.Point(711, 51)
+        Me.TB_buscarEquipos.Name = "TB_buscarEquipos"
+        Me.TB_buscarEquipos.Size = New System.Drawing.Size(230, 22)
+        Me.TB_buscarEquipos.TabIndex = 5
         '
         'DGV_Equipos
         '
@@ -601,8 +566,7 @@ Partial Class FormAdmin
         Me.GroupBox4.Controls.Add(Me.BTN_eliminarSim)
         Me.GroupBox4.Controls.Add(Me.BTN_editarSIM)
         Me.GroupBox4.Controls.Add(Me.Button14)
-        Me.GroupBox4.Controls.Add(Me.TextBox3)
-        Me.GroupBox4.Controls.Add(Me.Button15)
+        Me.GroupBox4.Controls.Add(Me.TB_buscarSim)
         Me.GroupBox4.Controls.Add(Me.DGV_Sim)
         Me.GroupBox4.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(62, 137)
@@ -647,21 +611,12 @@ Partial Class FormAdmin
         Me.Button14.Text = "Agregar"
         Me.Button14.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'TB_buscarSim
         '
-        Me.TextBox3.Location = New System.Drawing.Point(711, 51)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox3.TabIndex = 5
-        '
-        'Button15
-        '
-        Me.Button15.Location = New System.Drawing.Point(630, 51)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(75, 23)
-        Me.Button15.TabIndex = 4
-        Me.Button15.Text = "Buscar"
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.TB_buscarSim.Location = New System.Drawing.Point(711, 51)
+        Me.TB_buscarSim.Name = "TB_buscarSim"
+        Me.TB_buscarSim.Size = New System.Drawing.Size(230, 22)
+        Me.TB_buscarSim.TabIndex = 5
         '
         'DGV_Sim
         '
@@ -745,8 +700,7 @@ Partial Class FormAdmin
         Me.GroupBox5.Controls.Add(Me.BTN_eliminarUsuarios)
         Me.GroupBox5.Controls.Add(Me.BTN_editarUsuario)
         Me.GroupBox5.Controls.Add(Me.BTN_agregarUsuario)
-        Me.GroupBox5.Controls.Add(Me.TextBox4)
-        Me.GroupBox5.Controls.Add(Me.Button19)
+        Me.GroupBox5.Controls.Add(Me.TB_buscarUsuario)
         Me.GroupBox5.Controls.Add(Me.DGV_Usuarios)
         Me.GroupBox5.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(62, 137)
@@ -782,21 +736,12 @@ Partial Class FormAdmin
         Me.BTN_agregarUsuario.Text = "Agregar"
         Me.BTN_agregarUsuario.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'TB_buscarUsuario
         '
-        Me.TextBox4.Location = New System.Drawing.Point(711, 51)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox4.TabIndex = 5
-        '
-        'Button19
-        '
-        Me.Button19.Location = New System.Drawing.Point(630, 51)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(75, 23)
-        Me.Button19.TabIndex = 4
-        Me.Button19.Text = "Buscar"
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.TB_buscarUsuario.Location = New System.Drawing.Point(711, 51)
+        Me.TB_buscarUsuario.Name = "TB_buscarUsuario"
+        Me.TB_buscarUsuario.Size = New System.Drawing.Size(230, 22)
+        Me.TB_buscarUsuario.TabIndex = 5
         '
         'DGV_Usuarios
         '
@@ -835,11 +780,11 @@ Partial Class FormAdmin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
-        Me.Controls.Add(Me.PanelCliente)
         Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelEquipos)
         Me.Controls.Add(Me.PanelActivos)
+        Me.Controls.Add(Me.PanelCliente)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormAdmin"
@@ -892,8 +837,7 @@ Partial Class FormAdmin
     Friend WithEvents BTN_eliminarClientes As Button
     Friend WithEvents BTN_editarClientes As Button
     Friend WithEvents BTN_agregarClientes As Button
-    Friend WithEvents TB_buscar As TextBox
-    Friend WithEvents BTN_buscarClientes As Button
+    Friend WithEvents TB_buscarClientes As TextBox
     Friend WithEvents DGV_clientes As DataGridView
     Friend WithEvents PanelActivos As Panel
     Friend WithEvents Label2 As Label
@@ -901,16 +845,14 @@ Partial Class FormAdmin
     Friend WithEvents BTN_eliminarActivos As Button
     Friend WithEvents BTN_editarActivos As Button
     Friend WithEvents BTN_agregarActivos As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents BTN_buscarActivos As Button
+    Friend WithEvents TB_buscarActivos As TextBox
     Friend WithEvents DGV_Activos As DataGridView
     Friend WithEvents PanelEquipos As Panel
     Friend WithEvents Label3 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents BTN_bajaEquipos As Button
     Friend WithEvents BTN_agregarEquipos As Button
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents BTN_buscarEquipos As Button
+    Friend WithEvents TB_buscarEquipos As TextBox
     Friend WithEvents DGV_Equipos As DataGridView
     Friend WithEvents Nombre_C As DataGridViewTextBoxColumn
     Friend WithEvents Telefono_C As DataGridViewTextBoxColumn
@@ -924,8 +866,7 @@ Partial Class FormAdmin
     Friend WithEvents BTN_eliminarSim As Button
     Friend WithEvents BTN_editarSIM As Button
     Friend WithEvents Button14 As Button
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button15 As Button
+    Friend WithEvents TB_buscarSim As TextBox
     Friend WithEvents DGV_Sim As DataGridView
     Friend WithEvents ICC_S As DataGridViewTextBoxColumn
     Friend WithEvents Numero_S As DataGridViewTextBoxColumn
@@ -939,8 +880,7 @@ Partial Class FormAdmin
     Friend WithEvents BTN_eliminarUsuarios As Button
     Friend WithEvents BTN_editarUsuario As Button
     Friend WithEvents BTN_agregarUsuario As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Button19 As Button
+    Friend WithEvents TB_buscarUsuario As TextBox
     Friend WithEvents DGV_Usuarios As DataGridView
     Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
     Friend WithEvents Rol_U As DataGridViewTextBoxColumn
