@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="88B11D83-8BE7-BAF4-1DC7-D5B2EF8FE12C" containerWithKeyObject="CD84C23D-47FD-147D-F837-45D53FDD2FBE" localFKIndex="168036F4-78D1-7E63-5119-A39BB170344A" name="ASIGNACION_ACTIVO_ACTIVO_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>06991B56-975B-DC91-2B83-A2BBC5AAD708</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<referredTableLongName>ACTIVO</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C2888592-AF50-825C-7E47-2974652A4217</referredTableID>
+<keyObject>F1C07C74-90E3-EAAE-8B07-48D6AFFB4CCB</keyObject>
+<referredKeyID>F1C07C74-90E3-EAAE-8B07-48D6AFFB4CCB</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ACT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

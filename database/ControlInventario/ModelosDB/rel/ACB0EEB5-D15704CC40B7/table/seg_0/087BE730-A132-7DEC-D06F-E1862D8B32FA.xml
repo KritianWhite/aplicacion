@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="087BE730-A132-7DEC-D06F-E1862D8B32FA" name="MIGRACION_SIM">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>3479C2C2-8F71-EF13-F555-2032296C5B9D</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>MIG_SIM</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SIM_SIM_ID" id="D437E7DF-0E97-C1D5-A571-D2BEC49F2B92">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C946A9B0-293F-D270-9E9A-5DFCB58ECD70" referredColumn="53E1B918-CBD7-8F06-195E-6B72793BE7C1"/>
+</associations>
+</Column>
+<Column name="ICC_ACTUAL" id="A920370D-6F7A-1FA0-F6C7-9F38CF4FF8B2">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:39:03 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ICC_NUEVA" id="11211EE8-1047-038D-4781-8B039D0843A4">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:39:21 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_MIGRACION" id="22977D06-5ACA-FEBA-8732-CBAE7F9BB43E">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:39:39 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="25009109-D1BC-3101-28A0-70254615A810" name="MIGRACION_SIM_SIM_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>24AD6112-E7D0-04EE-1080-C6A416AB381D</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D437E7DF-0E97-C1D5-A571-D2BEC49F2B92"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

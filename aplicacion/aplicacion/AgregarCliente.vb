@@ -8,7 +8,7 @@ Public Class AgregarCliente
         FormAdmin.Show()
     End Sub
 
-    Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click
+    Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) 
         ' Agregar validación de solo numeros en el textbox del telefono de igual manera el formato de numero a utilizar
         ' nombre tipo string
         ' correo tipo string

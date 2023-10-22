@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="276F40D6-C74B-7CB7-96FF-CBDD17DA7540" containerWithKeyObject="9AE864E0-57E8-B386-4C08-A067070DF36B" localFKIndex="CA51BA5B-4D50-C666-4704-13C82404F4B2" name="ASIGNACION_PLATAFORMA_PLATAFORMA_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:50:51 UTC</createdTime>
+<generatorID>002DA2EC-E6B9-4FF7-DDE9-044DE4B73D41</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<referredTableLongName>PLATAFORMA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>74D9995A-92BA-08F2-338C-49A53EFE773E</referredTableID>
+<keyObject>6238DBEE-CA86-E221-4569-6547D0717064</keyObject>
+<referredKeyID>6238DBEE-CA86-E221-4569-6547D0717064</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PLAT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

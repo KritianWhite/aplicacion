@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PLAT-ASIG_PLAT" directorySegmentName="seg_0" id="002DA2EC-E6B9-4FF7-DDE9-044DE4B73D41">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:50:34 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<engineerTo>
+<item key="ACB0EEB5-66D9-3469-92C6-D15704CC40B7" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A6ED52F5-5F20-B85D-B265-37C9005AC778</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>13FA28C3-286D-00DB-B312-B3AA12B2C0A4</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

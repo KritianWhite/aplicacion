@@ -134,6 +134,12 @@
     <Compile Include="FormAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="InformeActivos.Designer.vb">
+      <DependentUpon>InformeActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InformeActivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeActivos.resx">
+      <DependentUpon>InformeActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

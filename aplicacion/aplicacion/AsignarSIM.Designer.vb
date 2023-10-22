@@ -87,6 +87,7 @@ Partial Class AsignarSIM
         '
         'DTV_Equipos
         '
+<<<<<<< Updated upstream
         Me.DTV_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DTV_Equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DTV_Equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.imeiEquipo, Me.ModeloEquipo, Me.MarcaEquipo})
@@ -94,6 +95,21 @@ Partial Class AsignarSIM
         Me.DTV_Equipos.Name = "DTV_Equipos"
         Me.DTV_Equipos.Size = New System.Drawing.Size(440, 217)
         Me.DTV_Equipos.TabIndex = 33
+=======
+        Me.DGV_equipos.AllowUserToAddRows = False
+        Me.DGV_equipos.AllowUserToDeleteRows = False
+        Me.DGV_equipos.AllowUserToResizeRows = False
+        Me.DGV_equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_equipos.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.imeiEquipo, Me.ModeloEquipo, Me.MarcaEquipo})
+        Me.DGV_equipos.Location = New System.Drawing.Point(19, 41)
+        Me.DGV_equipos.Name = "DGV_equipos"
+        Me.DGV_equipos.ReadOnly = True
+        Me.DGV_equipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_equipos.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_equipos.TabIndex = 33
+>>>>>>> Stashed changes
         '
         'imeiEquipo
         '
@@ -113,12 +129,19 @@ Partial Class AsignarSIM
         'LB_equipoSeleccionado
         '
         Me.LB_equipoSeleccionado.AutoSize = True
+<<<<<<< Updated upstream
         Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_equipoSeleccionado.Location = New System.Drawing.Point(161, 260)
         Me.LB_equipoSeleccionado.Name = "LB_equipoSeleccionado"
         Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(76, 16)
+=======
+        Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_equipoSeleccionado.Location = New System.Drawing.Point(160, 253)
+        Me.LB_equipoSeleccionado.Name = "LB_equipoSeleccionado"
+        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(104, 15)
+>>>>>>> Stashed changes
         Me.LB_equipoSeleccionado.TabIndex = 32
-        Me.LB_equipoSeleccionado.Text = "Seleccion"
+        Me.LB_equipoSeleccionado.Text = "No seleccionado"
         '
         'BTN_seleccionarEquipo
         '
@@ -185,12 +208,19 @@ Partial Class AsignarSIM
         'LB_simSeleccionado
         '
         Me.LB_simSeleccionado.AutoSize = True
+<<<<<<< Updated upstream
         Me.LB_simSeleccionado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_simSeleccionado.Location = New System.Drawing.Point(158, 260)
         Me.LB_simSeleccionado.Name = "LB_simSeleccionado"
         Me.LB_simSeleccionado.Size = New System.Drawing.Size(76, 16)
+=======
+        Me.LB_simSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_simSeleccionado.Location = New System.Drawing.Point(151, 253)
+        Me.LB_simSeleccionado.Name = "LB_simSeleccionado"
+        Me.LB_simSeleccionado.Size = New System.Drawing.Size(104, 15)
+>>>>>>> Stashed changes
         Me.LB_simSeleccionado.TabIndex = 30
-        Me.LB_simSeleccionado.Text = "Seleccion"
+        Me.LB_simSeleccionado.Text = "No seleccionado"
         '
         'Label4
         '
@@ -222,6 +252,7 @@ Partial Class AsignarSIM
         '
         'BTN_buscarSIM
         '
+<<<<<<< Updated upstream
         Me.BTN_buscarSIM.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_buscarSIM.Location = New System.Drawing.Point(210, 0)
         Me.BTN_buscarSIM.Name = "BTN_buscarSIM"
@@ -229,6 +260,21 @@ Partial Class AsignarSIM
         Me.BTN_buscarSIM.TabIndex = 27
         Me.BTN_buscarSIM.Text = "Buscar"
         Me.BTN_buscarSIM.UseVisualStyleBackColor = True
+=======
+        Me.DGV_sim.AllowUserToAddRows = False
+        Me.DGV_sim.AllowUserToDeleteRows = False
+        Me.DGV_sim.AllowUserToResizeRows = False
+        Me.DGV_sim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_sim.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_sim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICCSim, Me.NumeroSim, Me.PropietarioSim, Me.CompaniaSim})
+        Me.DGV_sim.Location = New System.Drawing.Point(19, 41)
+        Me.DGV_sim.Name = "DGV_sim"
+        Me.DGV_sim.ReadOnly = True
+        Me.DGV_sim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_sim.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_sim.TabIndex = 30
+>>>>>>> Stashed changes
         '
         'DTV_SIM
         '
@@ -276,6 +322,7 @@ Partial Class AsignarSIM
         '
         'DTV_Asignacion
         '
+<<<<<<< Updated upstream
         Me.DTV_Asignacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DTV_Asignacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DTV_Asignacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEIAsignacion, Me.Espacio, Me.ICCAsignacion, Me.NumeroAsignacion, Me.PropietarioAsignacion, Me.CompaniaAsignacion})
@@ -283,6 +330,21 @@ Partial Class AsignarSIM
         Me.DTV_Asignacion.Name = "DTV_Asignacion"
         Me.DTV_Asignacion.Size = New System.Drawing.Size(833, 180)
         Me.DTV_Asignacion.TabIndex = 34
+=======
+        Me.DGV_asignaciones.AllowUserToAddRows = False
+        Me.DGV_asignaciones.AllowUserToDeleteRows = False
+        Me.DGV_asignaciones.AllowUserToResizeRows = False
+        Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEIAsignacion, Me.ICCAsignacion, Me.NumeroAsignacion, Me.PropietarioAsignacion, Me.CompaniaAsignacion})
+        Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
+        Me.DGV_asignaciones.Name = "DGV_asignaciones"
+        Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
+        Me.DGV_asignaciones.TabIndex = 34
+>>>>>>> Stashed changes
         '
         'TextBox3
         '

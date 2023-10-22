@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C2888592-AF50-825C-7E47-2974652A4217" name="ACTIVO">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>D851DBF3-FD4A-FC2E-4253-D0A34CBC2890</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>ACT</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACT_ID" id="0A8C30E5-9F19-0701-6A00-29BE35F95B68">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="PLACA" id="746CA0A4-A28A-3548-7510-214E6E0D363D">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:18:00 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHASIS" id="ED690A19-72A5-1CC8-77AB-4D7FFA87837F">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:19:26 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TIPO" id="A50416E9-427C-AEC6-CFD8-3F3171BF671C">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:19:26 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARCA" id="3938E2DD-6891-EE1F-DBE1-43F13E45C0D4">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:19:47 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MODELO" id="530497AF-5943-17A2-8C30-3255927E6BBD">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:20:07 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLOR" id="784A8C1C-F33E-891F-88FD-5DACAC1493A5">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:20:26 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ANIO" id="80B4BCD0-C9DC-5AF8-BE8E-2CFA25424976">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:21:38 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ESTADO" id="73FE7AD8-575A-5084-BF38-B94896C95005">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:32:23 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>25</dataTypeSize>
+<ownDataTypeParameters>25,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F1C07C74-90E3-EAAE-8B07-48D6AFFB4CCB" name="ACT_PK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="0A8C30E5-9F19-0701-6A00-29BE35F95B68"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

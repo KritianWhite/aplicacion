@@ -4,7 +4,13 @@
         FormAdmin.Show()
     End Sub
 
+<<<<<<< Updated upstream
     Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click
+=======
+    Dim controlador As New Controlador()
+
+    Private Sub BTN_agregarActivo_Click(sender As Object, e As EventArgs) 
+>>>>>>> Stashed changes
         If (TB_placaActivo.Text <> String.Empty And TB_chasisActivo.Text <> String.Empty And TB_tipoActivo.Text <> String.Empty And
             TB_marcaActivo.Text <> String.Empty And TB_modeloActivo.Text <> String.Empty And TB_anioActivo.Text <> String.Empty) Then
             MessageBox.Show("Se agregó el activo correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)

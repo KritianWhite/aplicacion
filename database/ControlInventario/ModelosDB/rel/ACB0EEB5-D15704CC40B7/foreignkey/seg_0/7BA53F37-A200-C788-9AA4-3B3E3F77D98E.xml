@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7BA53F37-A200-C788-9AA4-3B3E3F77D98E" containerWithKeyObject="46466D91-0541-5A0D-3932-2730CB8C9F3E" localFKIndex="562E45E1-6949-4C93-81A7-4FB3DFC2E232" name="GPS_MODELO_GPS_MARCA_FK">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:11:52 UTC</createdTime>
+<generatorID>B1CA3FED-C3A8-76C7-7911-12C55ACE564F</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<referredTableLongName>GPS_MARCA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C96E5110-9512-BD91-5365-299758811AA6</referredTableID>
+<keyObject>9361F41D-1491-56C3-B2CA-CE892F96192D</keyObject>
+<referredKeyID>9361F41D-1491-56C3-B2CA-CE892F96192D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MARCA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

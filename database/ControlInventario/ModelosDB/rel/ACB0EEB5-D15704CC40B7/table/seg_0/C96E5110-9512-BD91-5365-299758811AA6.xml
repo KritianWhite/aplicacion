@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C96E5110-9512-BD91-5365-299758811AA6" name="GPS_MARCA">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:08:19 UTC</createdTime>
+<generatorID>4B232DDF-A0C3-0FBA-9D8A-64177A1E1AA1</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>MARCA</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EQUIPO_EQUI_ID" id="7D132298-672C-1E8C-8BE5-42FE8C3DFEBD">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:08:19 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6EBB5FE5-BD27-4E8D-B8C3-7B6557D95FEA" referredColumn="A0AE0256-9D49-3674-B958-A41DF30613BC"/>
+</associations>
+</Column>
+<Column name="MARCA_ID" id="477E39AC-4C76-2459-A00F-75AC3DD0CCB3">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:09:11 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MARCA_GPS" id="E999DBF4-C0C6-9FD2-9F38-572226BAD7E8">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:09:48 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9361F41D-1491-56C3-B2CA-CE892F96192D" name="GPS_PK">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:09:11 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="477E39AC-4C76-2459-A00F-75AC3DD0CCB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="631BC922-FD66-6EBC-9436-533709CB39D1" name="GPS_EQUIPO_FK">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:08:19 UTC</createdTime>
+<generatorID>BF87A399-8A02-F44A-C1B8-382080F2E4C4</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D132298-672C-1E8C-8BE5-42FE8C3DFEBD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

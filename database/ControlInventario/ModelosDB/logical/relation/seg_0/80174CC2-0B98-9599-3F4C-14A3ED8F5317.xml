@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="EQUI-ASIG_EQUI" directorySegmentName="seg_0" id="80174CC2-0B98-9599-3F4C-14A3ED8F5317">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:08:24 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<engineerTo>
+<item key="ACB0EEB5-66D9-3469-92C6-D15704CC40B7" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8B82D4F5-52FB-2ECE-9163-EA506DAC29E2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>55869191-2D04-2122-9055-8D8A80EB4C57</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

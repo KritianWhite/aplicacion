@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_10" directorySegmentName="seg_0" id="BF87A399-8A02-F44A-C1B8-382080F2E4C4">
+<createdBy>kriti</createdBy>
+<createdTime>2023-10-13 18:07:36 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<engineerTo>
+<item key="ACB0EEB5-66D9-3469-92C6-D15704CC40B7" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>8B82D4F5-52FB-2ECE-9163-EA506DAC29E2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4B232DDF-A0C3-0FBA-9D8A-64177A1E1AA1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

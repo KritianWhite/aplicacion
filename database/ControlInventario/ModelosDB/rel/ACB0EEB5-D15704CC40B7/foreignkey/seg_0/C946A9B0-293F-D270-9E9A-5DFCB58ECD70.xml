@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C946A9B0-293F-D270-9E9A-5DFCB58ECD70" containerWithKeyObject="087BE730-A132-7DEC-D06F-E1862D8B32FA" localFKIndex="25009109-D1BC-3101-28A0-70254615A810" name="MIGRACION_SIM_SIM_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>24AD6112-E7D0-04EE-1080-C6A416AB381D</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<referredTableLongName>SIM</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B40C34CA-CD43-6384-007F-16A09FCC5AE2</referredTableID>
+<keyObject>3E4144CE-267D-ACC0-B325-0E1EE43CB0CD</keyObject>
+<referredKeyID>3E4144CE-267D-ACC0-B325-0E1EE43CB0CD</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SIM_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

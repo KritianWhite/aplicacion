@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="74D9995A-92BA-08F2-338C-49A53EFE773E" name="PLATAFORMA">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:50:51 UTC</createdTime>
+<generatorID>A6ED52F5-5F20-B85D-B265-37C9005AC778</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>PLAT</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PLAT_ID" id="CB3B38C7-02C2-9CB7-09B9-6E32571A0C5D">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:50:51 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="NOMBRE" id="C3A96E74-F495-2A82-D637-4D49ADBEA993">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:51:51 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6238DBEE-CA86-E221-4569-6547D0717064" name="PLAT_PK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:50:51 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="CB3B38C7-02C2-9CB7-09B9-6E32571A0C5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

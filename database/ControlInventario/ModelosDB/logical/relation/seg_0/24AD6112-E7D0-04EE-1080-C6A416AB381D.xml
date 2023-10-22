@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="SIM-MIG_SIM" directorySegmentName="seg_0" id="24AD6112-E7D0-04EE-1080-C6A416AB381D">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:14:10 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<engineerTo>
+<item key="ACB0EEB5-66D9-3469-92C6-D15704CC40B7" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>251594E2-0637-32E3-91B9-F7C9D14B99A9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>3479C2C2-8F71-EF13-F555-2032296C5B9D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

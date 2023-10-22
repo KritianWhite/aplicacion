@@ -3,8 +3,12 @@
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Hide()
     End Sub
+<<<<<<< Updated upstream
 
     Private Sub BTN_agregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarCliente.Click
+=======
+    Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs)
+>>>>>>> Stashed changes
         If (TB_iccSim.Text <> String.Empty And TB_numeroSim.Text <> String.Empty And TB_companiaSim.Text <> String.Empty And
             TB_propietarioSim.Text <> String.Empty And TB_plandatosSim.Text <> String.Empty) Then
             If (numeroValido.ValidarTelefono(TB_numeroSim.Text)) Then

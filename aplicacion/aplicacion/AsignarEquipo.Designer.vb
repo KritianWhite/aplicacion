@@ -50,6 +50,7 @@ Partial Class AsignarEquipo
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+<<<<<<< Updated upstream
         Me.DTV_Equipos = New System.Windows.Forms.DataGridView()
         Me.imeiEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ModeloEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -60,6 +61,12 @@ Partial Class AsignarEquipo
         Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
+=======
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.CB_plataforma = New System.Windows.Forms.ComboBox()
+        Me.CB_adquisicion = New System.Windows.Forms.ComboBox()
+>>>>>>> Stashed changes
         Me.Panel6.SuspendLayout()
         CType(Me.DTV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -83,15 +90,56 @@ Partial Class AsignarEquipo
         Me.Panel6.Size = New System.Drawing.Size(479, 288)
         Me.Panel6.TabIndex = 32
         '
+<<<<<<< Updated upstream
+=======
+        'DGV_equipos
+        '
+        Me.DGV_equipos.AllowUserToAddRows = False
+        Me.DGV_equipos.AllowUserToDeleteRows = False
+        Me.DGV_equipos.AllowUserToResizeRows = False
+        Me.DGV_equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_equipos.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.imeiEquipo, Me.ModeloEquipo, Me.MarcaEquipo})
+        Me.DGV_equipos.Location = New System.Drawing.Point(19, 41)
+        Me.DGV_equipos.Name = "DGV_equipos"
+        Me.DGV_equipos.ReadOnly = True
+        Me.DGV_equipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_equipos.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_equipos.TabIndex = 33
+        '
+        'imeiEquipo
+        '
+        Me.imeiEquipo.HeaderText = "IMEI"
+        Me.imeiEquipo.Name = "imeiEquipo"
+        Me.imeiEquipo.ReadOnly = True
+        '
+        'ModeloEquipo
+        '
+        Me.ModeloEquipo.HeaderText = "Modelo"
+        Me.ModeloEquipo.Name = "ModeloEquipo"
+        Me.ModeloEquipo.ReadOnly = True
+        '
+        'MarcaEquipo
+        '
+        Me.MarcaEquipo.HeaderText = "Marca"
+        Me.MarcaEquipo.Name = "MarcaEquipo"
+        Me.MarcaEquipo.ReadOnly = True
+        '
+>>>>>>> Stashed changes
         'LB_equipoSeleccionado
         '
         Me.LB_equipoSeleccionado.AutoSize = True
         Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_equipoSeleccionado.Location = New System.Drawing.Point(161, 260)
         Me.LB_equipoSeleccionado.Name = "LB_equipoSeleccionado"
+<<<<<<< Updated upstream
         Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(76, 16)
+=======
+        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(104, 15)
+>>>>>>> Stashed changes
         Me.LB_equipoSeleccionado.TabIndex = 32
-        Me.LB_equipoSeleccionado.Text = "Seleccion"
+        Me.LB_equipoSeleccionado.Text = "No seleccionado"
         '
         'BTN_seleccionarEquipo
         '
@@ -123,6 +171,7 @@ Partial Class AsignarEquipo
         '
         'DTV_Activos
         '
+<<<<<<< Updated upstream
         Me.DTV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DTV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DTV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.MarcaActivo})
@@ -130,6 +179,31 @@ Partial Class AsignarEquipo
         Me.DTV_Activos.Name = "DTV_Activos"
         Me.DTV_Activos.Size = New System.Drawing.Size(440, 217)
         Me.DTV_Activos.TabIndex = 30
+=======
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(16, 11)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 15)
+        Me.Label3.TabIndex = 28
+        Me.Label3.Text = "Equipos"
+        '
+        'DGV_Activos
+        '
+        Me.DGV_Activos.AllowUserToAddRows = False
+        Me.DGV_Activos.AllowUserToDeleteRows = False
+        Me.DGV_Activos.AllowUserToResizeRows = False
+        Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Activos.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.MarcaActivo})
+        Me.DGV_Activos.Location = New System.Drawing.Point(19, 41)
+        Me.DGV_Activos.Name = "DGV_Activos"
+        Me.DGV_Activos.ReadOnly = True
+        Me.DGV_Activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Activos.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_Activos.TabIndex = 30
+>>>>>>> Stashed changes
         '
         'PlacaActivo
         '
@@ -186,9 +260,13 @@ Partial Class AsignarEquipo
         Me.LB_activoSeleccionado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_activoSeleccionado.Location = New System.Drawing.Point(158, 260)
         Me.LB_activoSeleccionado.Name = "LB_activoSeleccionado"
+<<<<<<< Updated upstream
         Me.LB_activoSeleccionado.Size = New System.Drawing.Size(76, 16)
+=======
+        Me.LB_activoSeleccionado.Size = New System.Drawing.Size(104, 15)
+>>>>>>> Stashed changes
         Me.LB_activoSeleccionado.TabIndex = 30
-        Me.LB_activoSeleccionado.Text = "Seleccion"
+        Me.LB_activoSeleccionado.Text = "No seleccionado"
         '
         'Label4
         '
@@ -264,6 +342,7 @@ Partial Class AsignarEquipo
         '
         'DTV_Asignacion
         '
+<<<<<<< Updated upstream
         Me.DTV_Asignacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DTV_Asignacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DTV_Asignacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.Espacio, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion})
@@ -271,6 +350,21 @@ Partial Class AsignarEquipo
         Me.DTV_Asignacion.Name = "DTV_Asignacion"
         Me.DTV_Asignacion.Size = New System.Drawing.Size(833, 180)
         Me.DTV_Asignacion.TabIndex = 34
+=======
+        Me.DGV_asignaciones.AllowUserToAddRows = False
+        Me.DGV_asignaciones.AllowUserToDeleteRows = False
+        Me.DGV_asignaciones.AllowUserToResizeRows = False
+        Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion})
+        Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
+        Me.DGV_asignaciones.Name = "DGV_asignaciones"
+        Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
+        Me.DGV_asignaciones.TabIndex = 34
+>>>>>>> Stashed changes
         '
         'TextBox3
         '
@@ -299,7 +393,18 @@ Partial Class AsignarEquipo
         '
         'Panel1
         '
+<<<<<<< Updated upstream
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
+=======
+        Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.CB_adquisicion)
+        Me.Panel1.Controls.Add(Me.CB_plataforma)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Panel5)
+        Me.Panel1.Controls.Add(Me.Panel6)
+>>>>>>> Stashed changes
         Me.Panel1.Controls.Add(Me.BTN_asignar)
         Me.Panel1.Location = New System.Drawing.Point(12, 61)
         Me.Panel1.Name = "Panel1"
@@ -308,8 +413,13 @@ Partial Class AsignarEquipo
         '
         'BTN_asignar
         '
+<<<<<<< Updated upstream
         Me.BTN_asignar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTN_asignar.Location = New System.Drawing.Point(440, 294)
+=======
+        Me.BTN_asignar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_asignar.Location = New System.Drawing.Point(837, 315)
+>>>>>>> Stashed changes
         Me.BTN_asignar.Name = "BTN_asignar"
         Me.BTN_asignar.Size = New System.Drawing.Size(75, 23)
         Me.BTN_asignar.TabIndex = 29
@@ -335,6 +445,7 @@ Partial Class AsignarEquipo
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "ASIGNACION DE EQUIPOS"
         '
+<<<<<<< Updated upstream
         'DTV_Equipos
         '
         Me.DTV_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -394,6 +505,47 @@ Partial Class AsignarEquipo
         Me.Label5.Size = New System.Drawing.Size(243, 22)
         Me.Label5.TabIndex = 34
         Me.Label5.Text = "Equipos asignados a activos:"
+=======
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(39, 318)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(72, 15)
+        Me.Label6.TabIndex = 31
+        Me.Label6.Text = "Plataforma:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(404, 318)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(132, 15)
+        Me.Label8.TabIndex = 33
+        Me.Label8.Text = "Opción de adquisición:"
+        '
+        'CB_plataforma
+        '
+        Me.CB_plataforma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_plataforma.FormattingEnabled = True
+        Me.CB_plataforma.Location = New System.Drawing.Point(117, 315)
+        Me.CB_plataforma.Name = "CB_plataforma"
+        Me.CB_plataforma.Size = New System.Drawing.Size(210, 22)
+        Me.CB_plataforma.TabIndex = 34
+        '
+        'CB_adquisicion
+        '
+        Me.CB_adquisicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_adquisicion.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_adquisicion.FormattingEnabled = True
+        Me.CB_adquisicion.Items.AddRange(New Object() {"VENTA", "RENTA"})
+        Me.CB_adquisicion.Location = New System.Drawing.Point(542, 315)
+        Me.CB_adquisicion.Name = "CB_adquisicion"
+        Me.CB_adquisicion.Size = New System.Drawing.Size(210, 23)
+        Me.CB_adquisicion.TabIndex = 35
+>>>>>>> Stashed changes
         '
         'AsignarEquipo
         '
@@ -418,7 +570,11 @@ Partial Class AsignarEquipo
         Me.Panel3.PerformLayout()
         CType(Me.DTV_Asignacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+<<<<<<< Updated upstream
         CType(Me.DTV_Equipos, System.ComponentModel.ISupportInitialize).EndInit()
+=======
+        Me.Panel1.PerformLayout()
+>>>>>>> Stashed changes
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -461,5 +617,12 @@ Partial Class AsignarEquipo
     Friend WithEvents IMEIAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
+<<<<<<< Updated upstream
     Friend WithEvents Label5 As Label
+=======
+    Friend WithEvents CB_adquisicion As ComboBox
+    Friend WithEvents CB_plataforma As ComboBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label6 As Label
+>>>>>>> Stashed changes
 End Class

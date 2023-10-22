@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6663BF08-5488-37BB-9BF6-ABCD3A6FFBED" containerWithKeyObject="E3CC1395-CC72-E5BE-037E-F052E9BB67C6" localFKIndex="DA86C759-6D18-BB73-DEF6-AEB175CAF232" name="ASIGNACION_SIM_SIM_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>9303284B-D3F3-2265-436D-D9663AE0E079</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<referredTableLongName>SIM</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B40C34CA-CD43-6384-007F-16A09FCC5AE2</referredTableID>
+<keyObject>3E4144CE-267D-ACC0-B325-0E1EE43CB0CD</keyObject>
+<referredKeyID>3E4144CE-267D-ACC0-B325-0E1EE43CB0CD</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>SIM_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

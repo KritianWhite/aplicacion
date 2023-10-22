@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E3CC1395-CC72-E5BE-037E-F052E9BB67C6" name="ASIGNACION_SIM">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>53309A38-D02B-F8EC-2B74-AB9BF48EAA40</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>ASIG_SIM</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="EQUIPO_EQUI_ID" id="C8BD1CC6-D72D-76CB-5404-AF8A2EC9057D">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="60C9C3F1-88A5-8760-2932-267856E66A88" referredColumn="A0AE0256-9D49-3674-B958-A41DF30613BC"/>
+</associations>
+</Column>
+<Column name="SIM_SIM_ID" id="6CFDDA22-8822-8F41-8800-C5BF3AC118E2">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6663BF08-5488-37BB-9BF6-ABCD3A6FFBED" referredColumn="53E1B918-CBD7-8F06-195E-6B72793BE7C1"/>
+</associations>
+</Column>
+<Column name="FECHA_ASIGNACION_SIM" id="C6C9CD92-9793-3515-4E59-0036397C3417">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:42:45 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7EFE0E2-2D42-82F3-B706-413A92EEDF1F" name="ASIGNACION_SIM_EQUIPO_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>74457EFB-75E6-A298-990E-F926072A3F90</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C8BD1CC6-D72D-76CB-5404-AF8A2EC9057D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DA86C759-6D18-BB73-DEF6-AEB175CAF232" name="ASIGNACION_SIM_SIM_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>9303284B-D3F3-2265-436D-D9663AE0E079</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6CFDDA22-8822-8F41-8800-C5BF3AC118E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

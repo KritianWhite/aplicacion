@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="356B3DF4-8C44-84AC-7726-B1E1932F9668" name="ASIGNACION_EQUIPO">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>55869191-2D04-2122-9055-8D8A80EB4C57</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<abbreviation>ASIG_EQUI</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ACTIVO_ACT_ID" id="5D864480-399F-65F8-DC5D-8AA141665B1B">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DCF70160-207E-5728-9A57-D330680ACE22" referredColumn="0A8C30E5-9F19-0701-6A00-29BE35F95B68"/>
+</associations>
+</Column>
+<Column name="EQUIPO_EQUI_ID" id="7B164A04-ABB1-9D8A-92E5-2933F6A72796">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AE5455F0-B695-ED33-2702-48EF1FF5ED86" referredColumn="A0AE0256-9D49-3674-B958-A41DF30613BC"/>
+</associations>
+</Column>
+<Column name="FECHA_ASIGNACION_EQUIPO" id="BC9E8793-F581-D3B7-8A0D-D21217D8FBE8">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-05 20:45:54 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4A86EB97-FF66-853B-DBDD-90797EBE7E45" name="ASIGNACION_EQUIPO_ACTIVO_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>B73B90CD-C041-AEBF-FC72-135FF254C29C</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D864480-399F-65F8-DC5D-8AA141665B1B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0E4A62DE-7566-991A-ACE3-96E158187646" name="ASIGNACION_EQUIPO_EQUIPO_FK">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 14:27:57 UTC</createdTime>
+<generatorID>80174CC2-0B98-9599-3F4C-14A3ED8F5317</generatorID>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7B164A04-ABB1-9D8A-92E5-2933F6A72796"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="DF613254-E7F5-0D4F-27FF-BC538292036B">
+<createdBy>ITLocaliza</createdBy>
+<createdTime>2023-09-04 13:42:23 UTC</createdTime>
+<ownerDesignName>ModelosDB</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>
