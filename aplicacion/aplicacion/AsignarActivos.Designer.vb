@@ -120,9 +120,9 @@ Partial Class AsignarActivos
         Me.LB_clienteSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_clienteSeleccionado.Location = New System.Drawing.Point(158, 253)
         Me.LB_clienteSeleccionado.Name = "LB_clienteSeleccionado"
-        Me.LB_clienteSeleccionado.Size = New System.Drawing.Size(62, 15)
+        Me.LB_clienteSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_clienteSeleccionado.TabIndex = 30
-        Me.LB_clienteSeleccionado.Text = "Seleccion"
+        Me.LB_clienteSeleccionado.Text = "No seleccionado"
         '
         'Label4
         '
@@ -156,6 +156,7 @@ Partial Class AsignarActivos
         Me.DGV_Clientes.Location = New System.Drawing.Point(19, 41)
         Me.DGV_Clientes.Name = "DGV_Clientes"
         Me.DGV_Clientes.ReadOnly = True
+        Me.DGV_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_Clientes.Size = New System.Drawing.Size(440, 202)
         Me.DGV_Clientes.TabIndex = 27
         '
@@ -225,9 +226,9 @@ Partial Class AsignarActivos
         Me.LB_activoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_activoSeleccionado.Location = New System.Drawing.Point(161, 253)
         Me.LB_activoSeleccionado.Name = "LB_activoSeleccionado"
-        Me.LB_activoSeleccionado.Size = New System.Drawing.Size(62, 15)
+        Me.LB_activoSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_activoSeleccionado.TabIndex = 32
-        Me.LB_activoSeleccionado.Text = "Seleccion"
+        Me.LB_activoSeleccionado.Text = "No seleccionado"
         '
         'BTN_seleccionarActivo
         '
@@ -261,6 +262,7 @@ Partial Class AsignarActivos
         '
         Me.DGV_Activos.AllowUserToAddRows = False
         Me.DGV_Activos.AllowUserToDeleteRows = False
+        Me.DGV_Activos.AllowUserToResizeRows = False
         Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Activos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -268,6 +270,7 @@ Partial Class AsignarActivos
         Me.DGV_Activos.Location = New System.Drawing.Point(22, 41)
         Me.DGV_Activos.Name = "DGV_Activos"
         Me.DGV_Activos.ReadOnly = True
+        Me.DGV_Activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_Activos.Size = New System.Drawing.Size(440, 202)
         Me.DGV_Activos.TabIndex = 30
         '
@@ -338,6 +341,7 @@ Partial Class AsignarActivos
         '
         Me.DGV_asignaciones.AllowUserToAddRows = False
         Me.DGV_asignaciones.AllowUserToDeleteRows = False
+        Me.DGV_asignaciones.AllowUserToResizeRows = False
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -345,6 +349,7 @@ Partial Class AsignarActivos
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
         '

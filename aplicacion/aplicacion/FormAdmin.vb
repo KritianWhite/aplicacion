@@ -117,37 +117,35 @@
     End Sub
 
     ' Navegación hacia otras pestañas
-    Private Sub BTN_AgregarCliente_Click(sender As Object, e As EventArgs) Handles BTN_agregarClientes.Click
+    Private Sub BTN_agregarClientes_Click(sender As Object, e As EventArgs) Handles BTN_agregarClientes.Click
         AgregarCliente.Show()
         AgregarCliente.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
+    Private Sub BTN_agregarActivos_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
         AgregarActivo.Show()
         AgregarActivo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
+    Private Sub BTN_agregarEquipos_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
         AgregarEquipo.Show()
         AgregarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+    Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
         AgregarSIM.Show()
         AgregarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub BTN_agregarUsuari_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
+    Private Sub BTN_agregarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
         AgregarUsuario.Show()
         AgregarUsuario.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
-
     Private Sub BajaDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeEquiposToolStripMenuItem.Click
         BajaEquipos.Show()
         BajaEquipos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         'MigrarSIM.Show()
         aux.MigrarSim(valorSeleccionado)
         MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
@@ -178,6 +176,7 @@
 
     ' En este metodo se cargan todas las tablas al iniciar sesión
     Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = ColorTranslator.FromHtml("#A7E0EA")
         If (PanelCliente.Visible = False) Then
             ' Agregamos color al menu strip, y tambien a cada item al dar click para 
             ' asi tener una mejor vista sobre la navegación dentro del programa
@@ -461,7 +460,6 @@
         valorSeleccionado = DGV_Equipos.CurrentRow.Cells(0).Value
     End Sub
     Private Sub DGV_Sim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Sim.CellClick
-        'Debo de corregir el error al obtener el icc, ya que no se porque ocurre aún (Pero a de ser por la fecha[Talvez])
         valorSeleccionado = DGV_Sim.CurrentRow.Cells(0).Value
     End Sub
     Private Sub DGV_Usuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellClick
@@ -469,31 +467,26 @@
     End Sub
 
     Private Sub PanelCliente_Paint(sender As Object, e As PaintEventArgs) Handles PanelCliente.Paint
-        PanelCliente.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
         DGV_clientes.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_clientes.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
     Private Sub PanelActivos_Paint(sender As Object, e As PaintEventArgs) Handles PanelActivos.Paint
-        PanelActivos.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
         DGV_Activos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_Activos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
     Private Sub PanelEquipos_Paint(sender As Object, e As PaintEventArgs) Handles PanelEquipos.Paint
-        PanelEquipos.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
         DGV_Equipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_Equipos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
     Private Sub PanelSIM_Paint(sender As Object, e As PaintEventArgs) Handles PanelSIM.Paint
-        PanelSIM.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
         DGV_Sim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_Sim.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
     Private Sub PanelUsuario_Paint(sender As Object, e As PaintEventArgs) Handles PanelUsuario.Paint
-        PanelUsuario.BackColor = ColorTranslator.FromHtml("#0080AA") ' Establecemos el color del panel.
         DGV_Usuarios.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_Usuarios.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
@@ -502,9 +495,12 @@
     Private Sub TB_buscarClientes_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarClientes.TextChanged
         Dim searchText As String = TB_buscarClientes.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_clientes.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_clientes.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (Nombre)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -522,9 +518,12 @@
     Private Sub TB_buscarActivos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarActivos.TextChanged
         Dim searchText As String = TB_buscarActivos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_Activos.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_Activos.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (Placa o Chásis)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -543,9 +542,12 @@
     Private Sub TB_buscarEquipos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarEquipos.TextChanged
         Dim searchText As String = TB_buscarEquipos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_Activos.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
-        For Each row As DataGridViewRow In DGV_Equipos.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+        For Each row As DataGridViewRow In DGV_Activos.Rows
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (IMEI)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -563,9 +565,12 @@
     Private Sub TB_buscarSim_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarSim.TextChanged
         Dim searchText As String = TB_buscarSim.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_Sim.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_Sim.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (Icc y numero)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -584,9 +589,12 @@
     Private Sub TB_buscarUsuario_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarUsuario.TextChanged
         Dim searchText As String = TB_buscarUsuario.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_Usuarios.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_Usuarios.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (Nombre de usuario)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()

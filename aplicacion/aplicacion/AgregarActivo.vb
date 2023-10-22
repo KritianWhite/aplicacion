@@ -36,4 +36,5 @@
     Private Sub BTN_regresar_Click_1(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
     End Sub
+
 End Class

@@ -448,13 +448,16 @@ Public Class Controlador
     Function CargarTablaEquipos() As Boolean
         Try
             conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT IMEI FROM equipo", conn.connection)
+            Dim adapter As New MySqlDataAdapter("SELECT E.IMEI, MG.MARCA AS MARCA, MO.MODELO AS MODELO
+                                                FROM EQUIPO E
+                                                INNER JOIN MODELO_GPS MO ON E.ID_MODELO = MO.ID_MODELO
+                                                INNER JOIN MARCA_GPS MG ON MO.ID_MARCA = MG.ID_MARCA;", conn.connection)
             Dim table As New DataTable()
 
             adapter.Fill(table)
             FormAdmin.DGV_Equipos.Columns("IMEI_E").DataPropertyName = "IMEI"
-            'FormAdmin.DGV_Equipos.Columns("Modelo_E").DataPropertyName = "MODELO"
-            'FormAdmin.DGV_Equipos.Columns("Marca_E").DataPropertyName = "MARCA"
+            FormAdmin.DGV_Equipos.Columns("Modelo_E").DataPropertyName = "MODELO"
+            FormAdmin.DGV_Equipos.Columns("Marca_E").DataPropertyName = "MARCA"
             FormAdmin.DGV_Equipos.DataSource = table
             conn.desconexion()
             Return True
@@ -512,7 +515,7 @@ Public Class Controlador
         End Try
     End Function
 
-    ' Query para cargar el combobox para agregar el modelo al equipo (En agregar equipo)
+    ' Querys para cargar combobox's
     Function CargarModeloEquipo() As Boolean
         Try
             conn.conexion()
@@ -525,6 +528,119 @@ Public Class Controlador
             Next
             conn.desconexion()
             Return True
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    Function CargarPlataformaEquipo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT NOMBRE FROM plataforma;", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            For Each row As DataRow In table.Rows
+                AsignarEquipo.CB_plataforma.Items.Add(row("NOMBRE"))
+            Next
+            conn.desconexion()
+            Return True
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    ' Querys para llenar tablas de asignacion de sim (equipo, sim y asignaciones)
+    Function CargarTablaSim_Sim() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT ICC, NUMERO, PROPIETARIO, COMPANIA FROM sim WHERE ESTADO='INHABILITADO'", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarSIM.DGV_sim.Columns("ICCSim").DataPropertyName = "ICC"
+            AsignarSIM.DGV_sim.Columns("NumeroSim").DataPropertyName = "NUMERO"
+            AsignarSIM.DGV_sim.Columns("PropietarioSim").DataPropertyName = "PROPIETARIO"
+            AsignarSIM.DGV_sim.Columns("CompaniaSim").DataPropertyName = "COMPANIA"
+            AsignarSIM.DGV_sim.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+    Function CargarTablaEquipo_Sim() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT E.IMEI, MG.MARCA AS MARCA, MO.MODELO AS MODELO
+                                                FROM EQUIPO E
+                                                INNER JOIN MODELO_GPS MO ON E.ID_MODELO = MO.ID_MODELO
+                                                INNER JOIN MARCA_GPS MG ON MO.ID_MARCA = MG.ID_MARCA
+                                                WHERE E.ESTADO='INHABILITADO'", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarSIM.DGV_equipos.Columns("imeiEquipo").DataPropertyName = "IMEI"
+            AsignarSIM.DGV_equipos.Columns("modeloEquipo").DataPropertyName = "MODELO"
+            AsignarSIM.DGV_equipos.Columns("marcaEquipo").DataPropertyName = "MARCA"
+            AsignarSIM.DGV_equipos.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    ' Querys para llenar tablas de asignacion de equipo (clientes, activos y asignaciones)
+
+    Function CargarTablaActivos_Equipo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo WHERE ESTADO='INHABILITADO'", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarEquipo.DGV_Activos.Columns("PlacaActivo").DataPropertyName = "PLACA"
+            AsignarEquipo.DGV_Activos.Columns("ChasisActivo").DataPropertyName = "CHASIS"
+            AsignarEquipo.DGV_Activos.Columns("MarcaActivo").DataPropertyName = "MARCA"
+            AsignarEquipo.DGV_Activos.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+    Function CargarTablaEquipo_Equipo() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT E.IMEI, MG.MARCA AS MARCA, MO.MODELO AS MODELO
+                                                FROM EQUIPO E
+                                                INNER JOIN MODELO_GPS MO ON E.ID_MODELO = MO.ID_MODELO
+                                                INNER JOIN MARCA_GPS MG ON MO.ID_MARCA = MG.ID_MARCA
+                                                WHERE E.ESTADO='HABILITADO'", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            AsignarEquipo.DGV_equipos.Columns("imeiEquipo").DataPropertyName = "IMEI"
+            AsignarEquipo.DGV_equipos.Columns("modeloEquipo").DataPropertyName = "MODELO"
+            AsignarEquipo.DGV_equipos.Columns("marcaEquipo").DataPropertyName = "MARCA"
+            AsignarEquipo.DGV_equipos.DataSource = table
+            conn.desconexion()
+            Return True
+
         Catch ex As Exception
             MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()
@@ -556,7 +672,7 @@ Public Class Controlador
     Function CargarTablaActivos_Activo() As Boolean
         Try
             conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo", conn.connection)
+            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo WHERE ESTADO='HABILITADO'", conn.connection)
             Dim table As New DataTable()
 
             adapter.Fill(table)
@@ -576,50 +692,5 @@ Public Class Controlador
 
     Function CargarTablaAsignaciones_Activo() As Boolean
 
-    End Function
-
-    ' Querys para llenar tablas de asignacion de equipo (clientes, activos y asignaciones)
-    Function CargarTablaActivos_Equipo() As Boolean
-        Try
-            conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT PLACA, CHASIS, MARCA FROM activo", conn.connection)
-            Dim table As New DataTable()
-
-            adapter.Fill(table)
-            AsignarEquipo.DGV_Activos.Columns("PlacaActivo").DataPropertyName = "PLACA"
-            AsignarEquipo.DGV_Activos.Columns("ChasisActivo").DataPropertyName = "CHASIS"
-            AsignarEquipo.DGV_Activos.Columns("MarcaActivo").DataPropertyName = "MARCA"
-            AsignarEquipo.DGV_Activos.DataSource = table
-            conn.desconexion()
-            Return True
-
-        Catch ex As Exception
-            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            conn.desconexion()
-            Return False
-        End Try
-    End Function
-
-    ' Querys para llenar tablas de asignacion de sim (equipo, sim y asignaciones)
-    Function CargarTablaSim_Sim() As Boolean
-        Try
-            conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT ICC, NUMERO, PROPIETARIO, COMPANIA FROM sim", conn.connection)
-            Dim table As New DataTable()
-
-            adapter.Fill(table)
-            AsignarSIM.DGV_sim.Columns("ICCSim").DataPropertyName = "ICC"
-            AsignarSIM.DGV_sim.Columns("NumeroSim").DataPropertyName = "NUMERO"
-            AsignarSIM.DGV_sim.Columns("PropietarioSim").DataPropertyName = "PROPIETARIO"
-            AsignarSIM.DGV_sim.Columns("CompaniaSim").DataPropertyName = "COMPANIA"
-            AsignarSIM.DGV_sim.DataSource = table
-            conn.desconexion()
-            Return True
-
-        Catch ex As Exception
-            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            conn.desconexion()
-            Return False
-        End Try
     End Function
 End Class

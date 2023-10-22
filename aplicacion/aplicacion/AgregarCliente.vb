@@ -38,5 +38,4 @@
         TB_telefonoCliente.Clear()
         TB_correoCliente.Clear()
     End Sub
-
 End Class

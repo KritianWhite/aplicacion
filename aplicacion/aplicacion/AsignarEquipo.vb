@@ -1,5 +1,8 @@
 ﻿Public Class AsignarEquipo
     Dim controlador As New Controlador()
+    Dim valorSeleccionado_Activo As String = ""
+    Dim valorSeleccionado_Equipo As String = ""
+    Dim valorSeleccionado_Asignaciones As String = ""
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
         FormAdmin.Show()
@@ -18,15 +21,25 @@
         If Not controlador.CargarTablaActivos_Equipo() Then
             MessageBox.Show("Error al cargar la tabla de activos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+        If Not controlador.CargarTablaEquipo_Equipo() Then
+            MessageBox.Show("Error al cargar la tabla de equipos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        ' Carga de combobox
+        If Not controlador.CargarPlataformaEquipo() Then
+            MessageBox.Show("Error al cargar las plataformas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     ' Busquedas en las tablas
     Private Sub TB_buscarActivos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarActivos.TextChanged
         Dim searchText As String = TB_buscarActivos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_Activos.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_Activos.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (Placa y chásis)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -45,9 +58,12 @@
     Private Sub TB_buscarEquipos_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarEquipos.TextChanged
         Dim searchText As String = TB_buscarEquipos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_equipos.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_equipos.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (IMEI)
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -65,9 +81,12 @@
     Private Sub TB_buscarAsignaciones_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarAsignaciones.TextChanged
         Dim searchText As String = TB_buscarAsignaciones.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
+        ' Obtener la fila seleccionada (si hay alguna)
+        Dim selectedRow As DataGridViewRow = DGV_asignaciones.CurrentRow
+
         ' Iterar a través de las filas del DataGridView
         For Each row As DataGridViewRow In DGV_asignaciones.Rows
-            If Not row.IsNewRow AndAlso row.Index <> 0 AndAlso row.Cells.Count >= 2 Then
+            If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (ACTIVO[placa] y Equipo[IMEI])
                 Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
@@ -81,5 +100,57 @@
                 End If
             End If
         Next
+    End Sub
+
+    ' Funcionalidades de los botones para obtener valores
+    Private Sub BTN_seleccionarActivo_Click(sender As Object, e As EventArgs) Handles BTN_seleccionarActivo.Click
+        If valorSeleccionado_Activo <> "" Then
+            LB_activoSeleccionado.Text = valorSeleccionado_Activo
+        Else
+            MessageBox.Show("No ha seleccionado ningún activo a asignar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Sub BTN_seleccionarEquipo_Click(sender As Object, e As EventArgs) Handles BTN_seleccionarEquipo.Click
+        If valorSeleccionado_Equipo <> "" Then
+            LB_equipoSeleccionado.Text = valorSeleccionado_Equipo
+        Else
+            MessageBox.Show("No ha seleccionado ningún equipo a asignar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Sub BTN_asignar_Click(sender As Object, e As EventArgs) Handles BTN_asignar.Click
+        If LB_activoSeleccionado.Text <> "No seleccionado" And LB_equipoSeleccionado.Text <> "No seleccionado" Then
+            If CB_plataforma.Text <> "" Then
+                If CB_adquisicion.Text <> "" Then
+                    'Codigo aqui para query (procedimiento almacenado)
+                    MessageBox.Show("Hola", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Seleccione el tipo de adquisición para el equipo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+            Else
+                MessageBox.Show("Seleccione la plataforma para el equipo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Else
+            MessageBox.Show("Activo/Equipo no seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+    Private Sub BTN_desasignarEquipo_Click(sender As Object, e As EventArgs) Handles BTN_desasignarEquipo.Click
+        If valorSeleccionado_Asignaciones <> "" Then
+            'Codigo aqui para desasignar (procedimiento almacenado)
+        Else
+            MessageBox.Show("No ha seleccionado ninguna asignación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    ' funciones para obtener valor seleccionado del datagridview
+    Private Sub DGV_Activos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellClick
+        valorSeleccionado_Activo = DGV_Activos.CurrentRow.Cells(0).Value
+    End Sub
+
+    Private Sub DGV_equipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_equipos.CellClick
+        valorSeleccionado_Equipo = DGV_equipos.CurrentRow.Cells(0).Value
+    End Sub
+
+    Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
+        valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
     End Sub
 End Class

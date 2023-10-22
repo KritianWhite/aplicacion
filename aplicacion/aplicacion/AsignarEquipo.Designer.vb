@@ -53,6 +53,10 @@ Partial Class AsignarEquipo
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CB_adquisicion = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.CB_plataforma = New System.Windows.Forms.ComboBox()
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -92,6 +96,7 @@ Partial Class AsignarEquipo
         Me.DGV_equipos.Location = New System.Drawing.Point(19, 41)
         Me.DGV_equipos.Name = "DGV_equipos"
         Me.DGV_equipos.ReadOnly = True
+        Me.DGV_equipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_equipos.Size = New System.Drawing.Size(440, 202)
         Me.DGV_equipos.TabIndex = 33
         '
@@ -119,9 +124,9 @@ Partial Class AsignarEquipo
         Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_equipoSeleccionado.Location = New System.Drawing.Point(159, 253)
         Me.LB_equipoSeleccionado.Name = "LB_equipoSeleccionado"
-        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(62, 15)
+        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_equipoSeleccionado.TabIndex = 32
-        Me.LB_equipoSeleccionado.Text = "Seleccion"
+        Me.LB_equipoSeleccionado.Text = "No seleccionado"
         '
         'BTN_seleccionarEquipo
         '
@@ -173,6 +178,7 @@ Partial Class AsignarEquipo
         Me.DGV_Activos.Location = New System.Drawing.Point(19, 41)
         Me.DGV_Activos.Name = "DGV_Activos"
         Me.DGV_Activos.ReadOnly = True
+        Me.DGV_Activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_Activos.Size = New System.Drawing.Size(440, 202)
         Me.DGV_Activos.TabIndex = 30
         '
@@ -215,9 +221,9 @@ Partial Class AsignarEquipo
         Me.LB_activoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_activoSeleccionado.Location = New System.Drawing.Point(158, 253)
         Me.LB_activoSeleccionado.Name = "LB_activoSeleccionado"
-        Me.LB_activoSeleccionado.Size = New System.Drawing.Size(62, 15)
+        Me.LB_activoSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_activoSeleccionado.TabIndex = 30
-        Me.LB_activoSeleccionado.Text = "Seleccion"
+        Me.LB_activoSeleccionado.Text = "No seleccionado"
         '
         'Label4
         '
@@ -304,6 +310,7 @@ Partial Class AsignarEquipo
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
         '
@@ -350,6 +357,10 @@ Partial Class AsignarEquipo
         '
         Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.CB_adquisicion)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.CB_plataforma)
         Me.Panel1.Controls.Add(Me.Panel5)
         Me.Panel1.Controls.Add(Me.Panel6)
         Me.Panel1.Controls.Add(Me.BTN_asignar)
@@ -359,10 +370,51 @@ Partial Class AsignarEquipo
         Me.Panel1.Size = New System.Drawing.Size(1020, 356)
         Me.Panel1.TabIndex = 27
         '
+        'CB_adquisicion
+        '
+        Me.CB_adquisicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_adquisicion.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_adquisicion.FormattingEnabled = True
+        Me.CB_adquisicion.Items.AddRange(New Object() {"VENTA", "RENTA"})
+        Me.CB_adquisicion.Location = New System.Drawing.Point(571, 320)
+        Me.CB_adquisicion.Name = "CB_adquisicion"
+        Me.CB_adquisicion.Size = New System.Drawing.Size(206, 23)
+        Me.CB_adquisicion.TabIndex = 34
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(448, 324)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(117, 15)
+        Me.Label6.TabIndex = 33
+        Me.Label6.Text = "Tipo de adquisición:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(39, 320)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(116, 15)
+        Me.Label8.TabIndex = 32
+        Me.Label8.Text = "Tipo de plataforma:"
+        '
+        'CB_plataforma
+        '
+        Me.CB_plataforma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_plataforma.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_plataforma.FormattingEnabled = True
+        Me.CB_plataforma.Location = New System.Drawing.Point(161, 316)
+        Me.CB_plataforma.Name = "CB_plataforma"
+        Me.CB_plataforma.Size = New System.Drawing.Size(206, 23)
+        Me.CB_plataforma.TabIndex = 31
+        '
         'BTN_asignar
         '
         Me.BTN_asignar.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_asignar.Location = New System.Drawing.Point(434, 317)
+        Me.BTN_asignar.Location = New System.Drawing.Point(837, 317)
         Me.BTN_asignar.Name = "BTN_asignar"
         Me.BTN_asignar.Size = New System.Drawing.Size(154, 27)
         Me.BTN_asignar.TabIndex = 29
@@ -414,6 +466,7 @@ Partial Class AsignarEquipo
         Me.Panel3.PerformLayout()
         CType(Me.DGV_asignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -453,4 +506,8 @@ Partial Class AsignarEquipo
     Friend WithEvents IMEIAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents CB_adquisicion As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents CB_plataforma As ComboBox
 End Class

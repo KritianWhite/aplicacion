@@ -93,6 +93,7 @@ Partial Class AsignarSIM
         Me.DGV_equipos.Location = New System.Drawing.Point(19, 41)
         Me.DGV_equipos.Name = "DGV_equipos"
         Me.DGV_equipos.ReadOnly = True
+        Me.DGV_equipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_equipos.Size = New System.Drawing.Size(440, 202)
         Me.DGV_equipos.TabIndex = 33
         '
@@ -117,12 +118,12 @@ Partial Class AsignarSIM
         'LB_equipoSeleccionado
         '
         Me.LB_equipoSeleccionado.AutoSize = True
-        Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_equipoSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_equipoSeleccionado.Location = New System.Drawing.Point(160, 253)
         Me.LB_equipoSeleccionado.Name = "LB_equipoSeleccionado"
-        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(60, 15)
+        Me.LB_equipoSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_equipoSeleccionado.TabIndex = 32
-        Me.LB_equipoSeleccionado.Text = "Seleccion"
+        Me.LB_equipoSeleccionado.Text = "No seleccionado"
         '
         'BTN_seleccionarEquipo
         '
@@ -179,12 +180,12 @@ Partial Class AsignarSIM
         'LB_simSeleccionado
         '
         Me.LB_simSeleccionado.AutoSize = True
-        Me.LB_simSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_simSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_simSeleccionado.Location = New System.Drawing.Point(151, 253)
         Me.LB_simSeleccionado.Name = "LB_simSeleccionado"
-        Me.LB_simSeleccionado.Size = New System.Drawing.Size(60, 15)
+        Me.LB_simSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_simSeleccionado.TabIndex = 30
-        Me.LB_simSeleccionado.Text = "Seleccion"
+        Me.LB_simSeleccionado.Text = "No seleccionado"
         '
         'Label4
         '
@@ -226,6 +227,7 @@ Partial Class AsignarSIM
         Me.DGV_sim.Location = New System.Drawing.Point(19, 41)
         Me.DGV_sim.Name = "DGV_sim"
         Me.DGV_sim.ReadOnly = True
+        Me.DGV_sim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_sim.Size = New System.Drawing.Size(440, 202)
         Me.DGV_sim.TabIndex = 30
         '
@@ -309,6 +311,7 @@ Partial Class AsignarSIM
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
+        Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
         '
