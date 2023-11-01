@@ -50,6 +50,9 @@ Public Class Controlador
         End Try
     End Function
 
+
+
+
     ' Clausulas para poder agregar datos a las tablas
     Function AgregarCliente(ByVal nombre As String, ByVal telefono As String, ByVal correo As String) As Boolean
         Try
@@ -75,7 +78,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function AgregarActivo(ByVal placa As String, ByVal chasis As String, ByVal tipo As String, ByVal marca As String,
                            ByVal modelo As String, ByVal color As String, ByVal anio As String) As Boolean
         Try
@@ -107,7 +109,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function AgregarEquipo_(ByVal imei As String, ByVal modelo As String) As Boolean
         Try
             conn.conexion()
@@ -132,7 +133,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function AgregarSim(ByVal icc As String, ByVal numero As String, ByVal compania As String, ByVal propietario As String,
                            ByVal plan_datos As String, ByVal fecha_vencimiento As String) As Boolean
         Try
@@ -164,7 +164,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function AgregarUsuario(ByVal nombre As String, ByVal rol As String, ByVal contrasenia As String) As Boolean
         Try
             conn.conexion()
@@ -189,6 +188,9 @@ Public Class Controlador
             Return False
         End Try
     End Function
+
+
+
 
     ' Clausula para editar datos en las tablas
     Function Editarcliente(ByVal nombre As String, ByVal telefono As String, ByVal correo As String) As Boolean
@@ -217,7 +219,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function EditarActivo(ByVal placa As String, ByVal chasis As String, ByVal tipo As String, ByVal marca As String,
                           ByVal modelo As String, ByVal color As String, ByVal anio As String) As Boolean
         Try
@@ -248,7 +249,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function EditarSim(ByVal icc As String, ByVal numero As String, ByVal propietario As String, ByVal vence As String, ByVal plan As String, ByVal compania As String) As Boolean
         Try
             conn.conexion()
@@ -304,6 +304,8 @@ Public Class Controlador
     End Function
 
 
+
+
     ' Clausula para poder eliminar datos de las tablas
     Function EliminarCliente(ByVal nombre As String) As Boolean
         Try
@@ -325,7 +327,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function EliminarActivo(ByVal placa As String) As Boolean
         Try
             conn.conexion()
@@ -346,10 +347,27 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function DarBajaEquipo(ByVal imei As String) As Boolean
         ' Codigo para baja de equipos aqui
-
+        Try
+            conn.conexion()
+            Dim comando As New MySqlCommand("CALL darBajaEquipo(@p_imei)", conn.connection)
+            comando.Parameters.AddWithValue("@p_imei", imei)
+            ' Verificamos que se haya ejecutado el procedimiento
+            If comando.ExecuteNonQuery() > 0 Then
+                conn.desconexion()
+                CargarTablaEquipos()
+                Return True
+            Else
+                MessageBox.Show("Error al intentar dar de baja al equipo " & imei, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conn.desconexion()
+                Return False
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
     End Function
     Function EliminarSim(ByVal icc As String) As Boolean
         Try
@@ -371,7 +389,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function EliminarUsuario(ByVal usuario As String) As Boolean
         Try
             conn.conexion()
@@ -395,6 +412,29 @@ Public Class Controlador
 
 
 
+    ' Metodo para migrar sim
+    Function MigrarSim(ByVal icc_actual As String, ByVal icc_nueva As String) As Boolean
+        Try
+            conn.conexion()
+            Dim comando As New MySqlCommand("CALL migrarSIM(@p_icc_actual, @p_icc_nueva)", conn.connection)
+            comando.Parameters.AddWithValue("@p_icc_actual", icc_actual)
+            comando.Parameters.AddWithValue("@p_icc_nueva", icc_nueva)
+            ' Verificamos que se haya ejecutado el procedimiento
+            If comando.ExecuteNonQuery() > 0 Then
+                conn.desconexion()
+                CargarTablaSIM()
+                Return True
+            Else
+                MessageBox.Show("Error al intentar migrar la sim " & icc_actual, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conn.desconexion()
+                Return False
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
 
 
     ' Metodos para cargar las tablas 
@@ -419,7 +459,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function CargarTablaActivos() As Boolean
         Try
             conn.conexion()
@@ -444,7 +483,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function CargarTablaEquipos() As Boolean
         Try
             conn.conexion()
@@ -468,7 +506,25 @@ Public Class Controlador
             Return False
         End Try
     End Function
+    Function CargarTablaBajaEquipos() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT IMEI, FECHA_BAJA FROM BAJAS_EQUIPOS", conn.connection)
+            Dim table As New DataTable()
 
+            adapter.Fill(table)
+            BajaEquipos.DGV_bajaEquipos.Columns("IMEI").DataPropertyName = "IMEI"
+            BajaEquipos.DGV_bajaEquipos.Columns("fecha").DataPropertyName = "FECHA_BAJA"
+            BajaEquipos.DGV_bajaEquipos.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
     Function CargarTablaSIM() As Boolean
         Try
             conn.conexion()
@@ -494,7 +550,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function CargarTablaUsuarios() As Boolean
         Try
             conn.conexion()
@@ -514,6 +569,28 @@ Public Class Controlador
             Return False
         End Try
     End Function
+    Function CargarTablaMigrarSim() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT ICC_ACTUAL, ICC_NUEVA, FECHA_MIGRACION FROM MIGRACION_SIM", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            MigracionSIM.DGV_migracionesSim.Columns("ICC_anterior").DataPropertyName = "ICC_ACTUAL"
+            MigracionSIM.DGV_migracionesSim.Columns("ICC_nueva").DataPropertyName = "ICC_NUEVA"
+            MigracionSIM.DGV_migracionesSim.Columns("fecha").DataPropertyName = "FECHA_MIGRACION"
+            MigracionSIM.DGV_migracionesSim.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+
 
     ' Querys para cargar combobox's
     Function CargarModeloEquipo() As Boolean
@@ -534,7 +611,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function CargarPlataformaEquipo() As Boolean
         Try
             conn.conexion()
@@ -553,6 +629,9 @@ Public Class Controlador
             Return False
         End Try
     End Function
+
+
+
 
     ' Querys para llenar tablas de asignacion de sim (equipo, sim y asignaciones)
     Function CargarTablaSim_Sim() As Boolean
@@ -601,8 +680,10 @@ Public Class Controlador
         End Try
     End Function
 
-    ' Querys para llenar tablas de asignacion de equipo (clientes, activos y asignaciones)
 
+
+
+    ' Querys para llenar tablas de asignacion de equipo (clientes, activos y asignaciones)
     Function CargarTablaActivos_Equipo() As Boolean
         Try
             conn.conexion()
@@ -648,6 +729,9 @@ Public Class Controlador
         End Try
     End Function
 
+
+
+
     ' Querys para llenar tablas de asignacion de activos (clientes, activos y asignaciones)
     Function CargarTablaClientes_Activo() As Boolean
         Try
@@ -668,7 +752,6 @@ Public Class Controlador
             Return False
         End Try
     End Function
-
     Function CargarTablaActivos_Activo() As Boolean
         Try
             conn.conexion()
@@ -690,7 +773,5 @@ Public Class Controlador
         End Try
     End Function
 
-    Function CargarTablaAsignaciones_Activo() As Boolean
 
-    End Function
 End Class

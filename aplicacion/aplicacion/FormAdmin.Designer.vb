@@ -72,7 +72,7 @@ Partial Class FormAdmin
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PanelSIM = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BTN_migrarSim = New System.Windows.Forms.Button()
         Me.BTN_eliminarSim = New System.Windows.Forms.Button()
         Me.BTN_editarSIM = New System.Windows.Forms.Button()
         Me.BTN_agregarSIM = New System.Windows.Forms.Button()
@@ -557,7 +557,7 @@ Partial Class FormAdmin
         '
         Me.Panel4.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.BTN_migrarSim)
         Me.Panel4.Controls.Add(Me.BTN_eliminarSim)
         Me.Panel4.Controls.Add(Me.BTN_editarSIM)
         Me.Panel4.Controls.Add(Me.BTN_agregarSIM)
@@ -568,14 +568,14 @@ Partial Class FormAdmin
         Me.Panel4.Size = New System.Drawing.Size(965, 419)
         Me.Panel4.TabIndex = 0
         '
-        'Button1
+        'BTN_migrarSim
         '
-        Me.Button1.Location = New System.Drawing.Point(801, 361)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(109, 27)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Migrar SIM"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BTN_migrarSim.Location = New System.Drawing.Point(801, 361)
+        Me.BTN_migrarSim.Name = "BTN_migrarSim"
+        Me.BTN_migrarSim.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_migrarSim.TabIndex = 14
+        Me.BTN_migrarSim.Text = "Migrar SIM"
+        Me.BTN_migrarSim.UseVisualStyleBackColor = True
         '
         'BTN_eliminarSim
         '
@@ -785,11 +785,11 @@ Partial Class FormAdmin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
-        Me.Controls.Add(Me.PanelCliente)
-        Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelEquipos)
         Me.Controls.Add(Me.PanelActivos)
+        Me.Controls.Add(Me.PanelCliente)
+        Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormAdmin"
@@ -880,7 +880,7 @@ Partial Class FormAdmin
     Friend WithEvents Modelo_E As DataGridViewTextBoxColumn
     Friend WithEvents Marca_E As DataGridViewTextBoxColumn
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BTN_migrarSim As Button
     Friend WithEvents BTN_eliminarSim As Button
     Friend WithEvents BTN_editarSIM As Button
     Friend WithEvents BTN_agregarSIM As Button

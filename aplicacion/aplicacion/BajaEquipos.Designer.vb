@@ -26,10 +26,9 @@ Partial Class BajaEquipos
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_bajaEquipos = New System.Windows.Forms.DataGridView()
-        Me.IMEI_bajaEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo_bajaEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca_bajaEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
+        Me.IMEI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_bajaEquipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -69,35 +68,18 @@ Partial Class BajaEquipos
         '
         Me.DGV_bajaEquipos.AllowUserToAddRows = False
         Me.DGV_bajaEquipos.AllowUserToDeleteRows = False
+        Me.DGV_bajaEquipos.AllowUserToResizeColumns = False
         Me.DGV_bajaEquipos.AllowUserToResizeRows = False
         Me.DGV_bajaEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_bajaEquipos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_bajaEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_bajaEquipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI_bajaEquipo, Me.Modelo_bajaEquipo, Me.Marca_bajaEquipo})
+        Me.DGV_bajaEquipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI, Me.fecha})
         Me.DGV_bajaEquipos.Location = New System.Drawing.Point(35, 52)
         Me.DGV_bajaEquipos.Name = "DGV_bajaEquipos"
         Me.DGV_bajaEquipos.ReadOnly = True
         Me.DGV_bajaEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_bajaEquipos.Size = New System.Drawing.Size(729, 275)
         Me.DGV_bajaEquipos.TabIndex = 40
-        '
-        'IMEI_bajaEquipo
-        '
-        Me.IMEI_bajaEquipo.HeaderText = "IMEI"
-        Me.IMEI_bajaEquipo.Name = "IMEI_bajaEquipo"
-        Me.IMEI_bajaEquipo.ReadOnly = True
-        '
-        'Modelo_bajaEquipo
-        '
-        Me.Modelo_bajaEquipo.HeaderText = "Modelo"
-        Me.Modelo_bajaEquipo.Name = "Modelo_bajaEquipo"
-        Me.Modelo_bajaEquipo.ReadOnly = True
-        '
-        'Marca_bajaEquipo
-        '
-        Me.Marca_bajaEquipo.HeaderText = "Marca"
-        Me.Marca_bajaEquipo.Name = "Marca_bajaEquipo"
-        Me.Marca_bajaEquipo.ReadOnly = True
         '
         'TB_buscarBajaEquipo
         '
@@ -106,6 +88,18 @@ Partial Class BajaEquipos
         Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
         Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 22)
         Me.TB_buscarBajaEquipo.TabIndex = 39
+        '
+        'IMEI
+        '
+        Me.IMEI.HeaderText = "IMEI"
+        Me.IMEI.Name = "IMEI"
+        Me.IMEI.ReadOnly = True
+        '
+        'fecha
+        '
+        Me.fecha.HeaderText = "Fecha"
+        Me.fecha.Name = "fecha"
+        Me.fecha.ReadOnly = True
         '
         'BajaEquipos
         '
@@ -132,8 +126,7 @@ Partial Class BajaEquipos
     Friend WithEvents BTN_regresar As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DGV_bajaEquipos As DataGridView
-    Friend WithEvents IMEI_bajaEquipo As DataGridViewTextBoxColumn
-    Friend WithEvents Modelo_bajaEquipo As DataGridViewTextBoxColumn
-    Friend WithEvents Marca_bajaEquipo As DataGridViewTextBoxColumn
     Friend WithEvents TB_buscarBajaEquipo As TextBox
+    Friend WithEvents IMEI As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
 End Class

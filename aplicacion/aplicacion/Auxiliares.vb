@@ -1,6 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class Auxiliares
+    Dim controlador As New Controlador()
+
     ' Función para validar numero telefono correcto (12345678)
     Public Function ValidarTelefono(numero As String) As Boolean
 
@@ -21,13 +23,14 @@ Public Class Auxiliares
         icc_nueva = InputBox("Ingrese ICC nueva:", "Migrar SIM")
 
         If icc_nueva <> "" Then
-            Dim resultado = MessageBox.Show("¿Desea migrar la SIM con el siguiente ICC " & icc_nueva & "?" & icc_actual, "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+            Dim resultado = MessageBox.Show("¿Desea migrar la SIM con el siguiente ICC " & icc_nueva & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
             If resultado = DialogResult.OK Then
                 ' Codigo para migrar sim
-
+                If controlador.MigrarSim(icc_actual, icc_nueva) Then
+                    MessageBox.Show("Migracion de sim con exito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+                'MessageBox.Show("No se ingresó ningún ICC.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
             End If
-        Else
-            MessageBox.Show("No se ingresó ningún ICC.", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
         End If
 
     End Function

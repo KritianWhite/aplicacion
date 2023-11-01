@@ -1,4 +1,5 @@
 ﻿Public Class MigracionSIM
+    Dim controlador As New Controlador()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
     End Sub
@@ -6,6 +7,9 @@
     Private Sub MigracionSIM_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DGV_migracionesSim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5")
         DGV_migracionesSim.EnableHeadersVisualStyles = False
+        If controlador.CargarTablaMigrarSim() = False Then
+            MessageBox.Show("Error al cargar la tabla de migraciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
     Private Sub TB_buscarSim_TextChanged(sender As Object, e As EventArgs)

@@ -1,4 +1,5 @@
 ﻿Public Class BajaEquipos
+    Dim controlador As New Controlador()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
     End Sub
@@ -6,9 +7,12 @@
     Private Sub BajaEquipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DGV_bajaEquipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5")
         DGV_bajaEquipos.EnableHeadersVisualStyles = False
+        If controlador.CargarTablaBajaEquipos() = False Then
+            MessageBox.Show("No se pudo cargar la tabla baja de equipos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 
-    Private Sub TB_buscarBajaEquipo_TextChanged(sender As Object, e As EventArgs) 
+    Private Sub TB_buscarBajaEquipo_TextChanged(sender As Object, e As EventArgs)
         Dim searchText As String = TB_buscarBajaEquipo.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
         ' Iterar a través de las filas del DataGridView

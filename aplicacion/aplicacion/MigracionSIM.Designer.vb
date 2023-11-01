@@ -26,12 +26,10 @@ Partial Class MigracionSIM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_migracionesSim = New System.Windows.Forms.DataGridView()
-        Me.ICC_anterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ICC_actual = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Propietario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Compania = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarSim = New System.Windows.Forms.TextBox()
+        Me.ICC_anterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ICC_nueva = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_migracionesSim, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,47 +69,18 @@ Partial Class MigracionSIM
         '
         Me.DGV_migracionesSim.AllowUserToAddRows = False
         Me.DGV_migracionesSim.AllowUserToDeleteRows = False
+        Me.DGV_migracionesSim.AllowUserToResizeColumns = False
         Me.DGV_migracionesSim.AllowUserToResizeRows = False
         Me.DGV_migracionesSim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_migracionesSim.BackgroundColor = System.Drawing.Color.White
         Me.DGV_migracionesSim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_migracionesSim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICC_anterior, Me.ICC_actual, Me.Telefono, Me.Propietario, Me.Compania})
+        Me.DGV_migracionesSim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICC_anterior, Me.ICC_nueva, Me.fecha})
         Me.DGV_migracionesSim.Location = New System.Drawing.Point(35, 52)
         Me.DGV_migracionesSim.Name = "DGV_migracionesSim"
         Me.DGV_migracionesSim.ReadOnly = True
         Me.DGV_migracionesSim.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_migracionesSim.Size = New System.Drawing.Size(729, 275)
         Me.DGV_migracionesSim.TabIndex = 45
-        '
-        'ICC_anterior
-        '
-        Me.ICC_anterior.HeaderText = "ICC anterior"
-        Me.ICC_anterior.Name = "ICC_anterior"
-        Me.ICC_anterior.ReadOnly = True
-        '
-        'ICC_actual
-        '
-        Me.ICC_actual.HeaderText = "ICC actual"
-        Me.ICC_actual.Name = "ICC_actual"
-        Me.ICC_actual.ReadOnly = True
-        '
-        'Telefono
-        '
-        Me.Telefono.HeaderText = "Telefono"
-        Me.Telefono.Name = "Telefono"
-        Me.Telefono.ReadOnly = True
-        '
-        'Propietario
-        '
-        Me.Propietario.HeaderText = "Propietario"
-        Me.Propietario.Name = "Propietario"
-        Me.Propietario.ReadOnly = True
-        '
-        'Compania
-        '
-        Me.Compania.HeaderText = "Compañia"
-        Me.Compania.Name = "Compania"
-        Me.Compania.ReadOnly = True
         '
         'TB_buscarSim
         '
@@ -120,6 +89,24 @@ Partial Class MigracionSIM
         Me.TB_buscarSim.Name = "TB_buscarSim"
         Me.TB_buscarSim.Size = New System.Drawing.Size(211, 22)
         Me.TB_buscarSim.TabIndex = 44
+        '
+        'ICC_anterior
+        '
+        Me.ICC_anterior.HeaderText = "ICC anterior"
+        Me.ICC_anterior.Name = "ICC_anterior"
+        Me.ICC_anterior.ReadOnly = True
+        '
+        'ICC_nueva
+        '
+        Me.ICC_nueva.HeaderText = "ICC nueva"
+        Me.ICC_nueva.Name = "ICC_nueva"
+        Me.ICC_nueva.ReadOnly = True
+        '
+        'fecha
+        '
+        Me.fecha.HeaderText = "Fecha de migración"
+        Me.fecha.Name = "fecha"
+        Me.fecha.ReadOnly = True
         '
         'MigracionSIM
         '
@@ -146,10 +133,8 @@ Partial Class MigracionSIM
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DGV_migracionesSim As DataGridView
-    Friend WithEvents ICC_anterior As DataGridViewTextBoxColumn
-    Friend WithEvents ICC_actual As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono As DataGridViewTextBoxColumn
-    Friend WithEvents Propietario As DataGridViewTextBoxColumn
-    Friend WithEvents Compania As DataGridViewTextBoxColumn
     Friend WithEvents TB_buscarSim As TextBox
+    Friend WithEvents ICC_anterior As DataGridViewTextBoxColumn
+    Friend WithEvents ICC_nueva As DataGridViewTextBoxColumn
+    Friend WithEvents fecha As DataGridViewTextBoxColumn
 End Class

@@ -543,10 +543,10 @@
         Dim searchText As String = TB_buscarEquipos.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
         ' Obtener la fila seleccionada (si hay alguna)
-        Dim selectedRow As DataGridViewRow = DGV_Activos.CurrentRow
+        Dim selectedRow As DataGridViewRow = DGV_Equipos.CurrentRow
 
         ' Iterar a través de las filas del DataGridView
-        For Each row As DataGridViewRow In DGV_Activos.Rows
+        For Each row As DataGridViewRow In DGV_Equipos.Rows
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (IMEI)
@@ -607,5 +607,16 @@
                 End If
             End If
         Next
+    End Sub
+
+    Private Sub BTN_bajaEquipos_Click(sender As Object, e As EventArgs) Handles BTN_bajaEquipos.Click
+        If controlador.DarBajaEquipo(valorSeleccionado) Then
+            MessageBox.Show("Se dió de baja al equipo " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TB_buscarEquipos.Clear()
+        End If
+    End Sub
+
+    Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
+        aux.MigrarSim(valorSeleccionado)
     End Sub
 End Class
