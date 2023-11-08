@@ -3,6 +3,7 @@
     Dim valorSeleccionado_Equipo As String = ""
     Dim valorSeleccionado_Sim As String = ""
     Dim valorSeleccionado_Asignaciones As String = ""
+    Dim valorSeleccionado2_Asignaciones As String = ""
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
         FormAdmin.Show()
@@ -23,6 +24,9 @@
         End If
         If Not controlador.CargarTablaEquipo_Sim() Then
             MessageBox.Show("Error al cargar tabla de equipos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        If Not controlador.CargarTablaAsignaciones_Sim() Then
+            MessageBox.Show("Error al cargar tabla de asignaciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -118,6 +122,14 @@
     Private Sub BTN_asignar_Click(sender As Object, e As EventArgs) Handles BTN_asignar.Click
         If LB_equipoSeleccionado.Text <> "No seleccionado" And LB_simSeleccionado.Text <> "No seleccionado" Then
             ' Codigo aqui para realizar querys (procedimiento almacenado)
+            If controlador.asignacionSIM(LB_equipoSeleccionado.Text, LB_simSeleccionado.Text) Then
+                MessageBox.Show("Asignación del equipo " & LB_equipoSeleccionado.Text & " con la sim " & LB_simSeleccionado.Text &
+                                " exitosa.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LB_equipoSeleccionado.Text = "No seleccionado"
+                LB_simSeleccionado.Text = "No seleccionado"
+                TB_buscarEquipos.Clear()
+                TB_buscarSim.Clear()
+            End If
         Else
             MessageBox.Show("Equipo/SIM no seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -126,6 +138,11 @@
     Private Sub BTN_desasignarEquipo_Click(sender As Object, e As EventArgs) Handles BTN_desasignarEquipo.Click
         If valorSeleccionado_Asignaciones <> "" Then
             'codigo aqui para realizar query (procedimiento almacenado)
+            If controlador.desasignacionSIM(valorSeleccionado_Asignaciones, valorSeleccionado2_Asignaciones) Then
+                MessageBox.Show("Se ha desasignado la sim " & valorSeleccionado2_Asignaciones &
+                                " del equipo " & valorSeleccionado_Asignaciones, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                TB_buscarAsignaciones.Clear()
+            End If
         Else
             MessageBox.Show("No ha seleccionado ninguna asignación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -142,5 +159,6 @@
 
     Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
         valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
+        valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1).Value
     End Sub
 End Class

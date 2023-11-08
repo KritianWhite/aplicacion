@@ -2,3 +2,7 @@
 /database/ControlInventario/*
 /aplicacion/packages/*
 *.vs*
+
+/database/hola.sql
+/database/datos_prueba.sql
+

@@ -3,6 +3,7 @@
     Dim valorSeleccionado_Activo As String = ""
     Dim valorSeleccionado_Equipo As String = ""
     Dim valorSeleccionado_Asignaciones As String = ""
+    Dim valorSeleccionado2_Asignaciones As String = ""
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
         FormAdmin.Show()
@@ -27,6 +28,9 @@
         ' Carga de combobox
         If Not controlador.CargarPlataformaEquipo() Then
             MessageBox.Show("Error al cargar las plataformas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        If Not controlador.CargarTablaAsignaciones_Equipo() Then
+            MessageBox.Show("Error al cargar la tabla de asignaciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -122,7 +126,14 @@
             If CB_plataforma.Text <> "" Then
                 If CB_adquisicion.Text <> "" Then
                     'Codigo aqui para query (procedimiento almacenado)
-                    MessageBox.Show("Hola", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    If controlador.asignacionEquipo(LB_activoSeleccionado.Text, LB_equipoSeleccionado.Text, CB_plataforma.Text, CB_adquisicion.Text) Then
+                        MessageBox.Show("Se ha asignado el activo " & LB_activoSeleccionado.Text &
+                                        " con el equipo " & LB_equipoSeleccionado.Text, "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        LB_activoSeleccionado.Text = "No seleccionado"
+                        LB_equipoSeleccionado.Text = "No seleccionado"
+                        TB_buscarActivos.Clear()
+                        TB_buscarEquipos.Clear()
+                    End If
                 Else
                     MessageBox.Show("Seleccione el tipo de adquisición para el equipo.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End If
@@ -136,6 +147,9 @@
     Private Sub BTN_desasignarEquipo_Click(sender As Object, e As EventArgs) Handles BTN_desasignarEquipo.Click
         If valorSeleccionado_Asignaciones <> "" Then
             'Codigo aqui para desasignar (procedimiento almacenado)
+            If controlador.desasignacionEquipo(valorSeleccionado_Asignaciones, valorSeleccionado2_Asignaciones) Then
+                MessageBox.Show("Se ha desasignado correctamente el equipo", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         Else
             MessageBox.Show("No ha seleccionado ninguna asignación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -152,5 +166,6 @@
 
     Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
         valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
+        valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1).Value
     End Sub
 End Class

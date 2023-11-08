@@ -619,4 +619,8 @@
     Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
         aux.MigrarSim(valorSeleccionado)
     End Sub
+
+    Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
+        InformeActivos.Show()
+    End Sub
 End Class

@@ -47,17 +47,18 @@ Partial Class AsignarSIM
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarEquipo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ICCAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PropietarioAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CompaniaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ICCAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PropietarioAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CompaniaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -307,43 +308,13 @@ Partial Class AsignarSIM
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEIAsignacion, Me.ICCAsignacion, Me.NumeroAsignacion, Me.PropietarioAsignacion, Me.CompaniaAsignacion})
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEIAsignacion, Me.ICCAsignacion, Me.NumeroAsignacion, Me.PropietarioAsignacion, Me.CompaniaAsignacion, Me.FechaAsignacion})
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
         Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
-        '
-        'IMEIAsignacion
-        '
-        Me.IMEIAsignacion.HeaderText = "IMEI (Equipo)"
-        Me.IMEIAsignacion.Name = "IMEIAsignacion"
-        Me.IMEIAsignacion.ReadOnly = True
-        '
-        'ICCAsignacion
-        '
-        Me.ICCAsignacion.HeaderText = "ICC"
-        Me.ICCAsignacion.Name = "ICCAsignacion"
-        Me.ICCAsignacion.ReadOnly = True
-        '
-        'NumeroAsignacion
-        '
-        Me.NumeroAsignacion.HeaderText = "Numero"
-        Me.NumeroAsignacion.Name = "NumeroAsignacion"
-        Me.NumeroAsignacion.ReadOnly = True
-        '
-        'PropietarioAsignacion
-        '
-        Me.PropietarioAsignacion.HeaderText = "Propietario"
-        Me.PropietarioAsignacion.Name = "PropietarioAsignacion"
-        Me.PropietarioAsignacion.ReadOnly = True
-        '
-        'CompaniaAsignacion
-        '
-        Me.CompaniaAsignacion.HeaderText = "Compañia"
-        Me.CompaniaAsignacion.Name = "CompaniaAsignacion"
-        Me.CompaniaAsignacion.ReadOnly = True
         '
         'TB_buscarAsignaciones
         '
@@ -401,6 +372,42 @@ Partial Class AsignarSIM
         Me.Label1.Size = New System.Drawing.Size(401, 46)
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "ASIGNACION DE SIM"
+        '
+        'IMEIAsignacion
+        '
+        Me.IMEIAsignacion.HeaderText = "IMEI (Equipo)"
+        Me.IMEIAsignacion.Name = "IMEIAsignacion"
+        Me.IMEIAsignacion.ReadOnly = True
+        '
+        'ICCAsignacion
+        '
+        Me.ICCAsignacion.HeaderText = "ICC"
+        Me.ICCAsignacion.Name = "ICCAsignacion"
+        Me.ICCAsignacion.ReadOnly = True
+        '
+        'NumeroAsignacion
+        '
+        Me.NumeroAsignacion.HeaderText = "Numero"
+        Me.NumeroAsignacion.Name = "NumeroAsignacion"
+        Me.NumeroAsignacion.ReadOnly = True
+        '
+        'PropietarioAsignacion
+        '
+        Me.PropietarioAsignacion.HeaderText = "Propietario"
+        Me.PropietarioAsignacion.Name = "PropietarioAsignacion"
+        Me.PropietarioAsignacion.ReadOnly = True
+        '
+        'CompaniaAsignacion
+        '
+        Me.CompaniaAsignacion.HeaderText = "Compañia"
+        Me.CompaniaAsignacion.Name = "CompaniaAsignacion"
+        Me.CompaniaAsignacion.ReadOnly = True
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.HeaderText = "Fecha"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
         '
         'AsignarSIM
         '
@@ -467,4 +474,5 @@ Partial Class AsignarSIM
     Friend WithEvents NumeroAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents PropietarioAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents CompaniaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
 End Class

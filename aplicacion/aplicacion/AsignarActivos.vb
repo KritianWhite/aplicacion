@@ -5,6 +5,7 @@ Public Class AsignarActivos
     Dim valorSeleccionado_Cliente As String = ""
     Dim valorSeleccionado_Activo As String = ""
     Dim valorSeleccionado_Asignaciones As String = ""
+    Dim valorSeleccionado2_Asignaciones As String = ""
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
         FormAdmin.Show()
@@ -26,6 +27,9 @@ Public Class AsignarActivos
         End If
         If Not controlador.CargarTablaActivos_Activo() Then
             MessageBox.Show("Error al cargar la tabla de activos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+        If Not controlador.CargarTablaAsignaciones_Activo() Then
+            MessageBox.Show("Error al cargar la tabla de asignaciones.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
     End Sub
@@ -122,14 +126,26 @@ Public Class AsignarActivos
     Private Sub BTN_asignar_Click(sender As Object, e As EventArgs) Handles BTN_asignar.Click
         If LB_clienteSeleccionado.Text <> "No seleccionado" And LB_activoSeleccionado.Text <> "No seleccionado" Then
             ' codigo aqui para realizar query (procedimiento almacenado)
+            If controlador.asignacionActivo(LB_clienteSeleccionado.Text, LB_activoSeleccionado.Text) Then
+                MessageBox.Show("Se asignó al cliente " & LB_clienteSeleccionado.Text &
+                                " el activo " & LB_activoSeleccionado.Text, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                LB_activoSeleccionado.Text = "No seleccionado"
+                LB_clienteSeleccionado.Text = "No seleccionado"
+                TB_buscarActivo.Clear()
+                TB_buscarCliente.Clear()
+            End If
         Else
             MessageBox.Show("Cliente/Activo no seleccionado.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        End If
+            End If
     End Sub
 
     Private Sub BTN_desasignarActivo_Click(sender As Object, e As EventArgs) Handles BTN_desasignarActivo.Click
-        If valorSeleccionado_Asignaciones <> "" Then
+        If valorSeleccionado_Asignaciones <> "" And valorSeleccionado2_Asignaciones <> "" Then
             ' Codigo para realizar desasignación (procedimiento almacenado)
+            If controlador.desasignacionActivo(valorSeleccionado_Asignaciones, valorSeleccionado2_Asignaciones) Then
+                MessageBox.Show("Se desasignó correctamente al cliente " & valorSeleccionado_Asignaciones &
+                                " del activo " & valorSeleccionado2_Asignaciones, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         Else
             MessageBox.Show("No ha seleccionado ninguna asignación.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
@@ -146,5 +162,6 @@ Public Class AsignarActivos
 
     Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
         valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
+        valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1).Value
     End Sub
 End Class

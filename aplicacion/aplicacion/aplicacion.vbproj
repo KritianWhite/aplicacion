@@ -167,12 +167,6 @@
     <Compile Include="AsignarEquipo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AsignarPlataforma.Designer.vb">
-      <DependentUpon>AsignarPlataforma.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AsignarPlataforma.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AsignarSIM.Designer.vb">
       <DependentUpon>AsignarSIM.vb</DependentUpon>
     </Compile>
@@ -192,6 +186,12 @@
       <DependentUpon>FormAdmin.vb</DependentUpon>
     </Compile>
     <Compile Include="FormAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeActivos.Designer.vb">
+      <DependentUpon>InformeActivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InformeActivos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.vb">
@@ -254,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeActivos.resx">
+      <DependentUpon>InformeActivos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

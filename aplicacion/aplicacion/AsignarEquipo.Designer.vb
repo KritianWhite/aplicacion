@@ -27,6 +27,7 @@ Partial Class AsignarEquipo
         Me.imeiEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ModeloEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.numeroEquipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LB_equipoSeleccionado = New System.Windows.Forms.Label()
         Me.BTN_seleccionarEquipo = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -46,10 +47,6 @@ Partial Class AsignarEquipo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarEquipo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -60,6 +57,11 @@ Partial Class AsignarEquipo
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,7 +94,7 @@ Partial Class AsignarEquipo
         Me.DGV_equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_equipos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.imeiEquipo, Me.ModeloEquipo, Me.MarcaEquipo})
+        Me.DGV_equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.imeiEquipo, Me.ModeloEquipo, Me.MarcaEquipo, Me.numeroEquipo})
         Me.DGV_equipos.Location = New System.Drawing.Point(19, 41)
         Me.DGV_equipos.Name = "DGV_equipos"
         Me.DGV_equipos.ReadOnly = True
@@ -117,6 +119,12 @@ Partial Class AsignarEquipo
         Me.MarcaEquipo.HeaderText = "Marca"
         Me.MarcaEquipo.Name = "MarcaEquipo"
         Me.MarcaEquipo.ReadOnly = True
+        '
+        'numeroEquipo
+        '
+        Me.numeroEquipo.HeaderText = "Numero SIM"
+        Me.numeroEquipo.Name = "numeroEquipo"
+        Me.numeroEquipo.ReadOnly = True
         '
         'LB_equipoSeleccionado
         '
@@ -275,7 +283,7 @@ Partial Class AsignarEquipo
         Me.Panel3.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel3.Location = New System.Drawing.Point(35, 442)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1020, 294)
+        Me.Panel3.Size = New System.Drawing.Size(1020, 307)
         Me.Panel3.TabIndex = 28
         '
         'Label5
@@ -306,37 +314,13 @@ Partial Class AsignarEquipo
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion})
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
         Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
-        '
-        'PlacaAsignacion
-        '
-        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
-        Me.PlacaAsignacion.Name = "PlacaAsignacion"
-        Me.PlacaAsignacion.ReadOnly = True
-        '
-        'IMEIAsignacion
-        '
-        Me.IMEIAsignacion.HeaderText = "IMEI"
-        Me.IMEIAsignacion.Name = "IMEIAsignacion"
-        Me.IMEIAsignacion.ReadOnly = True
-        '
-        'ModeloAsignacion
-        '
-        Me.ModeloAsignacion.HeaderText = "Modelo"
-        Me.ModeloAsignacion.Name = "ModeloAsignacion"
-        Me.ModeloAsignacion.ReadOnly = True
-        '
-        'MarcaAsignacion
-        '
-        Me.MarcaAsignacion.HeaderText = "Marca"
-        Me.MarcaAsignacion.Name = "MarcaAsignacion"
-        Me.MarcaAsignacion.ReadOnly = True
         '
         'TB_buscarAsignaciones
         '
@@ -441,6 +425,36 @@ Partial Class AsignarEquipo
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "ASIGNACION DE EQUIPOS"
         '
+        'PlacaAsignacion
+        '
+        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
+        Me.PlacaAsignacion.Name = "PlacaAsignacion"
+        Me.PlacaAsignacion.ReadOnly = True
+        '
+        'IMEIAsignacion
+        '
+        Me.IMEIAsignacion.HeaderText = "IMEI"
+        Me.IMEIAsignacion.Name = "IMEIAsignacion"
+        Me.IMEIAsignacion.ReadOnly = True
+        '
+        'ModeloAsignacion
+        '
+        Me.ModeloAsignacion.HeaderText = "Modelo"
+        Me.ModeloAsignacion.Name = "ModeloAsignacion"
+        Me.ModeloAsignacion.ReadOnly = True
+        '
+        'MarcaAsignacion
+        '
+        Me.MarcaAsignacion.HeaderText = "Marca"
+        Me.MarcaAsignacion.Name = "MarcaAsignacion"
+        Me.MarcaAsignacion.ReadOnly = True
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.HeaderText = "Fecha"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
+        '
         'AsignarEquipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -498,16 +512,18 @@ Partial Class AsignarEquipo
     Friend WithEvents BTN_regresar As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents DGV_equipos As DataGridView
-    Friend WithEvents imeiEquipo As DataGridViewTextBoxColumn
-    Friend WithEvents ModeloEquipo As DataGridViewTextBoxColumn
-    Friend WithEvents MarcaEquipo As DataGridViewTextBoxColumn
     Friend WithEvents Label5 As Label
-    Friend WithEvents PlacaAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents IMEIAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents CB_adquisicion As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents CB_plataforma As ComboBox
+    Friend WithEvents imeiEquipo As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloEquipo As DataGridViewTextBoxColumn
+    Friend WithEvents MarcaEquipo As DataGridViewTextBoxColumn
+    Friend WithEvents numeroEquipo As DataGridViewTextBoxColumn
+    Friend WithEvents PlacaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents IMEIAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
 End Class

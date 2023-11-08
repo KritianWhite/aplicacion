@@ -42,21 +42,23 @@ Partial Class AsignarActivos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TB_buscarActivo = New System.Windows.Forms.TextBox()
         Me.DGV_Activos = New System.Windows.Forms.DataGridView()
-        Me.PlacaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ChasisActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarActivo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.ClienteAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ChasiaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.PlacaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ChasisActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMEIActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PlataformaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ChasisAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DGV_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,14 +113,14 @@ Partial Class AsignarActivos
         Me.Panel5.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel5.Location = New System.Drawing.Point(22, 18)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(475, 283)
+        Me.Panel5.Size = New System.Drawing.Size(441, 283)
         Me.Panel5.TabIndex = 25
         '
         'LB_clienteSeleccionado
         '
         Me.LB_clienteSeleccionado.AutoSize = True
         Me.LB_clienteSeleccionado.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LB_clienteSeleccionado.Location = New System.Drawing.Point(158, 253)
+        Me.LB_clienteSeleccionado.Location = New System.Drawing.Point(147, 253)
         Me.LB_clienteSeleccionado.Name = "LB_clienteSeleccionado"
         Me.LB_clienteSeleccionado.Size = New System.Drawing.Size(104, 15)
         Me.LB_clienteSeleccionado.TabIndex = 30
@@ -137,7 +139,7 @@ Partial Class AsignarActivos
         'BTN_seleccionarCliente
         '
         Me.BTN_seleccionarCliente.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_seleccionarCliente.Location = New System.Drawing.Point(368, 249)
+        Me.BTN_seleccionarCliente.Location = New System.Drawing.Point(328, 250)
         Me.BTN_seleccionarCliente.Name = "BTN_seleccionarCliente"
         Me.BTN_seleccionarCliente.Size = New System.Drawing.Size(91, 23)
         Me.BTN_seleccionarCliente.TabIndex = 29
@@ -157,7 +159,7 @@ Partial Class AsignarActivos
         Me.DGV_Clientes.Name = "DGV_Clientes"
         Me.DGV_Clientes.ReadOnly = True
         Me.DGV_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Clientes.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_Clientes.Size = New System.Drawing.Size(400, 202)
         Me.DGV_Clientes.TabIndex = 27
         '
         'NombreCliente
@@ -181,7 +183,7 @@ Partial Class AsignarActivos
         'TB_buscarCliente
         '
         Me.TB_buscarCliente.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarCliente.Location = New System.Drawing.Point(291, 8)
+        Me.TB_buscarCliente.Location = New System.Drawing.Point(251, 9)
         Me.TB_buscarCliente.Name = "TB_buscarCliente"
         Me.TB_buscarCliente.Size = New System.Drawing.Size(168, 22)
         Me.TB_buscarCliente.TabIndex = 28
@@ -215,9 +217,9 @@ Partial Class AsignarActivos
         Me.Panel6.Controls.Add(Me.TB_buscarActivo)
         Me.Panel6.Controls.Add(Me.DGV_Activos)
         Me.Panel6.Controls.Add(Me.Label3)
-        Me.Panel6.Location = New System.Drawing.Point(516, 18)
+        Me.Panel6.Location = New System.Drawing.Point(482, 18)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(479, 283)
+        Me.Panel6.Size = New System.Drawing.Size(513, 283)
         Me.Panel6.TabIndex = 26
         '
         'LB_activoSeleccionado
@@ -233,7 +235,7 @@ Partial Class AsignarActivos
         'BTN_seleccionarActivo
         '
         Me.BTN_seleccionarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_seleccionarActivo.Location = New System.Drawing.Point(371, 249)
+        Me.BTN_seleccionarActivo.Location = New System.Drawing.Point(404, 249)
         Me.BTN_seleccionarActivo.Name = "BTN_seleccionarActivo"
         Me.BTN_seleccionarActivo.Size = New System.Drawing.Size(91, 23)
         Me.BTN_seleccionarActivo.TabIndex = 31
@@ -253,7 +255,7 @@ Partial Class AsignarActivos
         'TB_buscarActivo
         '
         Me.TB_buscarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarActivo.Location = New System.Drawing.Point(294, 7)
+        Me.TB_buscarActivo.Location = New System.Drawing.Point(327, 6)
         Me.TB_buscarActivo.Name = "TB_buscarActivo"
         Me.TB_buscarActivo.Size = New System.Drawing.Size(168, 22)
         Me.TB_buscarActivo.TabIndex = 30
@@ -266,31 +268,13 @@ Partial Class AsignarActivos
         Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Activos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.MarcaActivo})
-        Me.DGV_Activos.Location = New System.Drawing.Point(22, 41)
+        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaActivo, Me.ChasisActivo, Me.IMEIActivo, Me.ModeloActivo, Me.PlataformaActivo})
+        Me.DGV_Activos.Location = New System.Drawing.Point(21, 41)
         Me.DGV_Activos.Name = "DGV_Activos"
         Me.DGV_Activos.ReadOnly = True
         Me.DGV_Activos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV_Activos.Size = New System.Drawing.Size(440, 202)
+        Me.DGV_Activos.Size = New System.Drawing.Size(474, 202)
         Me.DGV_Activos.TabIndex = 30
-        '
-        'PlacaActivo
-        '
-        Me.PlacaActivo.HeaderText = "Placa"
-        Me.PlacaActivo.Name = "PlacaActivo"
-        Me.PlacaActivo.ReadOnly = True
-        '
-        'ChasisActivo
-        '
-        Me.ChasisActivo.HeaderText = "Chásis"
-        Me.ChasisActivo.Name = "ChasisActivo"
-        Me.ChasisActivo.ReadOnly = True
-        '
-        'MarcaActivo
-        '
-        Me.MarcaActivo.HeaderText = "Marca"
-        Me.MarcaActivo.Name = "MarcaActivo"
-        Me.MarcaActivo.ReadOnly = True
         '
         'Label3
         '
@@ -345,43 +329,13 @@ Partial Class AsignarActivos
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ClienteAsignacion, Me.PlacaAsignacion, Me.ChasiaAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreAsignacion, Me.PlacaAsignacion, Me.ChasisAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
         Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
-        '
-        'ClienteAsignacion
-        '
-        Me.ClienteAsignacion.HeaderText = "Nombre (Cliente)"
-        Me.ClienteAsignacion.Name = "ClienteAsignacion"
-        Me.ClienteAsignacion.ReadOnly = True
-        '
-        'PlacaAsignacion
-        '
-        Me.PlacaAsignacion.HeaderText = "Placa"
-        Me.PlacaAsignacion.Name = "PlacaAsignacion"
-        Me.PlacaAsignacion.ReadOnly = True
-        '
-        'ChasiaAsignacion
-        '
-        Me.ChasiaAsignacion.HeaderText = "Chásis"
-        Me.ChasiaAsignacion.Name = "ChasiaAsignacion"
-        Me.ChasiaAsignacion.ReadOnly = True
-        '
-        'MarcaAsignacion
-        '
-        Me.MarcaAsignacion.HeaderText = "Marca"
-        Me.MarcaAsignacion.Name = "MarcaAsignacion"
-        Me.MarcaAsignacion.ReadOnly = True
-        '
-        'FechaAsignacion
-        '
-        Me.FechaAsignacion.HeaderText = "Fecha de asignación"
-        Me.FechaAsignacion.Name = "FechaAsignacion"
-        Me.FechaAsignacion.ReadOnly = True
         '
         'TB_buscarAsignaciones
         '
@@ -397,6 +351,66 @@ Partial Class AsignarActivos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(960, 227)
         Me.Panel4.TabIndex = 1
+        '
+        'PlacaActivo
+        '
+        Me.PlacaActivo.HeaderText = "Placa"
+        Me.PlacaActivo.Name = "PlacaActivo"
+        Me.PlacaActivo.ReadOnly = True
+        '
+        'ChasisActivo
+        '
+        Me.ChasisActivo.HeaderText = "Chásis"
+        Me.ChasisActivo.Name = "ChasisActivo"
+        Me.ChasisActivo.ReadOnly = True
+        '
+        'IMEIActivo
+        '
+        Me.IMEIActivo.HeaderText = "IMEI (Equipo)"
+        Me.IMEIActivo.Name = "IMEIActivo"
+        Me.IMEIActivo.ReadOnly = True
+        '
+        'ModeloActivo
+        '
+        Me.ModeloActivo.HeaderText = "Modelo (equipo)"
+        Me.ModeloActivo.Name = "ModeloActivo"
+        Me.ModeloActivo.ReadOnly = True
+        '
+        'PlataformaActivo
+        '
+        Me.PlataformaActivo.HeaderText = "Plataforma"
+        Me.PlataformaActivo.Name = "PlataformaActivo"
+        Me.PlataformaActivo.ReadOnly = True
+        '
+        'NombreAsignacion
+        '
+        Me.NombreAsignacion.HeaderText = "Nombre (Cliente)"
+        Me.NombreAsignacion.Name = "NombreAsignacion"
+        Me.NombreAsignacion.ReadOnly = True
+        '
+        'PlacaAsignacion
+        '
+        Me.PlacaAsignacion.HeaderText = "Placa"
+        Me.PlacaAsignacion.Name = "PlacaAsignacion"
+        Me.PlacaAsignacion.ReadOnly = True
+        '
+        'ChasisAsignacion
+        '
+        Me.ChasisAsignacion.HeaderText = "Chásis"
+        Me.ChasisAsignacion.Name = "ChasisAsignacion"
+        Me.ChasisAsignacion.ReadOnly = True
+        '
+        'MarcaAsignacion
+        '
+        Me.MarcaAsignacion.HeaderText = "Marca"
+        Me.MarcaAsignacion.Name = "MarcaAsignacion"
+        Me.MarcaAsignacion.ReadOnly = True
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.HeaderText = "Fecha de asignación"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
         '
         'AsignarActivos
         '
@@ -450,17 +464,19 @@ Partial Class AsignarActivos
     Friend WithEvents NombreCliente As DataGridViewTextBoxColumn
     Friend WithEvents TelefonoCliente As DataGridViewTextBoxColumn
     Friend WithEvents CorreoCliente As DataGridViewTextBoxColumn
-    Friend WithEvents PlacaActivo As DataGridViewTextBoxColumn
-    Friend WithEvents ChasisActivo As DataGridViewTextBoxColumn
-    Friend WithEvents MarcaActivo As DataGridViewTextBoxColumn
     Friend WithEvents LB_clienteSeleccionado As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents LB_activoSeleccionado As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents ClienteAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents PlacaActivo As DataGridViewTextBoxColumn
+    Friend WithEvents ChasisActivo As DataGridViewTextBoxColumn
+    Friend WithEvents IMEIActivo As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloActivo As DataGridViewTextBoxColumn
+    Friend WithEvents PlataformaActivo As DataGridViewTextBoxColumn
+    Friend WithEvents NombreAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents PlacaAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents ChasiaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents ChasisAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
 End Class
