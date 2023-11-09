@@ -14,7 +14,7 @@ BEGIN
     FROM EQUIPO e
     WHERE e.IMEI = p_imei;
 
-    IF estado != 'INHABILITADO' THEN
+    IF estado != 'INHABILITADO' THEN 
         SIGNAL SQLSTATE '45000' 
         SET MESSAGE_TEXT = 'Error: no se puede dar de baja al equipo porque se encuentra asignado.';
     END IF;
@@ -294,5 +294,186 @@ BEGIN
     WHERE PLACA = placa_activo;
   
 END//  
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA AGREGAR NUEVOS MODELOS DE GPS 
+DELIMITER //
+CREATE PROCEDURE agregarModelo(
+    IN p_marca VARCHAR(30),
+    IN p_modelo VARCHAR(30)
+)
+BEGIN
+    DECLARE modelo INT;
+
+    SELECT MODELO INTO modelo FROM MODELO_GPS WHERE MODELO = p_modelo;
+
+    -- Validamos que el modelo no exista
+    IF modelo IS NOT NULL THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el modelo que desea ingresar ya existe.';
+    END IF;
+
+    INSERT INTO MODELO_GPS (ID_MARCA, MODELO)
+    SELECT ID_MARCA, p_modelo
+    FROM MARCA_GPS 
+    WHERE MARCA = p_marca;
+
+END //
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA AGREGAR NUEVAS MARCAS DE GPS
+DELIMITER //
+
+CREATE PROCEDURE agregarMarca(IN p_nombre VARCHAR(30))
+BEGIN
+  
+    DECLARE cantidad INT;
+
+    SELECT COUNT(*) INTO cantidad
+    FROM MARCA_GPS
+    WHERE MARCA = p_nombre;
+
+    IF cantidad > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: la marca que desea ingresar ya existe.';
+    ELSE
+        INSERT INTO MARCA_GPS(MARCA) 
+        VALUES (p_nombre);
+    END IF;
+
+END //
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA ELIMINAR UNA SIM
+DELIMITER //
+
+CREATE PROCEDURE eliminarSIM(IN icc_sim VARCHAR(30))
+BEGIN
+    DECLARE sim_id1 INT;
+    DECLARE sim_id2 INT;
+    DECLARE sim_id3 INT;
+    
+    -- Buscar el ID de la SIM por su ICC
+    SELECT SIM_ID INTO sim_id1 FROM SIM WHERE ICC = icc_sim;
+    SELECT sim_id1;
+    
+    IF sim_id1 IS NOT NULL THEN
+
+
+        
+        -- Verificar si la SIM está asignada
+        SELECT COUNT(*) INTO sim_id2 FROM ASIGNACION_SIM WHERE SIM_SIM_ID = sim_id1;
+        
+        IF sim_id2 > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: la SIM está asignada y no se puede eliminar.';
+        ELSE
+        -- Eliminar la SIM de la tabla migraciones
+        DELETE FROM MIGRACION_SIM 
+        WHERE SIM_SIM_ID = sim_id1;
+        -- Eliminar la SIM de la tabla SIM
+        DELETE FROM SIM WHERE SIM_ID = sim_id1;
+        END IF;
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: la SIM con ICC especificado no existe.';
+    END IF;
+END //
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA ELIMINAR UN EQUIPO
+DELIMITER //
+
+CREATE PROCEDURE eliminarEquipo(IN imei_equipo INT)
+BEGIN
+    DECLARE equipo_id INT;
+    DECLARE equipo_count INT;
+    
+    -- Buscar el ID del equipo por su IMEI
+    SELECT EQUI_ID INTO equipo_id FROM EQUIPO WHERE IMEI = imei_equipo;
+    
+    IF equipo_id IS NOT NULL THEN
+        
+        -- Verificar si el equipo está asignado en la tabla ASIGNACION_SIM
+        SELECT COUNT(*) INTO equipo_count FROM ASIGNACION_SIM WHERE EQUIPO_EQUI_ID = equipo_id;
+        
+        IF equipo_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el equipo está asignado y no se puede eliminar.';
+        ELSE
+        -- Eliminar el equipo
+        DELETE FROM EQUIPO WHERE EQUI_ID = equipo_id;
+        END IF;
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el equipo con IMEI especificado no existe.';
+    END IF;
+END //
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA ELIMINAR UN ACTIVO
+DELIMITER //
+
+CREATE PROCEDURE eliminarActivo(IN placa_activo VARCHAR(10))
+BEGIN
+    DECLARE activo_id INT;
+    DECLARE activo_count INT;
+    
+    -- Buscar el ID del activo por su placa
+    SELECT ACT_ID INTO activo_id FROM ACTIVO WHERE PLACA = placa_activo;
+    
+    IF activo_id IS NOT NULL THEN
+        
+        -- Verificar si el activo está asignado en la tabla ASIGNACION_EQUIPO
+        SELECT COUNT(*) INTO activo_count FROM ASIGNACION_EQUIPO WHERE ACTIVO_ACT_ID = activo_id;
+        
+        IF activo_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el activo está asignado y no se puede eliminar.';
+        ELSE
+        -- Eliminar el activo
+        DELETE FROM ACTIVO WHERE ACT_ID = activo_id;
+        END IF;
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el activo con la placa especificada no existe.';
+    END IF;
+END //
+
+DELIMITER ;
+
+-- PROCEDIMIENTO PARA ELIMINAR UN CLIENTE
+DELIMITER //
+
+CREATE PROCEDURE eliminarCliente(IN nombre_cliente VARCHAR(100))
+BEGIN
+    DECLARE cliente_id INT;
+    DECLARE cliente_count INT;
+    
+    -- Buscar el ID del cliente por su nombre
+    SELECT CLI_ID INTO cliente_id FROM CLIENTE WHERE NOMBRE = nombre_cliente;
+    
+    IF cliente_id IS NOT NULL THEN
+        
+        -- Verificar si el cliente está asignado en la tabla ASIGNACION_ACTIVO
+        SELECT COUNT(*) INTO cliente_count FROM ASIGNACION_ACTIVO WHERE CLIENTE_CLI_ID = cliente_id;
+        
+        IF cliente_count > 0 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el cliente está asignado y no se puede eliminar.';
+        ELSE
+        -- Eliminar el cliente
+        DELETE FROM CLIENTE WHERE CLI_ID = cliente_id;
+        END IF;
+    ELSE
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: el cliente con el nombre especificado no existe.';
+    END IF;
+END //
 
 DELIMITER ;

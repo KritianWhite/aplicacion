@@ -153,15 +153,21 @@ Public Class AsignarActivos
 
     ' Funciones para obtener el valor del datagridview
     Private Sub DGV_Clientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Clientes.CellClick
-        valorSeleccionado_Cliente = DGV_Clientes.CurrentRow.Cells(0).Value
+        If DGV_Clientes.SelectedRows.Count > 0 Then
+            valorSeleccionado_Cliente = DGV_Clientes.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
 
     Private Sub DGV_Activos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellClick
-        valorSeleccionado_Activo = DGV_Activos.CurrentRow.Cells(0).Value
+        If DGV_Activos.SelectedRows.Count > 0 Then
+            valorSeleccionado_Activo = DGV_Activos.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
 
     Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
-        valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
-        valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1).Value
+        If DGV_asignaciones.SelectedRows.Count > 0 Then
+            valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0)?.Value
+            valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1)?.Value
+        End If
     End Sub
 End Class

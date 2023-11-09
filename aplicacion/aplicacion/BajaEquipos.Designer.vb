@@ -26,9 +26,9 @@ Partial Class BajaEquipos
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_bajaEquipos = New System.Windows.Forms.DataGridView()
-        Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
         Me.IMEI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_bajaEquipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -81,14 +81,6 @@ Partial Class BajaEquipos
         Me.DGV_bajaEquipos.Size = New System.Drawing.Size(729, 275)
         Me.DGV_bajaEquipos.TabIndex = 40
         '
-        'TB_buscarBajaEquipo
-        '
-        Me.TB_buscarBajaEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarBajaEquipo.Location = New System.Drawing.Point(553, 14)
-        Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
-        Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 22)
-        Me.TB_buscarBajaEquipo.TabIndex = 39
-        '
         'IMEI
         '
         Me.IMEI.HeaderText = "IMEI"
@@ -100,6 +92,14 @@ Partial Class BajaEquipos
         Me.fecha.HeaderText = "Fecha"
         Me.fecha.Name = "fecha"
         Me.fecha.ReadOnly = True
+        '
+        'TB_buscarBajaEquipo
+        '
+        Me.TB_buscarBajaEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarBajaEquipo.Location = New System.Drawing.Point(553, 14)
+        Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
+        Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 22)
+        Me.TB_buscarBajaEquipo.TabIndex = 39
         '
         'BajaEquipos
         '

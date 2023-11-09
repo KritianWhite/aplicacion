@@ -56,4 +56,10 @@
             End If
         Next
     End Sub
+
+    Private Sub DGV_migracionesSim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_migracionesSim.CellClick
+        If DGV_migracionesSim.SelectedRows.Count > 0 Then
+
+        End If
+    End Sub
 End Class

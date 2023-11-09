@@ -1,4 +1,7 @@
-﻿Imports MySqlConnector
+﻿Imports System.Numerics
+Imports System.Reflection
+Imports System.Text.RegularExpressions
+Imports MySqlConnector
 
 Public Class Controlador
     Dim conn As New Conexion()
@@ -92,7 +95,7 @@ Public Class Controlador
             comando.Parameters.Add("@MODELO", MySqlDbType.VarChar).Value = modelo.ToString()
             comando.Parameters.Add("@COLOR", MySqlDbType.VarChar).Value = color.ToString()
             comando.Parameters.Add("@ANIO", MySqlDbType.VarChar).Value = anio.ToString()
-            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INACTIVO"
+            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INHABILITADO"
             'Verificamos que se haya insertado a la base datos 1 elemento
             If comando.ExecuteNonQuery() = 1 Then
                 conn.desconexion()
@@ -112,11 +115,13 @@ Public Class Controlador
     Function AgregarEquipo_(ByVal imei As String, ByVal modelo As String) As Boolean
         Try
             conn.conexion()
-            Dim comando As New MySqlCommand("INSERT INTO equipo(IMEI, MODELO, ESTADO) VALUES(@IMEI, @MODELO, @ESTADO);", conn.connection)
+            Dim comando As New MySqlCommand("INSERT INTO EQUIPO (IMEI, ID_MODELO, ESTADO)
+                                            SELECT @IMEI, (SELECT ID_MODELO  FROM MODELO_GPS WHERE MODELO = @MODELO),
+                                            @ESTADO", conn.connection)
 
             comando.Parameters.Add("@IMEI", MySqlDbType.VarChar).Value = imei.ToString()
             comando.Parameters.Add("@MODELO", MySqlDbType.VarChar).Value = modelo.ToString()
-            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INACTIVO"
+            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INHABILITADO"
             'Verificamos que se haya insertado a la base datos 1 elemento
             If comando.ExecuteNonQuery() = 1 Then
                 conn.desconexion()
@@ -147,7 +152,7 @@ Public Class Controlador
             comando.Parameters.Add("@PROPIETARIO", MySqlDbType.VarChar).Value = propietario.ToString()
             comando.Parameters.Add("@PLAN_DATOS", MySqlDbType.VarChar).Value = plan_datos.ToString()
             comando.Parameters.Add("@VENCE", MySqlDbType.DateTime).Value = fechaString
-            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INACTIVO"
+            comando.Parameters.Add("@ESTADO", MySqlDbType.VarChar).Value = "INHABILITADO"
             'Verificamos que se haya insertado a la base datos 1 elemento
             If comando.ExecuteNonQuery() = 1 Then
                 conn.desconexion()
@@ -310,17 +315,22 @@ Public Class Controlador
     Function EliminarCliente(ByVal nombre As String) As Boolean
         Try
             conn.conexion()
-            Dim comando As New MySqlCommand("DELETE FROM cliente WHERE NOMBRE='" & nombre & "'", conn.connection)
-            ' Verificamos que se haya eliminado 1 elemento de la tabla
-            If comando.ExecuteNonQuery() = 1 Then
-                conn.desconexion()
-                CargarTablaClientes()
-                Return True
-            Else
-                MessageBox.Show("Error al intentar elimnar al cliente " & nombre, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Try
+                Dim comando As New MySqlCommand("ELIMINARCLIENTE", conn.connection)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@nombre_cliente", nombre)
+
+                If comando.ExecuteNonQuery() > 0 Then
+                    conn.desconexion()
+                    ' Carga de tablas
+                    CargarTablaClientes()
+                    Return True
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conn.desconexion()
                 Return False
-            End If
+            End Try
         Catch ex As Exception
             MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()
@@ -330,17 +340,22 @@ Public Class Controlador
     Function EliminarActivo(ByVal placa As String) As Boolean
         Try
             conn.conexion()
-            Dim comando As New MySqlCommand("DELETE FROM activo WHERE PLACA='" & placa & "'", conn.connection)
-            ' Verificamos que se haya eliminado 1 elemento de la tabla
-            If comando.ExecuteNonQuery() = 1 Then
-                conn.desconexion()
-                CargarTablaActivos()
-                Return True
-            Else
-                MessageBox.Show("Error al intentar elimnar el activo con placa " & placa, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Try
+                Dim comando As New MySqlCommand("ELIMINARACTIVO", conn.connection)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@placa_activo", placa)
+
+                If comando.ExecuteNonQuery() > 0 Then
+                    conn.desconexion()
+                    ' Carga de tablas
+                    CargarTablaActivos()
+                    Return True
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conn.desconexion()
                 Return False
-            End If
+            End Try
         Catch ex As Exception
             MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()
@@ -374,17 +389,22 @@ Public Class Controlador
     Function EliminarSim(ByVal icc As String) As Boolean
         Try
             conn.conexion()
-            Dim comando As New MySqlCommand("DELETE FROM sim WHERE ICC='" & icc & "'", conn.connection)
-            ' Verificamos que se haya eliminado 1 elemento de la tabla
-            If comando.ExecuteNonQuery() = 1 Then
-                conn.desconexion()
-                CargarTablaSIM()
-                Return True
-            Else
-                MessageBox.Show("Error al intentar elimnar la sim con icc " & icc, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Try
+                Dim comando As New MySqlCommand("ELIMINARSIM", conn.connection)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@icc_sim", icc)
+
+                If comando.ExecuteNonQuery() > 0 Then
+                    conn.desconexion()
+                    ' Carga de tablas
+                    CargarTablaSIM()
+                    Return True
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 conn.desconexion()
                 Return False
-            End If
+            End Try
         Catch ex As Exception
             MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()
@@ -584,6 +604,45 @@ Public Class Controlador
             MigracionSIM.DGV_migracionesSim.Columns("ICC_nueva").DataPropertyName = "ICC_NUEVA"
             MigracionSIM.DGV_migracionesSim.Columns("fecha").DataPropertyName = "FECHA_MIGRACION"
             MigracionSIM.DGV_migracionesSim.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+    Function CargarTablaMarcas() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT MARCA FROM MARCA_GPS", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            FormAdmin.DGV_Marcas.Columns("MarcaMyM").DataPropertyName = "MARCA"
+            FormAdmin.DGV_Marcas.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+    Function CargarTablaModelos() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT MODELO_GPS.MODELO, MARCA_GPS.MARCA
+                                                FROM MODELO_GPS
+                                                JOIN MARCA_GPS ON MODELO_GPS.ID_MARCA = MARCA_GPS.ID_MARCA;", conn.connection)
+            Dim table As New DataTable()
+
+            adapter.Fill(table)
+            FormAdmin.DGV_Modelos.Columns("ModeloMyM").DataPropertyName = "MODELO"
+            FormAdmin.DGV_Modelos.Columns("Marca2MyM").DataPropertyName = "MARCA"
+            FormAdmin.DGV_Modelos.DataSource = table
             conn.desconexion()
             Return True
 
@@ -1093,4 +1152,67 @@ Public Class Controlador
         End Try
 
     End Function
+
+    ' PARA MARCAS Y MODELOS
+    Function agregarMarca(ByVal marca As String) As Boolean
+        Try
+            conn.conexion()
+            Try
+                Dim comando As New MySqlCommand("AGREGARMARCA", conn.connection)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@p_nombre", marca)
+
+                If comando.ExecuteNonQuery() > 0 Then
+                    conn.desconexion()
+                    ' Carga de tablas
+                    CargarTablaMarcas()
+                    Return True
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conn.desconexion()
+                Return False
+            End Try
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    Function agregarModelo(ByVal marca As String, ByVal modelo As String) As Boolean
+        Try
+            conn.conexion()
+            Try
+                Dim comando As New MySqlCommand("AGREGARMODELO", conn.connection)
+                comando.CommandType = CommandType.StoredProcedure
+                comando.Parameters.AddWithValue("@p_marca", marca)
+                comando.Parameters.AddWithValue("@p_modelo", modelo)
+
+                If comando.ExecuteNonQuery() > 0 Then
+                    conn.desconexion()
+                    ' Carga de tablas
+                    CargarTablaMarcas()
+                    CargarTablaModelos()
+                    Return True
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                conn.desconexion()
+                Return False
+            End Try
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+
+
+
 End Class

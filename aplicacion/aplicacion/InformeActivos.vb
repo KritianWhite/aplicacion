@@ -51,4 +51,10 @@
             End If
         Next
     End Sub
+
+    Private Sub DGV_informeActivos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_informeActivos.CellClick
+        If DGV_informeActivos.SelectedRows.Count > 0 Then
+
+        End If
+    End Sub
 End Class

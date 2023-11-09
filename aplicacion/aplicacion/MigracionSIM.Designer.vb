@@ -26,10 +26,10 @@ Partial Class MigracionSIM
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_migracionesSim = New System.Windows.Forms.DataGridView()
-        Me.TB_buscarSim = New System.Windows.Forms.TextBox()
         Me.ICC_anterior = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ICC_nueva = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarSim = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_migracionesSim, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -82,14 +82,6 @@ Partial Class MigracionSIM
         Me.DGV_migracionesSim.Size = New System.Drawing.Size(729, 275)
         Me.DGV_migracionesSim.TabIndex = 45
         '
-        'TB_buscarSim
-        '
-        Me.TB_buscarSim.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarSim.Location = New System.Drawing.Point(553, 14)
-        Me.TB_buscarSim.Name = "TB_buscarSim"
-        Me.TB_buscarSim.Size = New System.Drawing.Size(211, 22)
-        Me.TB_buscarSim.TabIndex = 44
-        '
         'ICC_anterior
         '
         Me.ICC_anterior.HeaderText = "ICC anterior"
@@ -107,6 +99,14 @@ Partial Class MigracionSIM
         Me.fecha.HeaderText = "Fecha de migración"
         Me.fecha.Name = "fecha"
         Me.fecha.ReadOnly = True
+        '
+        'TB_buscarSim
+        '
+        Me.TB_buscarSim.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarSim.Location = New System.Drawing.Point(553, 14)
+        Me.TB_buscarSim.Name = "TB_buscarSim"
+        Me.TB_buscarSim.Size = New System.Drawing.Size(211, 22)
+        Me.TB_buscarSim.TabIndex = 44
         '
         'MigracionSIM
         '

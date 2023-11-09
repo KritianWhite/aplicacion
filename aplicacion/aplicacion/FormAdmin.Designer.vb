@@ -25,10 +25,12 @@ Partial Class FormAdmin
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformeDeActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaDeEquiposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SIMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MigracionesDeSIMToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MarcasYModelosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SallirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelCliente = New System.Windows.Forms.Panel()
@@ -95,7 +97,18 @@ Partial Class FormAdmin
         Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.InformeDeActivosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PanelMarcaYModelos = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.DGV_Modelos = New System.Windows.Forms.DataGridView()
+        Me.ModeloMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca2MyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BTN_agregarModelo = New System.Windows.Forms.Button()
+        Me.BTN_agregarMarca = New System.Windows.Forms.Button()
+        Me.DGV_Marcas = New System.Windows.Forms.DataGridView()
+        Me.MarcaMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -112,13 +125,17 @@ Partial Class FormAdmin
         Me.PanelUsuario.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DGV_Usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelMarcaYModelos.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        CType(Me.DGV_Modelos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV_Marcas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.White
         Me.MenuStrip1.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.ActivosToolStripMenuItem, Me.EquiposToolStripMenuItem, Me.SIMToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.SallirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.ActivosToolStripMenuItem, Me.EquiposToolStripMenuItem, Me.SIMToolStripMenuItem, Me.MarcasYModelosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.SallirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1091, 24)
@@ -138,6 +155,12 @@ Partial Class FormAdmin
         Me.ActivosToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
         Me.ActivosToolStripMenuItem.Text = "Activos"
         '
+        'InformeDeActivosToolStripMenuItem
+        '
+        Me.InformeDeActivosToolStripMenuItem.Name = "InformeDeActivosToolStripMenuItem"
+        Me.InformeDeActivosToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.InformeDeActivosToolStripMenuItem.Text = "Informe de activos"
+        '
         'EquiposToolStripMenuItem
         '
         Me.EquiposToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BajaDeEquiposToolStripMenuItem})
@@ -148,7 +171,7 @@ Partial Class FormAdmin
         'BajaDeEquiposToolStripMenuItem
         '
         Me.BajaDeEquiposToolStripMenuItem.Name = "BajaDeEquiposToolStripMenuItem"
-        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BajaDeEquiposToolStripMenuItem.Text = "Baja de equipos"
         '
         'SIMToolStripMenuItem
@@ -163,6 +186,12 @@ Partial Class FormAdmin
         Me.MigracionesDeSIMToolStripMenuItem.Name = "MigracionesDeSIMToolStripMenuItem"
         Me.MigracionesDeSIMToolStripMenuItem.Size = New System.Drawing.Size(191, 22)
         Me.MigracionesDeSIMToolStripMenuItem.Text = "Migraciones de SIM"
+        '
+        'MarcasYModelosToolStripMenuItem
+        '
+        Me.MarcasYModelosToolStripMenuItem.Name = "MarcasYModelosToolStripMenuItem"
+        Me.MarcasYModelosToolStripMenuItem.Size = New System.Drawing.Size(127, 20)
+        Me.MarcasYModelosToolStripMenuItem.Text = "Marcas y modelos"
         '
         'UsuariosToolStripMenuItem
         '
@@ -617,7 +646,6 @@ Partial Class FormAdmin
         '
         Me.DGV_Sim.AllowUserToAddRows = False
         Me.DGV_Sim.AllowUserToDeleteRows = False
-        Me.DGV_Sim.AllowUserToResizeColumns = False
         Me.DGV_Sim.AllowUserToResizeRows = False
         Me.DGV_Sim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Sim.BackgroundColor = System.Drawing.Color.White
@@ -685,7 +713,7 @@ Partial Class FormAdmin
         Me.PanelUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PanelUsuario.Controls.Add(Me.Panel5)
         Me.PanelUsuario.Controls.Add(Me.Label5)
-        Me.PanelUsuario.Location = New System.Drawing.Point(86, 22)
+        Me.PanelUsuario.Location = New System.Drawing.Point(87, 32)
         Me.PanelUsuario.Name = "PanelUsuario"
         Me.PanelUsuario.Size = New System.Drawing.Size(1088, 614)
         Me.PanelUsuario.TabIndex = 7
@@ -781,11 +809,138 @@ Partial Class FormAdmin
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "USUARIOS"
         '
-        'InformeDeActivosToolStripMenuItem
+        'PanelMarcaYModelos
         '
-        Me.InformeDeActivosToolStripMenuItem.Name = "InformeDeActivosToolStripMenuItem"
-        Me.InformeDeActivosToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.InformeDeActivosToolStripMenuItem.Text = "Informe de activos"
+        Me.PanelMarcaYModelos.BackColor = System.Drawing.Color.Transparent
+        Me.PanelMarcaYModelos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PanelMarcaYModelos.Controls.Add(Me.Panel7)
+        Me.PanelMarcaYModelos.Controls.Add(Me.Label6)
+        Me.PanelMarcaYModelos.Location = New System.Drawing.Point(102, 19)
+        Me.PanelMarcaYModelos.Name = "PanelMarcaYModelos"
+        Me.PanelMarcaYModelos.Size = New System.Drawing.Size(1088, 614)
+        Me.PanelMarcaYModelos.TabIndex = 8
+        Me.PanelMarcaYModelos.Visible = False
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.AliceBlue
+        Me.Panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel7.Controls.Add(Me.Label8)
+        Me.Panel7.Controls.Add(Me.Label7)
+        Me.Panel7.Controls.Add(Me.DGV_Modelos)
+        Me.Panel7.Controls.Add(Me.BTN_agregarModelo)
+        Me.Panel7.Controls.Add(Me.BTN_agregarMarca)
+        Me.Panel7.Controls.Add(Me.DGV_Marcas)
+        Me.Panel7.Location = New System.Drawing.Point(62, 142)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(965, 419)
+        Me.Panel7.TabIndex = 0
+        '
+        'DGV_Modelos
+        '
+        Me.DGV_Modelos.AllowUserToAddRows = False
+        Me.DGV_Modelos.AllowUserToDeleteRows = False
+        Me.DGV_Modelos.AllowUserToResizeColumns = False
+        Me.DGV_Modelos.AllowUserToResizeRows = False
+        Me.DGV_Modelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Modelos.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Modelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Modelos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ModeloMyM, Me.Marca2MyM})
+        Me.DGV_Modelos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Modelos.Location = New System.Drawing.Point(543, 80)
+        Me.DGV_Modelos.MultiSelect = False
+        Me.DGV_Modelos.Name = "DGV_Modelos"
+        Me.DGV_Modelos.ReadOnly = True
+        Me.DGV_Modelos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Modelos.Size = New System.Drawing.Size(367, 289)
+        Me.DGV_Modelos.StandardTab = True
+        Me.DGV_Modelos.TabIndex = 13
+        '
+        'ModeloMyM
+        '
+        Me.ModeloMyM.HeaderText = "Modelo"
+        Me.ModeloMyM.Name = "ModeloMyM"
+        Me.ModeloMyM.ReadOnly = True
+        '
+        'Marca2MyM
+        '
+        Me.Marca2MyM.HeaderText = "Marca"
+        Me.Marca2MyM.Name = "Marca2MyM"
+        Me.Marca2MyM.ReadOnly = True
+        '
+        'BTN_agregarModelo
+        '
+        Me.BTN_agregarModelo.Location = New System.Drawing.Point(52, 182)
+        Me.BTN_agregarModelo.Name = "BTN_agregarModelo"
+        Me.BTN_agregarModelo.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_agregarModelo.TabIndex = 11
+        Me.BTN_agregarModelo.Text = "Agregar modelo"
+        Me.BTN_agregarModelo.UseVisualStyleBackColor = True
+        '
+        'BTN_agregarMarca
+        '
+        Me.BTN_agregarMarca.Location = New System.Drawing.Point(52, 134)
+        Me.BTN_agregarMarca.Name = "BTN_agregarMarca"
+        Me.BTN_agregarMarca.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_agregarMarca.TabIndex = 8
+        Me.BTN_agregarMarca.Text = "Agregar marca"
+        Me.BTN_agregarMarca.UseVisualStyleBackColor = True
+        '
+        'DGV_Marcas
+        '
+        Me.DGV_Marcas.AllowUserToAddRows = False
+        Me.DGV_Marcas.AllowUserToDeleteRows = False
+        Me.DGV_Marcas.AllowUserToResizeColumns = False
+        Me.DGV_Marcas.AllowUserToResizeRows = False
+        Me.DGV_Marcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV_Marcas.BackgroundColor = System.Drawing.Color.White
+        Me.DGV_Marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV_Marcas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MarcaMyM})
+        Me.DGV_Marcas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DGV_Marcas.Location = New System.Drawing.Point(287, 80)
+        Me.DGV_Marcas.MultiSelect = False
+        Me.DGV_Marcas.Name = "DGV_Marcas"
+        Me.DGV_Marcas.ReadOnly = True
+        Me.DGV_Marcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV_Marcas.Size = New System.Drawing.Size(236, 289)
+        Me.DGV_Marcas.StandardTab = True
+        Me.DGV_Marcas.TabIndex = 9
+        '
+        'MarcaMyM
+        '
+        Me.MarcaMyM.HeaderText = "Marca"
+        Me.MarcaMyM.Name = "MarcaMyM"
+        Me.MarcaMyM.ReadOnly = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Vensim Sans Tamil", 47.99999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(48, 55)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(696, 79)
+        Me.Label6.TabIndex = 4
+        Me.Label6.Text = "MARCAS Y MODELOS"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(284, 52)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(68, 19)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "Marcas:"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(540, 52)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(76, 19)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Modelos:"
         '
         'FormAdmin
         '
@@ -793,11 +948,12 @@ Partial Class FormAdmin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
-        Me.Controls.Add(Me.PanelActivos)
-        Me.Controls.Add(Me.PanelEquipos)
+        Me.Controls.Add(Me.PanelMarcaYModelos)
+        Me.Controls.Add(Me.PanelCliente)
         Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.PanelSIM)
-        Me.Controls.Add(Me.PanelCliente)
+        Me.Controls.Add(Me.PanelEquipos)
+        Me.Controls.Add(Me.PanelActivos)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormAdmin"
@@ -831,6 +987,12 @@ Partial Class FormAdmin
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         CType(Me.DGV_Usuarios, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelMarcaYModelos.ResumeLayout(False)
+        Me.PanelMarcaYModelos.PerformLayout()
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        CType(Me.DGV_Modelos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV_Marcas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -909,4 +1071,17 @@ Partial Class FormAdmin
     Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
     Friend WithEvents Rol_U As DataGridViewTextBoxColumn
     Friend WithEvents InformeDeActivosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelMarcaYModelos As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents BTN_agregarModelo As Button
+    Friend WithEvents BTN_agregarMarca As Button
+    Friend WithEvents DGV_Marcas As DataGridView
+    Friend WithEvents Label6 As Label
+    Friend WithEvents MarcasYModelosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DGV_Modelos As DataGridView
+    Friend WithEvents MarcaMyM As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloMyM As DataGridViewTextBoxColumn
+    Friend WithEvents Marca2MyM As DataGridViewTextBoxColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label7 As Label
 End Class

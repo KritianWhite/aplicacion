@@ -1,4 +1,6 @@
-﻿Public Class FormAdmin
+﻿Imports System.Text.RegularExpressions
+
+Public Class FormAdmin
 
     ' LLamamos a nuestro controlador
     Dim controlador As New Controlador()
@@ -6,6 +8,7 @@
     Dim aux As New Auxiliares()
     ' Variable global para la seleccion de dato en cualquier tabla
     Dim valorSeleccionado As String = ""
+    Dim valorSeleccionadoMarca As String = ""
 
     Private Sub SallirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SallirToolStripMenuItem.Click
         Me.Close()
@@ -23,11 +26,13 @@
             EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelEquipos.Visible = False
             PanelSIM.Visible = False
             PanelUsuario.Visible = False
+            PanelMarcaYModelos.Visible = False
             PanelCliente.Visible = True
             PanelCliente.Location = New Point(0, 0)
             PanelCliente.Dock = DockStyle.Fill
@@ -43,11 +48,13 @@
             EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             'Ocultamos o mostramos los paneles
             PanelCliente.Visible = False
             PanelEquipos.Visible = False
             PanelSIM.Visible = False
             PanelUsuario.Visible = False
+            PanelMarcaYModelos.Visible = False
             PanelActivos.Visible = True
             PanelActivos.Location = New Point(0, 0)
             PanelActivos.Dock = DockStyle.Fill
@@ -63,11 +70,13 @@
             EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
             SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelSIM.Visible = False
             PanelUsuario.Visible = False
+            PanelMarcaYModelos.Visible = False
             PanelEquipos.Visible = True
             PanelEquipos.Location = New Point(0, 0)
             PanelEquipos.Dock = DockStyle.Fill
@@ -84,11 +93,13 @@
             EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
             UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelEquipos.Visible = False
             PanelUsuario.Visible = False
+            PanelMarcaYModelos.Visible = False
             PanelSIM.Visible = True
             PanelSIM.Location = New Point(0, 0)
             PanelSIM.Dock = DockStyle.Fill
@@ -105,14 +116,39 @@
             EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
             'Ocultamos o mostramos los paneles
             PanelActivos.Visible = False
             PanelCliente.Visible = False
             PanelEquipos.Visible = False
             PanelSIM.Visible = False
             PanelUsuario.Visible = True
+            PanelMarcaYModelos.Visible = False
             PanelUsuario.Location = New Point(0, 0)
             PanelUsuario.Dock = DockStyle.Fill
+        End If
+    End Sub
+
+    Private Sub MarcasYModelosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MarcasYModelosToolStripMenuItem.Click
+        If (PanelMarcaYModelos.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            MarcasYModelosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            'Ocultamos o mostramos los paneles
+            PanelActivos.Visible = False
+            PanelCliente.Visible = False
+            PanelEquipos.Visible = False
+            PanelSIM.Visible = False
+            PanelUsuario.Visible = False
+            PanelMarcaYModelos.Visible = True
+            PanelMarcaYModelos.Location = New Point(0, 0)
+            PanelMarcaYModelos.Dock = DockStyle.Fill
         End If
     End Sub
 
@@ -210,6 +246,12 @@
             End If
             If controlador.CargarTablaUsuarios() = False Then
                 MessageBox.Show("No se pudo cargar la tabla de usuarios.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+            If controlador.CargarTablaMarcas() = False Then
+                MessageBox.Show("No se pudo cargar la tabla de marcas gps.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+            If controlador.CargarTablaModelos() = False Then
+                MessageBox.Show("No se pudo cargar la tabla de modelos gps.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MessageBox.Show("Ocurrió algo inesperado (" & ex.Message & ").", "Error Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -451,19 +493,39 @@
 
     ' Metodos para poder obtener el item de la primera columna de cada tabla
     Private Sub DGV_clientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_clientes.CellClick
-        valorSeleccionado = DGV_clientes.CurrentRow.Cells(0).Value
+        If DGV_clientes.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_clientes.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
     Private Sub DGV_Activos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellClick
-        valorSeleccionado = DGV_Activos.CurrentRow.Cells(0).Value
+        If DGV_Activos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Activos.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
     Private Sub DGV_Equipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Equipos.CellClick
-        valorSeleccionado = DGV_Equipos.CurrentRow.Cells(0).Value
+        If DGV_Equipos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Equipos.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
     Private Sub DGV_Sim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Sim.CellClick
-        valorSeleccionado = DGV_Sim.CurrentRow.Cells(0).Value
+        If DGV_Sim.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Sim.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
     Private Sub DGV_Usuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellClick
-        valorSeleccionado = DGV_Usuarios.CurrentRow.Cells(0).Value
+        If DGV_Usuarios.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Usuarios.CurrentRow.Cells(0)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Marcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Marcas.CellClick
+        If DGV_Marcas.SelectedRows.Count > 0 Then
+            valorSeleccionadoMarca = DGV_Marcas.CurrentRow.Cells(0)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Modelos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Modelos.CellClick
+        If DGV_Modelos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Modelos.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
 
     Private Sub PanelCliente_Paint(sender As Object, e As PaintEventArgs) Handles PanelCliente.Paint
@@ -623,4 +685,20 @@
     Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
         InformeActivos.Show()
     End Sub
+
+    Private Sub BTN_agregarMarca_Click(sender As Object, e As EventArgs) Handles BTN_agregarMarca.Click
+        aux.agregarMarca()
+    End Sub
+
+    Private Sub BTN_agregarModelo_Click(sender As Object, e As EventArgs) Handles BTN_agregarModelo.Click
+        If valorSeleccionadoMarca <> "" Then
+            Dim resultado = MessageBox.Show("¿Desea agregar un nuevo modelo a la marca " & valorSeleccionadoMarca & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+            If resultado = DialogResult.OK Then
+                aux.agregarModelo(valorSeleccionadoMarca)
+            End If
+        Else
+            MessageBox.Show("No se ha seleccionado ninguna marca de la tabla para agregar un nuevo modelo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
 End Class

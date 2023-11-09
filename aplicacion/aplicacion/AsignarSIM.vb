@@ -150,15 +150,21 @@
 
     ' Funciones para la obtencion de datos del datagirdview
     Private Sub DGV_equipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_equipos.CellClick
-        valorSeleccionado_Equipo = DGV_equipos.CurrentRow.Cells(0).Value
+        If DGV_equipos.SelectedRows.Count > 0 Then
+            valorSeleccionado_Equipo = DGV_equipos.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
 
     Private Sub DGV_sim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_sim.CellClick
-        valorSeleccionado_Sim = DGV_sim.CurrentRow.Cells(0).Value
+        If DGV_sim.SelectedRows.Count > 0 Then
+            valorSeleccionado_Sim = DGV_sim.CurrentRow.Cells(0)?.Value
+        End If
     End Sub
 
     Private Sub DGV_asignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_asignaciones.CellClick
-        valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0).Value
-        valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1).Value
+        If DGV_asignaciones.SelectedRows.Count > 0 Then
+            valorSeleccionado_Asignaciones = DGV_asignaciones.CurrentRow.Cells(0)?.Value
+            valorSeleccionado2_Asignaciones = DGV_asignaciones.CurrentRow.Cells(1)?.Value
+        End If
     End Sub
 End Class

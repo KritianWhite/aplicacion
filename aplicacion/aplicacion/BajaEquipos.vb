@@ -54,4 +54,10 @@
             End If
         Next
     End Sub
+
+    Private Sub DGV_bajaEquipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_bajaEquipos.CellClick
+        If DGV_bajaEquipos.SelectedRows.Count > 0 Then
+
+        End If
+    End Sub
 End Class

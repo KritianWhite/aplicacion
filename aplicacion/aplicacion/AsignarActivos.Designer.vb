@@ -42,23 +42,23 @@ Partial Class AsignarActivos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TB_buscarActivo = New System.Windows.Forms.TextBox()
         Me.DGV_Activos = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.BTN_desasignarActivo = New System.Windows.Forms.Button()
-        Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.PlacaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasisActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IMEIActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ModeloActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PlataformaActivo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.BTN_desasignarActivo = New System.Windows.Forms.Button()
+        Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
         Me.NombreAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasisAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DGV_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,6 +276,36 @@ Partial Class AsignarActivos
         Me.DGV_Activos.Size = New System.Drawing.Size(474, 202)
         Me.DGV_Activos.TabIndex = 30
         '
+        'PlacaActivo
+        '
+        Me.PlacaActivo.HeaderText = "Placa"
+        Me.PlacaActivo.Name = "PlacaActivo"
+        Me.PlacaActivo.ReadOnly = True
+        '
+        'ChasisActivo
+        '
+        Me.ChasisActivo.HeaderText = "Chásis"
+        Me.ChasisActivo.Name = "ChasisActivo"
+        Me.ChasisActivo.ReadOnly = True
+        '
+        'IMEIActivo
+        '
+        Me.IMEIActivo.HeaderText = "IMEI (Equipo)"
+        Me.IMEIActivo.Name = "IMEIActivo"
+        Me.IMEIActivo.ReadOnly = True
+        '
+        'ModeloActivo
+        '
+        Me.ModeloActivo.HeaderText = "Modelo (equipo)"
+        Me.ModeloActivo.Name = "ModeloActivo"
+        Me.ModeloActivo.ReadOnly = True
+        '
+        'PlataformaActivo
+        '
+        Me.PlataformaActivo.HeaderText = "Plataforma"
+        Me.PlataformaActivo.Name = "PlataformaActivo"
+        Me.PlataformaActivo.ReadOnly = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -337,51 +367,6 @@ Partial Class AsignarActivos
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
         '
-        'TB_buscarAsignaciones
-        '
-        Me.TB_buscarAsignaciones.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarAsignaciones.Location = New System.Drawing.Point(752, 13)
-        Me.TB_buscarAsignaciones.Name = "TB_buscarAsignaciones"
-        Me.TB_buscarAsignaciones.Size = New System.Drawing.Size(168, 22)
-        Me.TB_buscarAsignaciones.TabIndex = 33
-        '
-        'Panel4
-        '
-        Me.Panel4.Location = New System.Drawing.Point(0, 311)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(960, 227)
-        Me.Panel4.TabIndex = 1
-        '
-        'PlacaActivo
-        '
-        Me.PlacaActivo.HeaderText = "Placa"
-        Me.PlacaActivo.Name = "PlacaActivo"
-        Me.PlacaActivo.ReadOnly = True
-        '
-        'ChasisActivo
-        '
-        Me.ChasisActivo.HeaderText = "Chásis"
-        Me.ChasisActivo.Name = "ChasisActivo"
-        Me.ChasisActivo.ReadOnly = True
-        '
-        'IMEIActivo
-        '
-        Me.IMEIActivo.HeaderText = "IMEI (Equipo)"
-        Me.IMEIActivo.Name = "IMEIActivo"
-        Me.IMEIActivo.ReadOnly = True
-        '
-        'ModeloActivo
-        '
-        Me.ModeloActivo.HeaderText = "Modelo (equipo)"
-        Me.ModeloActivo.Name = "ModeloActivo"
-        Me.ModeloActivo.ReadOnly = True
-        '
-        'PlataformaActivo
-        '
-        Me.PlataformaActivo.HeaderText = "Plataforma"
-        Me.PlataformaActivo.Name = "PlataformaActivo"
-        Me.PlataformaActivo.ReadOnly = True
-        '
         'NombreAsignacion
         '
         Me.NombreAsignacion.HeaderText = "Nombre (Cliente)"
@@ -411,6 +396,21 @@ Partial Class AsignarActivos
         Me.FechaAsignacion.HeaderText = "Fecha de asignación"
         Me.FechaAsignacion.Name = "FechaAsignacion"
         Me.FechaAsignacion.ReadOnly = True
+        '
+        'TB_buscarAsignaciones
+        '
+        Me.TB_buscarAsignaciones.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarAsignaciones.Location = New System.Drawing.Point(752, 13)
+        Me.TB_buscarAsignaciones.Name = "TB_buscarAsignaciones"
+        Me.TB_buscarAsignaciones.Size = New System.Drawing.Size(168, 22)
+        Me.TB_buscarAsignaciones.TabIndex = 33
+        '
+        'Panel4
+        '
+        Me.Panel4.Location = New System.Drawing.Point(0, 311)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(960, 227)
+        Me.Panel4.TabIndex = 1
         '
         'AsignarActivos
         '
