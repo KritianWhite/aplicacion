@@ -4,6 +4,7 @@ Public Class AgregarUsuario
     Dim encryp As New Encrypted()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
+        FormAdmin.Show()
     End Sub
 
     Private Sub BTN_agregarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click

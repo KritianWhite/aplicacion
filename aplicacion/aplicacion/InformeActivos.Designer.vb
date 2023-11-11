@@ -23,6 +23,7 @@ Partial Class InformeActivos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BTN_reporteIntervalo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
@@ -33,6 +34,7 @@ Partial Class InformeActivos
         Me.TB_buscarActivo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BTN_regresar = New System.Windows.Forms.Button()
+        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_informeActivos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -41,6 +43,8 @@ Partial Class InformeActivos
         '
         Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BTN_exportar)
+        Me.Panel1.Controls.Add(Me.BTN_reporteIntervalo)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.RadioButton4)
@@ -51,8 +55,18 @@ Partial Class InformeActivos
         Me.Panel1.Controls.Add(Me.TB_buscarActivo)
         Me.Panel1.Location = New System.Drawing.Point(13, 91)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(799, 374)
+        Me.Panel1.Size = New System.Drawing.Size(799, 402)
         Me.Panel1.TabIndex = 43
+        '
+        'BTN_reporteIntervalo
+        '
+        Me.BTN_reporteIntervalo.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_reporteIntervalo.Location = New System.Drawing.Point(606, 20)
+        Me.BTN_reporteIntervalo.Name = "BTN_reporteIntervalo"
+        Me.BTN_reporteIntervalo.Size = New System.Drawing.Size(158, 26)
+        Me.BTN_reporteIntervalo.TabIndex = 44
+        Me.BTN_reporteIntervalo.Text = "Reporte por intervalo"
+        Me.BTN_reporteIntervalo.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -126,6 +140,8 @@ Partial Class InformeActivos
         '
         Me.DGV_informeActivos.AllowUserToAddRows = False
         Me.DGV_informeActivos.AllowUserToDeleteRows = False
+        Me.DGV_informeActivos.AllowUserToResizeColumns = False
+        Me.DGV_informeActivos.AllowUserToResizeRows = False
         Me.DGV_informeActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_informeActivos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_informeActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -139,7 +155,7 @@ Partial Class InformeActivos
         'TB_buscarActivo
         '
         Me.TB_buscarActivo.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarActivo.Location = New System.Drawing.Point(553, 69)
+        Me.TB_buscarActivo.Location = New System.Drawing.Point(553, 71)
         Me.TB_buscarActivo.Name = "TB_buscarActivo"
         Me.TB_buscarActivo.Size = New System.Drawing.Size(211, 22)
         Me.TB_buscarActivo.TabIndex = 39
@@ -164,11 +180,21 @@ Partial Class InformeActivos
         Me.BTN_regresar.Text = "Regresar"
         Me.BTN_regresar.UseVisualStyleBackColor = True
         '
+        'BTN_exportar
+        '
+        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_exportar.Location = New System.Drawing.Point(652, 371)
+        Me.BTN_exportar.Name = "BTN_exportar"
+        Me.BTN_exportar.Size = New System.Drawing.Size(112, 26)
+        Me.BTN_exportar.TabIndex = 44
+        Me.BTN_exportar.Text = "Exportar tablas"
+        Me.BTN_exportar.UseVisualStyleBackColor = True
+        '
         'InformeActivos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 477)
+        Me.ClientSize = New System.Drawing.Size(824, 505)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
@@ -196,4 +222,6 @@ Partial Class InformeActivos
     Friend WithEvents TB_buscarActivo As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BTN_regresar As Button
+    Friend WithEvents BTN_reporteIntervalo As Button
+    Friend WithEvents BTN_exportar As Button
 End Class

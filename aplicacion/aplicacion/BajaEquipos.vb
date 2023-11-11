@@ -2,6 +2,7 @@
     Dim controlador As New Controlador()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
+        FormAdmin.Show()
     End Sub
 
     Private Sub BajaEquipos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -69,6 +69,7 @@ C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\De
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.AsignarSIM.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.BajaEquipos.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.FormAdmin.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.InformeActivos.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.Login.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.MigracionSIM.resources
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.Resources.resources
@@ -78,4 +79,4 @@ C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\De
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.exe
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.xml
 C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.pdb
-C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.InformeActivos.resources
+C:\Users\kriti\OneDrive\Documents\GitHub\aplicacion\aplicacion\aplicacion\obj\Debug\aplicacion.ReporteGeneral.resources

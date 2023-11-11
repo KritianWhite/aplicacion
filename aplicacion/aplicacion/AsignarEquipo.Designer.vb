@@ -47,6 +47,12 @@ Partial Class AsignarEquipo
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarEquipo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
+        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -57,11 +63,7 @@ Partial Class AsignarEquipo
         Me.BTN_asignar = New System.Windows.Forms.Button()
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV_Activos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -275,6 +277,7 @@ Partial Class AsignarEquipo
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.BTN_exportar)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.BTN_desasignarEquipo)
         Me.Panel3.Controls.Add(Me.DGV_asignaciones)
@@ -314,13 +317,49 @@ Partial Class AsignarEquipo
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PlacaAsignacion, Me.NumeroAsignacion, Me.IMEIAsignacion, Me.ModeloAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
         Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
+        '
+        'PlacaAsignacion
+        '
+        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
+        Me.PlacaAsignacion.Name = "PlacaAsignacion"
+        Me.PlacaAsignacion.ReadOnly = True
+        '
+        'NumeroAsignacion
+        '
+        Me.NumeroAsignacion.HeaderText = "Numero"
+        Me.NumeroAsignacion.Name = "NumeroAsignacion"
+        Me.NumeroAsignacion.ReadOnly = True
+        '
+        'IMEIAsignacion
+        '
+        Me.IMEIAsignacion.HeaderText = "IMEI"
+        Me.IMEIAsignacion.Name = "IMEIAsignacion"
+        Me.IMEIAsignacion.ReadOnly = True
+        '
+        'ModeloAsignacion
+        '
+        Me.ModeloAsignacion.HeaderText = "Modelo"
+        Me.ModeloAsignacion.Name = "ModeloAsignacion"
+        Me.ModeloAsignacion.ReadOnly = True
+        '
+        'MarcaAsignacion
+        '
+        Me.MarcaAsignacion.HeaderText = "Marca"
+        Me.MarcaAsignacion.Name = "MarcaAsignacion"
+        Me.MarcaAsignacion.ReadOnly = True
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.HeaderText = "Fecha"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
         '
         'TB_buscarAsignaciones
         '
@@ -425,35 +464,15 @@ Partial Class AsignarEquipo
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "ASIGNACION DE EQUIPOS"
         '
-        'PlacaAsignacion
+        'BTN_exportar
         '
-        Me.PlacaAsignacion.HeaderText = "Placa (Activo)"
-        Me.PlacaAsignacion.Name = "PlacaAsignacion"
-        Me.PlacaAsignacion.ReadOnly = True
-        '
-        'IMEIAsignacion
-        '
-        Me.IMEIAsignacion.HeaderText = "IMEI"
-        Me.IMEIAsignacion.Name = "IMEIAsignacion"
-        Me.IMEIAsignacion.ReadOnly = True
-        '
-        'ModeloAsignacion
-        '
-        Me.ModeloAsignacion.HeaderText = "Modelo"
-        Me.ModeloAsignacion.Name = "ModeloAsignacion"
-        Me.ModeloAsignacion.ReadOnly = True
-        '
-        'MarcaAsignacion
-        '
-        Me.MarcaAsignacion.HeaderText = "Marca"
-        Me.MarcaAsignacion.Name = "MarcaAsignacion"
-        Me.MarcaAsignacion.ReadOnly = True
-        '
-        'FechaAsignacion
-        '
-        Me.FechaAsignacion.HeaderText = "Fecha"
-        Me.FechaAsignacion.Name = "FechaAsignacion"
-        Me.FechaAsignacion.ReadOnly = True
+        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_exportar.Location = New System.Drawing.Point(86, 261)
+        Me.BTN_exportar.Name = "BTN_exportar"
+        Me.BTN_exportar.Size = New System.Drawing.Size(107, 23)
+        Me.BTN_exportar.TabIndex = 34
+        Me.BTN_exportar.Text = "Exportar tabla"
+        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'AsignarEquipo
         '
@@ -522,8 +541,10 @@ Partial Class AsignarEquipo
     Friend WithEvents MarcaEquipo As DataGridViewTextBoxColumn
     Friend WithEvents numeroEquipo As DataGridViewTextBoxColumn
     Friend WithEvents PlacaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents NumeroAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents IMEIAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents BTN_exportar As Button
 End Class

@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports Excel = Microsoft.Office.Interop.Excel
 
 Public Class FormAdmin
 
@@ -9,6 +10,7 @@ Public Class FormAdmin
     ' Variable global para la seleccion de dato en cualquier tabla
     Dim valorSeleccionado As String = ""
     Dim valorSeleccionadoMarca As String = ""
+    Private bloquearClicks As Boolean
 
     Private Sub SallirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SallirToolStripMenuItem.Click
         Me.Close()
@@ -154,60 +156,73 @@ Public Class FormAdmin
 
     ' Navegación hacia otras pestañas
     Private Sub BTN_agregarClientes_Click(sender As Object, e As EventArgs) Handles BTN_agregarClientes.Click
+        Me.Hide()
         AgregarCliente.Show()
         AgregarCliente.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
     Private Sub BTN_agregarActivos_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
+        Me.Hide()
         AgregarActivo.Show()
         AgregarActivo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BTN_agregarEquipos_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
+        Me.Hide()
         AgregarEquipo.Show()
         AgregarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
+        Me.Hide()
         AgregarSIM.Show()
         AgregarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BTN_agregarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
+        Me.Hide()
         AgregarUsuario.Show()
         AgregarUsuario.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
     Private Sub BajaDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeEquiposToolStripMenuItem.Click
+        Me.Hide()
         BajaEquipos.Show()
         BajaEquipos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        'MigrarSIM.Show()
-        aux.MigrarSim(valorSeleccionado)
-        MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
     Private Sub MigracionesDeSIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MigracionesDeSIMToolStripMenuItem.Click
+        Me.Hide()
         MigracionSIM.Show()
         MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
 
     Private Sub BTN_asignarActivo_Cliente_Click(sender As Object, e As EventArgs) Handles BTN_asignarActivo_Clientes.Click
+        Me.Hide()
         AsignarActivos.Show()
         AsignarActivos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-        Me.Hide()
     End Sub
 
     Private Sub BTN_asignarEquipo_Activos_Click(sender As Object, e As EventArgs) Handles BTN_asignarEquipo_Activos.Click
+        Me.Hide()
         AsignarEquipo.Show()
         AsignarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-        Me.Hide()
     End Sub
 
     Private Sub BTN_asignarSIM_Equipos_Click(sender As Object, e As EventArgs) Handles BTN_asignarSIM_Equipos.Click
+        Me.Hide()
         AsignarSIM.Show()
         AsignarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
+        aux.MigrarSim(valorSeleccionado)
+    End Sub
+
+    Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
         Me.Hide()
+        InformeActivos.Show()
+    End Sub
+
+    Private Sub BTN_agregarMarca_Click(sender As Object, e As EventArgs) Handles BTN_agregarMarca.Click
+        aux.agregarMarca()
     End Sub
 
     ' En este metodo se cargan todas las tablas al iniciar sesión
@@ -260,10 +275,9 @@ Public Class FormAdmin
 
     ' Editar tablas
     Private Sub BTN_editarClientes_Click(sender As Object, e As EventArgs) Handles BTN_editarClientes.Click
-        'DGV_clientes.ReadOnly = False
+        DGV_clientes.ReadOnly = False
         DGV_clientes.Columns("Telefono_C").ReadOnly = False
         DGV_clientes.Columns("Correo_C").ReadOnly = False
-
     End Sub
     Private Sub DGV_clientes_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_clientes.CellEndEdit
 
@@ -272,12 +286,12 @@ Public Class FormAdmin
             'Aquí va tu código para guardar cambios
             Try
                 Dim resultado = MessageBox.Show("¿Desea editar la información del cliente " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
+                DGV_clientes.SelectionMode = False
                 If resultado = DialogResult.OK Then
                     Dim telefono = DGV_clientes.CurrentRow.Cells("Telefono_C").Value
                     Dim correo = DGV_clientes.CurrentRow.Cells("Correo_C").Value
                     If (controlador.Editarcliente(valorSeleccionado, telefono, correo)) Then
                         MessageBox.Show("Se editó la información del cliente " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        'DGV_clientes.ReadOnly = True
                         bloquearCeldasClientes()
                     End If
                 Else
@@ -289,7 +303,6 @@ Public Class FormAdmin
                 MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 bloquearCeldasClientes()
             End Try
-            'DGV_clientes.Rows(e.RowIndex).Cells(e.ColumnIndex).Selected = True
         End If
     End Sub
 
@@ -678,18 +691,6 @@ Public Class FormAdmin
         End If
     End Sub
 
-    Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
-        aux.MigrarSim(valorSeleccionado)
-    End Sub
-
-    Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
-        InformeActivos.Show()
-    End Sub
-
-    Private Sub BTN_agregarMarca_Click(sender As Object, e As EventArgs) Handles BTN_agregarMarca.Click
-        aux.agregarMarca()
-    End Sub
-
     Private Sub BTN_agregarModelo_Click(sender As Object, e As EventArgs) Handles BTN_agregarModelo.Click
         If valorSeleccionadoMarca <> "" Then
             Dim resultado = MessageBox.Show("¿Desea agregar un nuevo modelo a la marca " & valorSeleccionadoMarca & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
@@ -701,4 +702,145 @@ Public Class FormAdmin
         End If
     End Sub
 
+    ' EXPORTAR TABLAS
+    Private Sub BTN_exportarClientes_Click(sender As Object, e As EventArgs) Handles BTN_exportarClientes.Click
+
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+        Dim worksheet As Excel.Worksheet = workbook.ActiveSheet
+
+        ' Agregar encabezados
+        For i As Integer = 0 To DGV_clientes.ColumnCount - 1
+            worksheet.Cells(1, i + 1) = DGV_clientes.Columns(i).HeaderText
+        Next
+
+        ' Agregar datos 
+        For i As Integer = 0 To DGV_clientes.RowCount - 1
+            For j As Integer = 0 To DGV_clientes.ColumnCount - 1
+                worksheet.Cells(i + 2, j + 1) = DGV_clientes.Rows(i).Cells(j).Value.ToString()
+            Next
+        Next
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        excelApp.Quit()
+    End Sub
+
+    Private Sub BTN_exportarActivos_Click(sender As Object, e As EventArgs) Handles BTN_exportarActivos.Click
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+        Dim worksheet As Excel.Worksheet = workbook.ActiveSheet
+
+        ' Agregar encabezados
+        For i As Integer = 0 To DGV_Activos.ColumnCount - 1
+            worksheet.Cells(1, i + 1) = DGV_Activos.Columns(i).HeaderText
+        Next
+
+        ' Agregar datos 
+        For i As Integer = 0 To DGV_Activos.RowCount - 1
+            For j As Integer = 0 To DGV_Activos.ColumnCount - 1
+                worksheet.Cells(i + 2, j + 1) = DGV_Activos.Rows(i).Cells(j).Value.ToString()
+            Next
+        Next
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        excelApp.Quit()
+    End Sub
+
+    Private Sub BTN_exportarEquipos_Click(sender As Object, e As EventArgs) Handles BTN_exportarEquipos.Click
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+        Dim worksheet As Excel.Worksheet = workbook.ActiveSheet
+
+        ' Agregar encabezados
+        For i As Integer = 0 To DGV_Equipos.ColumnCount - 1
+            worksheet.Cells(1, i + 1) = DGV_Equipos.Columns(i).HeaderText
+        Next
+
+        ' Agregar datos 
+        For i As Integer = 0 To DGV_Equipos.RowCount - 1
+            For j As Integer = 0 To DGV_Equipos.ColumnCount - 1
+                worksheet.Cells(i + 2, j + 1) = DGV_Equipos.Rows(i).Cells(j).Value.ToString()
+            Next
+        Next
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        excelApp.Quit()
+    End Sub
+
+    Private Sub BTN_exportarSim_Click(sender As Object, e As EventArgs) Handles BTN_exportarSim.Click
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+        Dim worksheet As Excel.Worksheet = workbook.ActiveSheet
+
+        ' Agregar encabezados
+        For i As Integer = 0 To DGV_Sim.ColumnCount - 1
+            worksheet.Cells(1, i + 1) = DGV_Sim.Columns(i).HeaderText
+        Next
+
+        ' Agregar datos 
+        For i As Integer = 0 To DGV_Sim.RowCount - 1
+            For j As Integer = 0 To DGV_Sim.ColumnCount - 1
+                worksheet.Cells(i + 2, j + 1) = DGV_Sim.Rows(i).Cells(j).Value.ToString()
+            Next
+        Next
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        excelApp.Quit()
+    End Sub
+
+    Private Sub BTN_exportarUsuarios_Click(sender As Object, e As EventArgs) Handles BTN_exportarUsuarios.Click
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+        Dim worksheet As Excel.Worksheet = workbook.ActiveSheet
+
+        ' Agregar encabezados
+        For i As Integer = 0 To DGV_Usuarios.ColumnCount - 1
+            worksheet.Cells(1, i + 1) = DGV_Usuarios.Columns(i).HeaderText
+        Next
+
+        ' Agregar datos 
+        For i As Integer = 0 To DGV_Usuarios.RowCount - 1
+            For j As Integer = 0 To DGV_Usuarios.ColumnCount - 1
+                worksheet.Cells(i + 2, j + 1) = DGV_Usuarios.Rows(i).Cells(j).Value.ToString()
+            Next
+        Next
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        excelApp.Quit()
+    End Sub
 End Class

@@ -35,6 +35,7 @@ Partial Class FormAdmin
         Me.SallirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelCliente = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BTN_exportarClientes = New System.Windows.Forms.Button()
         Me.BTN_asignarActivo_Clientes = New System.Windows.Forms.Button()
         Me.BTN_eliminarClientes = New System.Windows.Forms.Button()
         Me.BTN_editarClientes = New System.Windows.Forms.Button()
@@ -47,6 +48,7 @@ Partial Class FormAdmin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelActivos = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BTN_exportarActivos = New System.Windows.Forms.Button()
         Me.BTN_asignarEquipo_Activos = New System.Windows.Forms.Button()
         Me.BTN_eliminarActivos = New System.Windows.Forms.Button()
         Me.BTN_editarActivos = New System.Windows.Forms.Button()
@@ -63,6 +65,7 @@ Partial Class FormAdmin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelEquipos = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BTN_exportarEquipos = New System.Windows.Forms.Button()
         Me.BTN_asignarSIM_Equipos = New System.Windows.Forms.Button()
         Me.BTN_bajaEquipos = New System.Windows.Forms.Button()
         Me.BTN_agregarEquipos = New System.Windows.Forms.Button()
@@ -74,6 +77,7 @@ Partial Class FormAdmin
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PanelSIM = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BTN_exportarSim = New System.Windows.Forms.Button()
         Me.BTN_migrarSim = New System.Windows.Forms.Button()
         Me.BTN_eliminarSim = New System.Windows.Forms.Button()
         Me.BTN_editarSIM = New System.Windows.Forms.Button()
@@ -89,6 +93,7 @@ Partial Class FormAdmin
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PanelUsuario = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.BTN_exportarUsuarios = New System.Windows.Forms.Button()
         Me.BTN_eliminarUsuarios = New System.Windows.Forms.Button()
         Me.BTN_editarUsuario = New System.Windows.Forms.Button()
         Me.BTN_agregarUsuario = New System.Windows.Forms.Button()
@@ -99,6 +104,8 @@ Partial Class FormAdmin
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PanelMarcaYModelos = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.DGV_Modelos = New System.Windows.Forms.DataGridView()
         Me.ModeloMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Marca2MyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -107,8 +114,6 @@ Partial Class FormAdmin
         Me.DGV_Marcas = New System.Windows.Forms.DataGridView()
         Me.MarcaMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -171,7 +176,7 @@ Partial Class FormAdmin
         'BajaDeEquiposToolStripMenuItem
         '
         Me.BajaDeEquiposToolStripMenuItem.Name = "BajaDeEquiposToolStripMenuItem"
-        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.BajaDeEquiposToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.BajaDeEquiposToolStripMenuItem.Text = "Baja de equipos"
         '
         'SIMToolStripMenuItem
@@ -221,6 +226,7 @@ Partial Class FormAdmin
         '
         Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BTN_exportarClientes)
         Me.Panel1.Controls.Add(Me.BTN_asignarActivo_Clientes)
         Me.Panel1.Controls.Add(Me.BTN_eliminarClientes)
         Me.Panel1.Controls.Add(Me.BTN_editarClientes)
@@ -231,6 +237,15 @@ Partial Class FormAdmin
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(965, 419)
         Me.Panel1.TabIndex = 5
+        '
+        'BTN_exportarClientes
+        '
+        Me.BTN_exportarClientes.Location = New System.Drawing.Point(52, 273)
+        Me.BTN_exportarClientes.Name = "BTN_exportarClientes"
+        Me.BTN_exportarClientes.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_exportarClientes.TabIndex = 15
+        Me.BTN_exportarClientes.Text = "Exportar tabla"
+        Me.BTN_exportarClientes.UseVisualStyleBackColor = True
         '
         'BTN_asignarActivo_Clientes
         '
@@ -289,6 +304,7 @@ Partial Class FormAdmin
         Me.DGV_clientes.Location = New System.Drawing.Point(287, 61)
         Me.DGV_clientes.MultiSelect = False
         Me.DGV_clientes.Name = "DGV_clientes"
+        Me.DGV_clientes.ReadOnly = True
         Me.DGV_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_clientes.Size = New System.Drawing.Size(623, 291)
         Me.DGV_clientes.StandardTab = True
@@ -338,6 +354,7 @@ Partial Class FormAdmin
         '
         Me.Panel2.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.BTN_exportarActivos)
         Me.Panel2.Controls.Add(Me.BTN_asignarEquipo_Activos)
         Me.Panel2.Controls.Add(Me.BTN_eliminarActivos)
         Me.Panel2.Controls.Add(Me.BTN_editarActivos)
@@ -348,6 +365,15 @@ Partial Class FormAdmin
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(965, 419)
         Me.Panel2.TabIndex = 5
+        '
+        'BTN_exportarActivos
+        '
+        Me.BTN_exportarActivos.Location = New System.Drawing.Point(52, 277)
+        Me.BTN_exportarActivos.Name = "BTN_exportarActivos"
+        Me.BTN_exportarActivos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_exportarActivos.TabIndex = 16
+        Me.BTN_exportarActivos.Text = "Exportar tabla"
+        Me.BTN_exportarActivos.UseVisualStyleBackColor = True
         '
         'BTN_asignarEquipo_Activos
         '
@@ -480,6 +506,7 @@ Partial Class FormAdmin
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.BTN_exportarEquipos)
         Me.Panel3.Controls.Add(Me.BTN_asignarSIM_Equipos)
         Me.Panel3.Controls.Add(Me.BTN_bajaEquipos)
         Me.Panel3.Controls.Add(Me.BTN_agregarEquipos)
@@ -489,6 +516,15 @@ Partial Class FormAdmin
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(965, 419)
         Me.Panel3.TabIndex = 0
+        '
+        'BTN_exportarEquipos
+        '
+        Me.BTN_exportarEquipos.Location = New System.Drawing.Point(52, 231)
+        Me.BTN_exportarEquipos.Name = "BTN_exportarEquipos"
+        Me.BTN_exportarEquipos.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_exportarEquipos.TabIndex = 16
+        Me.BTN_exportarEquipos.Text = "Exportar tabla"
+        Me.BTN_exportarEquipos.UseVisualStyleBackColor = True
         '
         'BTN_asignarSIM_Equipos
         '
@@ -588,6 +624,7 @@ Partial Class FormAdmin
         '
         Me.Panel4.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.BTN_exportarSim)
         Me.Panel4.Controls.Add(Me.BTN_migrarSim)
         Me.Panel4.Controls.Add(Me.BTN_eliminarSim)
         Me.Panel4.Controls.Add(Me.BTN_editarSIM)
@@ -598,6 +635,15 @@ Partial Class FormAdmin
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(965, 419)
         Me.Panel4.TabIndex = 0
+        '
+        'BTN_exportarSim
+        '
+        Me.BTN_exportarSim.Location = New System.Drawing.Point(52, 277)
+        Me.BTN_exportarSim.Name = "BTN_exportarSim"
+        Me.BTN_exportarSim.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_exportarSim.TabIndex = 16
+        Me.BTN_exportarSim.Text = "Exportar tabla"
+        Me.BTN_exportarSim.UseVisualStyleBackColor = True
         '
         'BTN_migrarSim
         '
@@ -723,6 +769,7 @@ Partial Class FormAdmin
         '
         Me.Panel5.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel5.Controls.Add(Me.BTN_exportarUsuarios)
         Me.Panel5.Controls.Add(Me.BTN_eliminarUsuarios)
         Me.Panel5.Controls.Add(Me.BTN_editarUsuario)
         Me.Panel5.Controls.Add(Me.BTN_agregarUsuario)
@@ -732,6 +779,15 @@ Partial Class FormAdmin
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(965, 419)
         Me.Panel5.TabIndex = 0
+        '
+        'BTN_exportarUsuarios
+        '
+        Me.BTN_exportarUsuarios.Location = New System.Drawing.Point(52, 271)
+        Me.BTN_exportarUsuarios.Name = "BTN_exportarUsuarios"
+        Me.BTN_exportarUsuarios.Size = New System.Drawing.Size(109, 27)
+        Me.BTN_exportarUsuarios.TabIndex = 16
+        Me.BTN_exportarUsuarios.Text = "Exportar tabla"
+        Me.BTN_exportarUsuarios.UseVisualStyleBackColor = True
         '
         'BTN_eliminarUsuarios
         '
@@ -836,6 +892,26 @@ Partial Class FormAdmin
         Me.Panel7.Size = New System.Drawing.Size(965, 419)
         Me.Panel7.TabIndex = 0
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(540, 52)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(76, 19)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Modelos:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(284, 52)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(68, 19)
+        Me.Label7.TabIndex = 15
+        Me.Label7.Text = "Marcas:"
+        '
         'DGV_Modelos
         '
         Me.DGV_Modelos.AllowUserToAddRows = False
@@ -922,38 +998,18 @@ Partial Class FormAdmin
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "MARCAS Y MODELOS"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(284, 52)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(68, 19)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "Marcas:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Vensim Sans Tamil", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(540, 52)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 19)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Modelos:"
-        '
         'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
-        Me.Controls.Add(Me.PanelMarcaYModelos)
-        Me.Controls.Add(Me.PanelCliente)
-        Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelEquipos)
+        Me.Controls.Add(Me.PanelUsuario)
         Me.Controls.Add(Me.PanelActivos)
+        Me.Controls.Add(Me.PanelCliente)
+        Me.Controls.Add(Me.PanelMarcaYModelos)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormAdmin"
@@ -1084,4 +1140,9 @@ Partial Class FormAdmin
     Friend WithEvents Marca2MyM As DataGridViewTextBoxColumn
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents BTN_exportarClientes As Button
+    Friend WithEvents BTN_exportarActivos As Button
+    Friend WithEvents BTN_exportarEquipos As Button
+    Friend WithEvents BTN_exportarSim As Button
+    Friend WithEvents BTN_exportarUsuarios As Button
 End Class

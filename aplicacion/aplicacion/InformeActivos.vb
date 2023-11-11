@@ -1,7 +1,12 @@
-﻿Public Class InformeActivos
+﻿Imports Microsoft.Office.Interop
+Imports MySqlConnector
+
+Public Class InformeActivos
     Dim controlador As New Controlador()
+    Dim conn As New Conexion()
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
+        FormAdmin.Show()
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
@@ -57,4 +62,111 @@
 
         End If
     End Sub
+
+    Private Sub BTN_reporteIntervalo_Click(sender As Object, e As EventArgs) Handles BTN_reporteIntervalo.Click
+        ReporteGeneral.Show()
+        Me.Close()
+    End Sub
+
+    Private Sub BTN_exportar_Click(sender As Object, e As EventArgs) Handles BTN_exportar.Click
+
+        Dim excelApp As New Excel.Application()
+        Dim workbook As Excel.Workbook = excelApp.Workbooks.Add()
+
+        Dim dtPlataformaPosition As DataTable = CargarTablaPlataforma_InformeActivos("POSITION LOGIC")
+        Dim dtPlataformaRed As DataTable = CargarTablaPlataforma_InformeActivos("RED GPS")
+        Dim dtAdquisicionVenta As DataTable = CargarTablaAdquisicion_InformeActivos("VENTA")
+        Dim dtAdquisicionRenta As DataTable = CargarTablaAdquisicion_InformeActivos("RENTA")
+
+        dtPlataformaPosition.TableName = "Position Logic"
+        dtPlataformaRed.TableName = "Red GPS"
+        dtAdquisicionVenta.TableName = "Venta"
+        dtAdquisicionRenta.TableName = "Renta"
+
+        ExportDataTableToExcel(dtPlataformaPosition, workbook, excelApp)
+        ExportDataTableToExcel(dtPlataformaRed, workbook, excelApp)
+        ExportDataTableToExcel(dtAdquisicionVenta, workbook, excelApp)
+        ExportDataTableToExcel(dtAdquisicionRenta, workbook, excelApp)
+
+        'workbook.SaveAs("InformeActivos.xlsx")
+
+        'Mostrar cuadro de diálogo para guardar archivo
+        Dim saveDialog As New SaveFileDialog()
+        saveDialog.Filter = "Excel Files|*.xlsx"
+
+        If saveDialog.ShowDialog() = DialogResult.OK Then
+            workbook.SaveAs(saveDialog.FileName)
+        End If
+
+        workbook.Close()
+        excelApp.Quit()
+    End Sub
+
+    Sub ExportDataTableToExcel(dt As DataTable, workbook As Excel.Workbook, excelApp As Excel.Application)
+
+        Dim worksheet As Excel.Worksheet = workbook.Sheets.Add()
+        worksheet.Name = dt.TableName
+
+        For i As Integer = 0 To dt.Columns.Count - 1
+            worksheet.Cells(1, i + 1).value = dt.Columns(i).ColumnName
+        Next
+
+        For i As Integer = 0 To dt.Rows.Count - 1
+            For j As Integer = 0 To dt.Columns.Count - 1
+                worksheet.Cells(i + 2, j + 1).value = dt.Rows(i)(j)
+            Next
+        Next
+
+    End Sub
+
+    Function CargarTablaPlataforma_InformeActivos(ByVal plataforma As String) As DataTable
+
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT a.PLACA AS 'Placa', a.CHASIS AS 'Chasis', e.IMEI AS 'IMEI Equipo', m.MODELO AS 'Modelo Equipo'
+                                                FROM ASIGNACION_PLATAFORMA ap
+                                                INNER JOIN PLATAFORMA p ON ap.PLATAFORMA_PLAT_ID = p.PLAT_ID
+                                                INNER JOIN ASIGNACION_EQUIPO ae ON ap.ACTIVO_ACT_ID = ae.ACTIVO_ACT_ID   
+                                                INNER JOIN ACTIVO a ON ae.ACTIVO_ACT_ID = a.ACT_ID
+                                                INNER JOIN EQUIPO e ON ae.EQUIPO_EQUI_ID = e.EQUI_ID
+                                                INNER JOIN MODELO_GPS m ON e.ID_MODELO = m.ID_MODELO
+                                                WHERE p.NOMBRE = '" & plataforma & "'
+                                                ORDER BY a.PLACA;", conn.connection)
+            Dim table As New DataTable()
+            adapter.FillSchema(table, SchemaType.Source)
+            adapter.Fill(table)
+
+            conn.desconexion()
+            Return table
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+        End Try
+
+    End Function
+    Function CargarTablaAdquisicion_InformeActivos(ByVal adiquisiciom As String) As DataTable
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("SELECT a.PLACA AS 'Placa', a.CHASIS AS 'Chasis', e.IMEI AS 'IMEI', m.MODELO AS 'Modelo'
+                                                FROM ASIGNACION_EQUIPO ae
+                                                INNER JOIN ACTIVO a ON ae.ACTIVO_ACT_ID = a.ACT_ID  
+                                                INNER JOIN EQUIPO e ON ae.EQUIPO_EQUI_ID = e.EQUI_ID
+                                                INNER JOIN MODELO_GPS m ON e.ID_MODELO = m.ID_MODELO
+                                                WHERE ae.ESTADO = '" & adiquisiciom & "'
+                                                ORDER BY a.PLACA", conn.connection)
+            Dim table As New DataTable()
+            adapter.FillSchema(table, SchemaType.Source)
+            adapter.Fill(table)
+
+            conn.desconexion()
+            Return table
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+        End Try
+
+    End Function
+
+
 End Class

@@ -55,10 +55,13 @@ Partial Class AsignarActivos
         Me.NombreAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PlacaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChasisAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarcaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ImeiAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel5.SuspendLayout()
         CType(Me.DGV_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -320,6 +323,7 @@ Partial Class AsignarActivos
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.BTN_exportar)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.BTN_desasignarActivo)
         Me.Panel3.Controls.Add(Me.DGV_asignaciones)
@@ -359,7 +363,7 @@ Partial Class AsignarActivos
         Me.DGV_asignaciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_asignaciones.BackgroundColor = System.Drawing.Color.White
         Me.DGV_asignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreAsignacion, Me.PlacaAsignacion, Me.ChasisAsignacion, Me.MarcaAsignacion, Me.FechaAsignacion})
+        Me.DGV_asignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreAsignacion, Me.PlacaAsignacion, Me.ChasisAsignacion, Me.NumeroAsignacion, Me.ImeiAsignacion, Me.ModeloAsignacion, Me.FechaAsignacion})
         Me.DGV_asignaciones.Location = New System.Drawing.Point(87, 43)
         Me.DGV_asignaciones.Name = "DGV_asignaciones"
         Me.DGV_asignaciones.ReadOnly = True
@@ -385,11 +389,23 @@ Partial Class AsignarActivos
         Me.ChasisAsignacion.Name = "ChasisAsignacion"
         Me.ChasisAsignacion.ReadOnly = True
         '
-        'MarcaAsignacion
+        'NumeroAsignacion
         '
-        Me.MarcaAsignacion.HeaderText = "Marca"
-        Me.MarcaAsignacion.Name = "MarcaAsignacion"
-        Me.MarcaAsignacion.ReadOnly = True
+        Me.NumeroAsignacion.HeaderText = "Numero"
+        Me.NumeroAsignacion.Name = "NumeroAsignacion"
+        Me.NumeroAsignacion.ReadOnly = True
+        '
+        'ImeiAsignacion
+        '
+        Me.ImeiAsignacion.HeaderText = "IMEI (Equipo)"
+        Me.ImeiAsignacion.Name = "ImeiAsignacion"
+        Me.ImeiAsignacion.ReadOnly = True
+        '
+        'ModeloAsignacion
+        '
+        Me.ModeloAsignacion.HeaderText = "Modelo"
+        Me.ModeloAsignacion.Name = "ModeloAsignacion"
+        Me.ModeloAsignacion.ReadOnly = True
         '
         'FechaAsignacion
         '
@@ -411,6 +427,16 @@ Partial Class AsignarActivos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(960, 227)
         Me.Panel4.TabIndex = 1
+        '
+        'BTN_exportar
+        '
+        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_exportar.Location = New System.Drawing.Point(87, 259)
+        Me.BTN_exportar.Name = "BTN_exportar"
+        Me.BTN_exportar.Size = New System.Drawing.Size(106, 23)
+        Me.BTN_exportar.TabIndex = 33
+        Me.BTN_exportar.Text = "Exportar tabla"
+        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'AsignarActivos
         '
@@ -477,6 +503,9 @@ Partial Class AsignarActivos
     Friend WithEvents NombreAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents PlacaAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents ChasisAsignacion As DataGridViewTextBoxColumn
-    Friend WithEvents MarcaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents NumeroAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents ImeiAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents BTN_exportar As Button
 End Class

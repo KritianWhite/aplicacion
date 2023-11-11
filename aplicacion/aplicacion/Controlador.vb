@@ -218,7 +218,7 @@ Public Class Controlador
                 Return False
             End If
         Catch ex As Exception
-            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ' MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             conn.desconexion()
             CargarTablaClientes()
             Return False
@@ -995,16 +995,19 @@ Public Class Controlador
     Function CargarTablaAsignaciones_Equipo() As Boolean
         Try
             conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT A.PLACA, E.IMEI, M.MODELO, MP.MARCA, AE.FECHA_ASIGNACION_EQUIPO
+            Dim adapter As New MySqlDataAdapter("SELECT A.PLACA, E.IMEI, M.MODELO, MP.MARCA, AE.FECHA_ASIGNACION_EQUIPO, S.NUMERO
                                                 FROM ASIGNACION_EQUIPO AE
                                                 INNER JOIN ACTIVO A ON AE.ACTIVO_ACT_ID = A.ACT_ID
-                                                INNER JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID 
+                                                INNER JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID  
                                                 INNER JOIN MODELO_GPS M ON E.ID_MODELO = M.ID_MODELO
-                                                INNER JOIN MARCA_GPS MP ON M.ID_MARCA = MP.ID_MARCA", conn.connection)
+                                                INNER JOIN MARCA_GPS MP ON M.ID_MARCA = MP.ID_MARCA
+                                                INNER JOIN ASIGNACION_SIM ASIM ON E.EQUI_ID = ASIM.EQUIPO_EQUI_ID 
+                                                INNER JOIN SIM S ON ASIM.SIM_SIM_ID = S.SIM_ID", conn.connection)
             Dim table As New DataTable()
 
             adapter.Fill(table)
             AsignarEquipo.DGV_asignaciones.Columns("PlacaAsignacion").DataPropertyName = "PLACA"
+            AsignarEquipo.DGV_asignaciones.Columns("NumeroAsignacion").DataPropertyName = "NUMERO"
             AsignarEquipo.DGV_asignaciones.Columns("IMEIAsignacion").DataPropertyName = "IMEI"
             AsignarEquipo.DGV_asignaciones.Columns("ModeloAsignacion").DataPropertyName = "MODELO"
             AsignarEquipo.DGV_asignaciones.Columns("MarcaAsignacion").DataPropertyName = "MARCA"
@@ -1074,9 +1077,14 @@ Public Class Controlador
     Function CargarTablaAsignaciones_Activo() As Boolean
         Try
             conn.conexion()
-            Dim adapter As New MySqlDataAdapter("SELECT C.NOMBRE, A.PLACA, A.CHASIS, A.MARCA, AA.FECHA
-                                                FROM ASIGNACION_ACTIVO AA
-                                                INNER JOIN ACTIVO A ON AA.ACTIVO_ACT_ID = A.ACT_ID
+            Dim adapter As New MySqlDataAdapter("SELECT C.NOMBRE, A.PLACA, A.CHASIS, S.NUMERO, E.IMEI, M.MODELO, AE.FECHA_ASIGNACION_EQUIPO
+                                                FROM ASIGNACION_EQUIPO AE
+                                                INNER JOIN ACTIVO A ON AE.ACTIVO_ACT_ID = A.ACT_ID  
+                                                INNER JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID
+                                                INNER JOIN MODELO_GPS M ON E.ID_MODELO = M.ID_MODELO
+                                                INNER JOIN ASIGNACION_SIM ASIM ON E.EQUI_ID = ASIM.EQUIPO_EQUI_ID
+                                                INNER JOIN SIM S ON ASIM.SIM_SIM_ID = S.SIM_ID
+                                                INNER JOIN ASIGNACION_ACTIVO AA ON A.ACT_ID = AA.ACTIVO_ACT_ID  
                                                 INNER JOIN CLIENTE C ON AA.CLIENTE_CLI_ID = C.CLI_ID", conn.connection)
             Dim table As New DataTable()
 
@@ -1084,8 +1092,10 @@ Public Class Controlador
             AsignarActivos.DGV_asignaciones.Columns("NombreAsignacion").DataPropertyName = "NOMBRE"
             AsignarActivos.DGV_asignaciones.Columns("PlacaAsignacion").DataPropertyName = "PLACA"
             AsignarActivos.DGV_asignaciones.Columns("ChasisAsignacion").DataPropertyName = "CHASIS"
-            AsignarActivos.DGV_asignaciones.Columns("MarcaAsignacion").DataPropertyName = "MARCA"
-            AsignarActivos.DGV_asignaciones.Columns("FechaAsignacion").DataPropertyName = "FECHA"
+            AsignarActivos.DGV_asignaciones.Columns("NumeroAsignacion").DataPropertyName = "NUMERO"
+            AsignarActivos.DGV_asignaciones.Columns("ImeiAsignacion").DataPropertyName = "IMEI"
+            AsignarActivos.DGV_asignaciones.Columns("ModeloAsignacion").DataPropertyName = "MODELO"
+            AsignarActivos.DGV_asignaciones.Columns("FechaAsignacion").DataPropertyName = "FECHA_ASIGNACION_EQUIPO"
             AsignarActivos.DGV_asignaciones.DataSource = table
             conn.desconexion()
             Return True
@@ -1213,6 +1223,192 @@ Public Class Controlador
     End Function
 
 
+    ' REPORTES
+    Function reportesGeneral() As Boolean
+        Try
+            conn.conexion()
+            Dim adapter As New MySqlDataAdapter("
+            SELECT 
+                'Equipos Totales' AS Descripcion, 
+                (SELECT COUNT(*) FROM EQUIPO) AS Cantidad 
+            UNION
+            SELECT 
+                'Equipos Habilitados' AS Descripcion, 
+                (SELECT COUNT(*) FROM EQUIPO WHERE ESTADO = 'HABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'Equipos Inhabilitados' AS Descripcion, 
+                (SELECT COUNT(*) FROM EQUIPO WHERE ESTADO = 'INHABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'SIMs Totales' AS Descripcion, 
+                (SELECT COUNT(*) FROM SIM) AS Cantidad 
+            UNION
+            SELECT 
+                'SIMs Habilitadas' AS Descripcion, 
+                (SELECT COUNT(*) FROM SIM WHERE ESTADO = 'HABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'SIMs Inhabilitadas' AS Descripcion, 
+                (SELECT COUNT(*) FROM SIM WHERE ESTADO = 'INHABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'Bajas de Equipo' AS Descripcion, 
+                (SELECT COUNT(*) FROM BAJAS_EQUIPOS) AS Cantidad 
+            UNION
+            SELECT 
+                'Migraciones de SIM' AS Descripcion, 
+                (SELECT COUNT(*) FROM MIGRACION_SIM) AS Cantidad 
+            UNION
+            SELECT 
+                'Asignaciones SIM' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_SIM) AS Cantidad 
+            UNION
+            SELECT 
+                'Asignaciones Equipo' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_EQUIPO) AS Cantidad 
+            UNION
+            SELECT 
+                'Asignaciones Activo' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_ACTIVO) AS Cantidad
+            UNION
+            SELECT 
+                'Activos Activados' AS Descripcion, 
+                (SELECT COUNT(*) FROM ACTIVO WHERE ESTADO = 'ACTIVADO') AS Cantidad 
+            UNION
+            SELECT 
+                'Activos Habilitados' AS Descripcion, 
+                (SELECT COUNT(*) FROM ACTIVO WHERE ESTADO = 'HABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'Activos Inhabilitados' AS Descripcion, 
+                (SELECT COUNT(*) FROM ACTIVO WHERE ESTADO = 'INHABILITADO') AS Cantidad 
+            UNION
+            SELECT 
+                'Activos en Venta' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_EQUIPO WHERE ESTADO = 'VENTA') AS Cantidad 
+            UNION
+            SELECT 
+                'Activos en Renta' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_EQUIPO WHERE ESTADO = 'RENTA') AS Cantidad
+            UNION
+            SELECT 
+                'Position Logic' AS Descripcion, 
+                (SELECT COUNT(*) FROM ASIGNACION_PLATAFORMA WHERE PLATAFORMA_PLAT_ID = (SELECT PLAT_ID FROM PLATAFORMA WHERE NOMBRE = 'POSITION LOGIC')) AS Cantidad
+            UNION
+            SELECT 
+                'Red GPS' AS Descripcion, 
+                (SELECT COUNT(*)  FROM ASIGNACION_PLATAFORMA WHERE PLATAFORMA_PLAT_ID = (SELECT PLAT_ID FROM PLATAFORMA WHERE NOMBRE = 'RED GPS')) AS Cantidad;
+                ", conn.connection)
+            Dim table As New DataTable()
+            adapter.FillSchema(table, SchemaType.Source)
+            adapter.Fill(table)
 
+            ReporteGeneral.DGV_reporteGeneral.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
+
+    Function reportesGeneralIntevalo(ByVal fecha_inicial As String, ByVal fecha_final As String) As Boolean
+        Try
+            conn.conexion()
+            ' Parseamos las fechas para mysql
+            Dim fechaI As DateTime = DateTime.Parse(fecha_inicial)
+            Dim fechainicial As String = fechaI.ToString("yyyy-MM-dd")
+            Dim fechaF As DateTime = DateTime.Parse(fecha_final)
+            Dim fechafinal As String = fechaF.ToString("yyyy-MM-dd")
+
+            Dim adapter As New MySqlDataAdapter("
+            SELECT
+                'Equipos asignados a activos' AS Descripcion,
+                COUNT(DISTINCT AE.EQUIPO_EQUI_ID) AS Cantidad
+                FROM ASIGNACION_EQUIPO AE
+                LEFT JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID
+                WHERE AE.FECHA_ASIGNACION_EQUIPO BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND E.ESTADO = 'ACTIVADO'
+            UNION
+            SELECT
+                'Equipos no asignados a activos' AS Descripcion,
+                COUNT(DISTINCT E.EQUI_ID) AS Cantidad
+                FROM ASIGNACION_SIM ASIM
+                LEFT JOIN EQUIPO E ON ASIM.EQUIPO_EQUI_ID = E.EQUI_ID
+                WHERE ASIM.FECHA_ASIGNACION_SIM BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND E.ESTADO = 'HABILITADO'
+            UNION
+            SELECT
+                'Sim asignadas a equipos' AS Descripcion,
+                COUNT(DISTINCT ASIM.SIM_SIM_ID) AS Cantidad
+                FROM ASIGNACION_SIM ASIM
+                LEFT JOIN SIM S ON ASIM.SIM_SIM_ID = S.SIM_ID
+                WHERE ASIM.FECHA_ASIGNACION_SIM BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND S.ESTADO = 'HABILITADO'
+            UNION
+            SELECT
+                'Activos asignados a clientes' AS Descripcion,
+                COUNT(DISTINCT AA.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_ACTIVO AA
+                LEFT JOIN ACTIVO A ON AA.ACTIVO_ACT_ID = A.ACT_ID
+                WHERE AA.FECHA BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND A.ESTADO = 'ACTIVADO'
+            UNION
+            SELECT
+                'Activos no asignados a clientes' AS Descripcion,
+                COUNT(DISTINCT AE.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_EQUIPO AE
+                LEFT JOIN ACTIVO A ON AE.ACTIVO_ACT_ID = A.ACT_ID
+                WHERE AE.FECHA_ASIGNACION_EQUIPO BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND A.ESTADO = 'HABILITADO'
+            UNION
+            SELECT
+                'Activos en venta' AS Descripcion,
+                COUNT(DISTINCT AE.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_EQUIPO AE
+                LEFT JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID
+                WHERE AE.FECHA_ASIGNACION_EQUIPO BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND AE.ESTADO = 'VENTA'
+            UNION
+            SELECT
+                'Activos en renta' AS Descripcion,
+                COUNT(DISTINCT AE.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_EQUIPO AE
+                LEFT JOIN EQUIPO E ON AE.EQUIPO_EQUI_ID = E.EQUI_ID
+                WHERE AE.FECHA_ASIGNACION_EQUIPO BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND AE.ESTADO = 'RENTA'
+            UNION
+            SELECT
+                'Activos con POSITION LOGIC' AS Descripcion,
+                COUNT(DISTINCT AP.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_PLATAFORMA AP
+                LEFT JOIN PLATAFORMA P ON AP.PLATAFORMA_PLAT_ID = P.PLAT_ID
+                WHERE AP.FECHA_ASIGNACION BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND P.NOMBRE = 'POSITION LOGIC'
+            UNION
+            SELECT
+                'Activos con RED GPS' AS Descripcion,
+                COUNT(DISTINCT AP.ACTIVO_ACT_ID) AS Cantidad
+                FROM ASIGNACION_PLATAFORMA AP
+                LEFT JOIN PLATAFORMA P ON AP.PLATAFORMA_PLAT_ID = P.PLAT_ID
+                WHERE AP.FECHA_ASIGNACION BETWEEN '" & fechainicial & "' AND '" & fechafinal & "'
+                AND P.NOMBRE = 'RED GPS'", conn.connection)
+            Dim table As New DataTable()
+            adapter.FillSchema(table, SchemaType.Source)
+            adapter.Fill(table)
+
+            ReporteGeneral.DGV_reporteGeneral.DataSource = table
+            conn.desconexion()
+            Return True
+
+        Catch ex As Exception
+            MessageBox.Show("Error con la base de datos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            conn.desconexion()
+            Return False
+        End Try
+    End Function
 
 End Class

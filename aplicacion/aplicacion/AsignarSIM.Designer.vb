@@ -47,18 +47,19 @@ Partial Class AsignarSIM
         Me.Label5 = New System.Windows.Forms.Label()
         Me.BTN_desasignarEquipo = New System.Windows.Forms.Button()
         Me.DGV_asignaciones = New System.Windows.Forms.DataGridView()
-        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BTN_asignar = New System.Windows.Forms.Button()
-        Me.BTN_regresar = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.IMEIAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ICCAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PropietarioAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CompaniaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAsignacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TB_buscarAsignaciones = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BTN_asignar = New System.Windows.Forms.Button()
+        Me.BTN_regresar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.Panel6.SuspendLayout()
         CType(Me.DGV_equipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -270,6 +271,7 @@ Partial Class AsignarSIM
         '
         Me.Panel3.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.BTN_exportar)
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.BTN_desasignarEquipo)
         Me.Panel3.Controls.Add(Me.DGV_asignaciones)
@@ -315,6 +317,42 @@ Partial Class AsignarSIM
         Me.DGV_asignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_asignaciones.Size = New System.Drawing.Size(833, 208)
         Me.DGV_asignaciones.TabIndex = 34
+        '
+        'IMEIAsignacion
+        '
+        Me.IMEIAsignacion.HeaderText = "IMEI (Equipo)"
+        Me.IMEIAsignacion.Name = "IMEIAsignacion"
+        Me.IMEIAsignacion.ReadOnly = True
+        '
+        'ICCAsignacion
+        '
+        Me.ICCAsignacion.HeaderText = "ICC"
+        Me.ICCAsignacion.Name = "ICCAsignacion"
+        Me.ICCAsignacion.ReadOnly = True
+        '
+        'NumeroAsignacion
+        '
+        Me.NumeroAsignacion.HeaderText = "Numero"
+        Me.NumeroAsignacion.Name = "NumeroAsignacion"
+        Me.NumeroAsignacion.ReadOnly = True
+        '
+        'PropietarioAsignacion
+        '
+        Me.PropietarioAsignacion.HeaderText = "Propietario"
+        Me.PropietarioAsignacion.Name = "PropietarioAsignacion"
+        Me.PropietarioAsignacion.ReadOnly = True
+        '
+        'CompaniaAsignacion
+        '
+        Me.CompaniaAsignacion.HeaderText = "Compañia"
+        Me.CompaniaAsignacion.Name = "CompaniaAsignacion"
+        Me.CompaniaAsignacion.ReadOnly = True
+        '
+        'FechaAsignacion
+        '
+        Me.FechaAsignacion.HeaderText = "Fecha"
+        Me.FechaAsignacion.Name = "FechaAsignacion"
+        Me.FechaAsignacion.ReadOnly = True
         '
         'TB_buscarAsignaciones
         '
@@ -373,41 +411,15 @@ Partial Class AsignarSIM
         Me.Label1.TabIndex = 35
         Me.Label1.Text = "ASIGNACION DE SIM"
         '
-        'IMEIAsignacion
+        'BTN_exportar
         '
-        Me.IMEIAsignacion.HeaderText = "IMEI (Equipo)"
-        Me.IMEIAsignacion.Name = "IMEIAsignacion"
-        Me.IMEIAsignacion.ReadOnly = True
-        '
-        'ICCAsignacion
-        '
-        Me.ICCAsignacion.HeaderText = "ICC"
-        Me.ICCAsignacion.Name = "ICCAsignacion"
-        Me.ICCAsignacion.ReadOnly = True
-        '
-        'NumeroAsignacion
-        '
-        Me.NumeroAsignacion.HeaderText = "Numero"
-        Me.NumeroAsignacion.Name = "NumeroAsignacion"
-        Me.NumeroAsignacion.ReadOnly = True
-        '
-        'PropietarioAsignacion
-        '
-        Me.PropietarioAsignacion.HeaderText = "Propietario"
-        Me.PropietarioAsignacion.Name = "PropietarioAsignacion"
-        Me.PropietarioAsignacion.ReadOnly = True
-        '
-        'CompaniaAsignacion
-        '
-        Me.CompaniaAsignacion.HeaderText = "Compañia"
-        Me.CompaniaAsignacion.Name = "CompaniaAsignacion"
-        Me.CompaniaAsignacion.ReadOnly = True
-        '
-        'FechaAsignacion
-        '
-        Me.FechaAsignacion.HeaderText = "Fecha"
-        Me.FechaAsignacion.Name = "FechaAsignacion"
-        Me.FechaAsignacion.ReadOnly = True
+        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_exportar.Location = New System.Drawing.Point(87, 257)
+        Me.BTN_exportar.Name = "BTN_exportar"
+        Me.BTN_exportar.Size = New System.Drawing.Size(100, 23)
+        Me.BTN_exportar.TabIndex = 34
+        Me.BTN_exportar.Text = "Exportar tabla"
+        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'AsignarSIM
         '
@@ -475,4 +487,5 @@ Partial Class AsignarSIM
     Friend WithEvents PropietarioAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents CompaniaAsignacion As DataGridViewTextBoxColumn
     Friend WithEvents FechaAsignacion As DataGridViewTextBoxColumn
+    Friend WithEvents BTN_exportar As Button
 End Class

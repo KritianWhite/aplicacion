@@ -4,6 +4,7 @@
 
     Private Sub BTN_regresar_Click(sender As Object, e As EventArgs) Handles BTN_regresar.Click
         Me.Close()
+        FormAdmin.Show()
     End Sub
     Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
         If (TB_iccSim.Text <> String.Empty And TB_numeroSim.Text <> String.Empty And TB_companiaSim.Text <> String.Empty And
