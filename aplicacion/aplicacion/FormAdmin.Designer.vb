@@ -1004,6 +1004,7 @@ Partial Class FormAdmin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
+        Me.ControlBox = False
         Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelEquipos)
         Me.Controls.Add(Me.PanelUsuario)

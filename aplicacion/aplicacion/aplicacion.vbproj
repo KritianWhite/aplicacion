@@ -184,6 +184,12 @@
     <Compile Include="BajaEquipos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Conectividad.Designer.vb">
+      <DependentUpon>Conectividad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Conectividad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Conexion.vb" />
     <Compile Include="Controlador.vb" />
     <Compile Include="FormAdmin.Designer.vb">
@@ -215,6 +221,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -261,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BajaEquipos.resx">
       <DependentUpon>BajaEquipos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conectividad.resx">
+      <DependentUpon>Conectividad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.vb</DependentUpon>
