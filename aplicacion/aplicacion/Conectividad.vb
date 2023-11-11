@@ -10,9 +10,6 @@
                     conn.username = TB_usuario.Text
                     conn.password = TB_contrasenia.Text
                     conn.database = TB_baseDatos.Text
-                    conn.conexion()
-                    conn.desconexion()
-
                     Login.Show()
                     Me.Hide()
                 Else
