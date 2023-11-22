@@ -23,16 +23,18 @@ Partial Class Conectividad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TB_host = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TB_baseDatos = New System.Windows.Forms.TextBox()
         Me.TB_contrasenia = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TB_usuario = New System.Windows.Forms.TextBox()
         Me.TB_puerto = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.BTN_conectar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -40,99 +42,39 @@ Partial Class Conectividad
         '
         Me.Panel1.BackColor = System.Drawing.Color.AliceBlue
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.BTN_conectar)
         Me.Panel1.Controls.Add(Me.TB_baseDatos)
         Me.Panel1.Controls.Add(Me.TB_contrasenia)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TB_usuario)
         Me.Panel1.Controls.Add(Me.TB_puerto)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.TB_host)
+        Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Location = New System.Drawing.Point(18, 161)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(702, 398)
         Me.Panel1.TabIndex = 0
         '
-        'TB_baseDatos
+        'TB_host
         '
-        Me.TB_baseDatos.Location = New System.Drawing.Point(315, 223)
-        Me.TB_baseDatos.Name = "TB_baseDatos"
-        Me.TB_baseDatos.Size = New System.Drawing.Size(268, 26)
-        Me.TB_baseDatos.TabIndex = 10
+        Me.TB_host.Location = New System.Drawing.Point(315, 35)
+        Me.TB_host.Name = "TB_host"
+        Me.TB_host.Size = New System.Drawing.Size(268, 26)
+        Me.TB_host.TabIndex = 13
         '
-        'TB_contrasenia
+        'Label6
         '
-        Me.TB_contrasenia.Location = New System.Drawing.Point(315, 165)
-        Me.TB_contrasenia.Name = "TB_contrasenia"
-        Me.TB_contrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TB_contrasenia.Size = New System.Drawing.Size(268, 26)
-        Me.TB_contrasenia.TabIndex = 9
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(113, 227)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(154, 22)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "BASE DE DATOS:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(113, 169)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(136, 22)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "CONTRASEÑA:"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(422, 295)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(161, 54)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "CONECTAR"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'TB_usuario
-        '
-        Me.TB_usuario.Location = New System.Drawing.Point(315, 114)
-        Me.TB_usuario.Name = "TB_usuario"
-        Me.TB_usuario.Size = New System.Drawing.Size(268, 26)
-        Me.TB_usuario.TabIndex = 5
-        '
-        'TB_puerto
-        '
-        Me.TB_puerto.Location = New System.Drawing.Point(315, 56)
-        Me.TB_puerto.Name = "TB_puerto"
-        Me.TB_puerto.Size = New System.Drawing.Size(268, 26)
-        Me.TB_puerto.TabIndex = 4
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(113, 118)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(99, 22)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "USUARIO:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(113, 60)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 22)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "PUERTO:"
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(113, 39)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(64, 22)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "HOST:"
         '
         'Label1
         '
@@ -144,6 +86,85 @@ Partial Class Conectividad
         Me.Label1.Size = New System.Drawing.Size(683, 67)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "CONECTIVIDAD REMOTA"
+        '
+        'TB_baseDatos
+        '
+        Me.TB_baseDatos.Location = New System.Drawing.Point(315, 256)
+        Me.TB_baseDatos.Name = "TB_baseDatos"
+        Me.TB_baseDatos.Size = New System.Drawing.Size(268, 26)
+        Me.TB_baseDatos.TabIndex = 21
+        '
+        'TB_contrasenia
+        '
+        Me.TB_contrasenia.Location = New System.Drawing.Point(315, 198)
+        Me.TB_contrasenia.Name = "TB_contrasenia"
+        Me.TB_contrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TB_contrasenia.Size = New System.Drawing.Size(268, 26)
+        Me.TB_contrasenia.TabIndex = 20
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(113, 260)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(154, 22)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "BASE DE DATOS:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(113, 202)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(136, 22)
+        Me.Label5.TabIndex = 18
+        Me.Label5.Text = "CONTRASEÑA:"
+        '
+        'TB_usuario
+        '
+        Me.TB_usuario.Location = New System.Drawing.Point(315, 147)
+        Me.TB_usuario.Name = "TB_usuario"
+        Me.TB_usuario.Size = New System.Drawing.Size(268, 26)
+        Me.TB_usuario.TabIndex = 17
+        '
+        'TB_puerto
+        '
+        Me.TB_puerto.Location = New System.Drawing.Point(315, 89)
+        Me.TB_puerto.Name = "TB_puerto"
+        Me.TB_puerto.Size = New System.Drawing.Size(268, 26)
+        Me.TB_puerto.TabIndex = 16
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(113, 151)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 22)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "USUARIO:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(113, 93)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(87, 22)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "PUERTO:"
+        '
+        'BTN_conectar
+        '
+        Me.BTN_conectar.Font = New System.Drawing.Font("Vensim Sans Tamil", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_conectar.Location = New System.Drawing.Point(422, 313)
+        Me.BTN_conectar.Name = "BTN_conectar"
+        Me.BTN_conectar.Size = New System.Drawing.Size(161, 54)
+        Me.BTN_conectar.TabIndex = 22
+        Me.BTN_conectar.Text = "CONECTAR"
+        Me.BTN_conectar.UseVisualStyleBackColor = True
         '
         'Conectividad
         '
@@ -170,13 +191,15 @@ Partial Class Conectividad
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents TB_usuario As TextBox
-    Friend WithEvents TB_puerto As TextBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents TB_host As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents BTN_conectar As Button
     Friend WithEvents TB_baseDatos As TextBox
     Friend WithEvents TB_contrasenia As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents TB_usuario As TextBox
+    Friend WithEvents TB_puerto As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
 End Class
