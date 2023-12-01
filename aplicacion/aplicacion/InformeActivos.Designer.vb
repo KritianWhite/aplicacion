@@ -23,6 +23,7 @@ Partial Class InformeActivos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.BTN_reporteIntervalo = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -34,7 +35,6 @@ Partial Class InformeActivos
         Me.TB_buscarActivo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BTN_regresar = New System.Windows.Forms.Button()
-        Me.BTN_exportar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_informeActivos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,16 @@ Partial Class InformeActivos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(799, 402)
         Me.Panel1.TabIndex = 43
+        '
+        'BTN_exportar
+        '
+        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTN_exportar.Location = New System.Drawing.Point(652, 371)
+        Me.BTN_exportar.Name = "BTN_exportar"
+        Me.BTN_exportar.Size = New System.Drawing.Size(112, 26)
+        Me.BTN_exportar.TabIndex = 44
+        Me.BTN_exportar.Text = "Exportar tablas"
+        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'BTN_reporteIntervalo
         '
@@ -179,16 +189,6 @@ Partial Class InformeActivos
         Me.BTN_regresar.TabIndex = 41
         Me.BTN_regresar.Text = "Regresar"
         Me.BTN_regresar.UseVisualStyleBackColor = True
-        '
-        'BTN_exportar
-        '
-        Me.BTN_exportar.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTN_exportar.Location = New System.Drawing.Point(652, 371)
-        Me.BTN_exportar.Name = "BTN_exportar"
-        Me.BTN_exportar.Size = New System.Drawing.Size(112, 26)
-        Me.BTN_exportar.TabIndex = 44
-        Me.BTN_exportar.Text = "Exportar tablas"
-        Me.BTN_exportar.UseVisualStyleBackColor = True
         '
         'InformeActivos
         '

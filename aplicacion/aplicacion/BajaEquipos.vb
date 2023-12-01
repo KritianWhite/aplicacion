@@ -44,7 +44,7 @@
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (Nombre de usuario)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Then

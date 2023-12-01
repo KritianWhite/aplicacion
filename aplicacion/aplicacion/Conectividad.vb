@@ -15,6 +15,7 @@
                         username = TB_usuario.Text
                         password = TB_contrasenia.Text
                         database = TB_baseDatos.Text
+                        host = TB_host.Text
                         If conn.verificarConexion() Then
                             conn.desconexion()
                             Login.Show()

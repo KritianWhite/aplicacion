@@ -14,10 +14,43 @@ Public Class FormAdmin
 
     Private Sub SallirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SallirToolStripMenuItem.Click
         Me.Close()
-        Login.Show()
+        Application.Exit()
     End Sub
 
-    ' ╔════════════════════════════════════════════════ NAVEGACIÓN PANELES ═══════════════════════════════════════════════╗
+    ' Metodo para acciones al cargar la tabla
+    Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+        If (PanelCliente.Visible = False) Then
+            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
+            ' asi tener una mejor vista sobre la navegación dentro del programa
+            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
+            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+            ' Ocultamos o mostramos los paneles
+            PanelCliente.Visible = True
+            PanelActivos.Visible = False
+            PanelEquipos.Visible = False
+            PanelSIM.Visible = False
+            PanelUsuario.Visible = False
+            PanelCliente.Location = New Point(0, 0)
+            PanelCliente.Dock = DockStyle.Fill
+            ' Cargamos tabla clientes
+            Try
+                If controlador.CargarTablaClientes() = False Then
+                    MessageBox.Show("No se pudo cargar la tabla de clientes.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MessageBox.Show("Ocurrió algo inesperado (" & ex.Message & ").", "Error Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
+
+
+
+    ' ╔════════════════════════════════════════════════ NAVEGACIÓN ═══════════════════════════════════════════════╗
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         If (PanelCliente.Visible = False) Then
             ' Agregamos color al menu strip, y tambien a cada item al dar click para 
@@ -204,6 +237,12 @@ Public Class FormAdmin
             MessageBox.Show("Ocurrió algo inesperado (" & ex.Message & ").", "Error Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+    'Navegación hacia otras ventanas
+    Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
+        Me.Hide()
+        InformeActivos.Show()
+    End Sub
+
 
 
     ' ╔═══════════════════════════════════════════════ CLIENTES ═══════════════════════════════════════════════╗
@@ -212,7 +251,6 @@ Public Class FormAdmin
         AgregarCliente.Show()
         AgregarCliente.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
-
     ' Editar información clientes
     Private Sub BTN_editarClientes_Click(sender As Object, e As EventArgs) Handles BTN_editarClientes.Click
         DGV_clientes.ReadOnly = False
@@ -249,7 +287,7 @@ Public Class FormAdmin
         DGV_clientes.Columns("Telefono_C").ReadOnly = True
         DGV_clientes.Columns("Correo_C").ReadOnly = True
     End Sub
-    ' Eliminar cliente
+    ' Eliminar registro de cliente
     Private Sub BTN_eliminarClientes_Click(sender As Object, e As EventArgs) Handles BTN_eliminarClientes.Click
         Try
             Dim resultado = MessageBox.Show("¿Desea eliminar al cliente " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation)
@@ -263,121 +301,27 @@ Public Class FormAdmin
             MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
-
-
-
-    ' ╔══════════════════════════════ ACTIVOS ══════════════════════════════╗
-    ' ╔══════════════════════════════ EQUIPOS ══════════════════════════════╗
-    ' ╔════════════════════════════════ SIM ════════════════════════════════╗
-    ' ╔══════════════════════════════ USUARIOS ═════════════════════════════╗
-    ' ╔══════════════════════════ MODELOS Y MARCAS ═════════════════════════╗
-
-
-
-    ' Navegación de los paneles
-
-
-    ' Navegación hacia otras pestañas
-    Private Sub BTN_agregarActivos_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
-        Me.Hide()
-        AgregarActivo.Show()
-        AgregarActivo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
-    Private Sub BTN_agregarEquipos_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
-        Me.Hide()
-        AgregarEquipo.Show()
-        AgregarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
-    Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
-        Me.Hide()
-        AgregarSIM.Show()
-        AgregarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
-    Private Sub BTN_agregarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
-        Me.Hide()
-        AgregarUsuario.Show()
-        AgregarUsuario.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-    Private Sub BajaDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeEquiposToolStripMenuItem.Click
-        Me.Hide()
-        BajaEquipos.Show()
-        BajaEquipos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
-    Private Sub MigracionesDeSIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MigracionesDeSIMToolStripMenuItem.Click
-        Me.Hide()
-        MigracionSIM.Show()
-        MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-
+    ' Ventana asignar activo
     Private Sub BTN_asignarActivo_Cliente_Click(sender As Object, e As EventArgs) Handles BTN_asignarActivo_Clientes.Click
         Me.Hide()
         AsignarActivos.Show()
         AsignarActivos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
+    'Estilos al datagridview
+    Private Sub PanelCliente_Paint(sender As Object, e As PaintEventArgs) Handles PanelCliente.Paint
+        DGV_clientes.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_clientes.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
 
-    Private Sub BTN_asignarEquipo_Activos_Click(sender As Object, e As EventArgs) Handles BTN_asignarEquipo_Activos.Click
+
+
+    ' ╔═══════════════════════════════════════════════ ACTIVOS ═══════════════════════════════════════════════╗
+    Private Sub BTN_agregarActivos_Click(sender As Object, e As EventArgs) Handles BTN_agregarActivos.Click
         Me.Hide()
-        AsignarEquipo.Show()
-        AsignarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+        AgregarActivo.Show()
+        AgregarActivo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
     End Sub
-
-    Private Sub BTN_asignarSIM_Equipos_Click(sender As Object, e As EventArgs) Handles BTN_asignarSIM_Equipos.Click
-        Me.Hide()
-        AsignarSIM.Show()
-        AsignarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-    End Sub
-    Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
-        aux.MigrarSim(valorSeleccionado)
-    End Sub
-
-    Private Sub InformeDeActivosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeDeActivosToolStripMenuItem.Click
-        Me.Hide()
-        InformeActivos.Show()
-    End Sub
-
-    Private Sub BTN_agregarMarca_Click(sender As Object, e As EventArgs) Handles BTN_agregarMarca.Click
-        aux.agregarMarca()
-    End Sub
-
-    ' En este metodo se cargan todas las tablas al iniciar sesión
-    Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-        If (PanelCliente.Visible = False) Then
-            ' Agregamos color al menu strip, y tambien a cada item al dar click para 
-            ' asi tener una mejor vista sobre la navegación dentro del programa
-            MenuStrip1.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-            ClientesToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#FFFFFF")
-            ActivosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-            EquiposToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-            SIMToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-            UsuariosToolStripMenuItem.BackColor = ColorTranslator.FromHtml("#A7E0EA")
-            ' Ocultamos o mostramos los paneles
-            PanelCliente.Visible = True
-            PanelActivos.Visible = False
-            PanelEquipos.Visible = False
-            PanelSIM.Visible = False
-            PanelUsuario.Visible = False
-            PanelCliente.Location = New Point(0, 0)
-            PanelCliente.Dock = DockStyle.Fill
-            ' Cargamos tabla clientes
-            Try
-                If controlador.CargarTablaClientes() = False Then
-                    MessageBox.Show("No se pudo cargar la tabla de clientes.", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Ocurrió algo inesperado (" & ex.Message & ").", "Error Fatal", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        End If
-    End Sub
-
-    ' Editar tablas
-
-
+    ' Editar información de activos
     Private Sub BTN_editarActivos_Click(sender As Object, e As EventArgs) Handles BTN_editarActivos.Click
         DGV_Activos.ReadOnly = False
         DGV_Activos.Columns("Placa_A").ReadOnly = True
@@ -429,7 +373,74 @@ Public Class FormAdmin
         DGV_Activos.Columns("Color_A").ReadOnly = True
         DGV_Activos.Columns("Anio_A").ReadOnly = True
     End Sub
+    ' Eliminar registro de activos
+    Private Sub BTN_eliminarActivos_Click(sender As Object, e As EventArgs) Handles BTN_eliminarActivos.Click
+        Try
+            Dim resultado = MessageBox.Show("¿Desea eliminar el activo " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+            If resultado = DialogResult.OK Then
+                If (controlador.EliminarActivo(valorSeleccionado)) Then
+                    MessageBox.Show("Se eliminó el activo con placa " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarActivos.Text = ""
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    ' Ventana asignar equipo
+    Private Sub BTN_asignarEquipo_Activos_Click(sender As Object, e As EventArgs) Handles BTN_asignarEquipo_Activos.Click
+        Me.Hide()
+        AsignarEquipo.Show()
+        AsignarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Estilos al datagridview
+    Private Sub PanelActivos_Paint(sender As Object, e As PaintEventArgs) Handles PanelActivos.Paint
+        DGV_Activos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Activos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
 
+
+
+    ' ╔═══════════════════════════════════════════════ EQUIPOS ═══════════════════════════════════════════════╗
+    Private Sub BTN_agregarEquipos_Click(sender As Object, e As EventArgs) Handles BTN_agregarEquipos.Click
+        Me.Hide()
+        AgregarEquipo.Show()
+        AgregarEquipo.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Dar de baja a equipos
+    Private Sub BTN_bajaEquipos_Click(sender As Object, e As EventArgs) Handles BTN_bajaEquipos.Click
+        If controlador.DarBajaEquipo(valorSeleccionado) Then
+            MessageBox.Show("Se dió de baja al equipo " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TB_buscarEquipos.Clear()
+        End If
+    End Sub
+    ' Ventana baja de equipos
+    Private Sub BajaDeEquiposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BajaDeEquiposToolStripMenuItem.Click
+        Me.Hide()
+        BajaEquipos.Show()
+        BajaEquipos.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Ventana asignar SIM
+    Private Sub BTN_asignarSIM_Equipos_Click(sender As Object, e As EventArgs) Handles BTN_asignarSIM_Equipos.Click
+        Me.Hide()
+        AsignarSIM.Show()
+        AsignarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Estilos al datagridview
+    Private Sub PanelEquipos_Paint(sender As Object, e As PaintEventArgs) Handles PanelEquipos.Paint
+        DGV_Equipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Equipos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+
+
+    ' ╔═══════════════════════════════════════════════ SIM ═══════════════════════════════════════════════╗
+    Private Sub BTN_agregarSIM_Click(sender As Object, e As EventArgs) Handles BTN_agregarSIM.Click
+        Me.Hide()
+        AgregarSIM.Show()
+        AgregarSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Editar información de sim
     Private Sub BTN_editarSIM_Click(sender As Object, e As EventArgs) Handles BTN_editarSIM.Click
         DGV_Sim.ReadOnly = False
         DGV_Sim.Columns("ICC_S").ReadOnly = True
@@ -479,7 +490,45 @@ Public Class FormAdmin
         DGV_Sim.Columns("Plan_Datos_S").ReadOnly = True
         DGV_Sim.Columns("Compania_S").ReadOnly = True
     End Sub
+    ' Elminar registro de sim
+    Private Sub BTN_eliminarSim_Click(sender As Object, e As EventArgs) Handles BTN_eliminarSim.Click
+        Try
+            Dim resultado = MessageBox.Show("¿Desea eliminar la sim con icc " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+            If resultado = DialogResult.OK Then
+                If (controlador.EliminarSim(valorSeleccionado.ToString())) Then
+                    MessageBox.Show("Se eliminó la sim con icc " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    TB_buscarSim.Text = ""
+                End If
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+    ' Ventana migración sim
+    Private Sub MigracionesDeSIMToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MigracionesDeSIMToolStripMenuItem.Click
+        Me.Hide()
+        MigracionSIM.Show()
+        MigracionSIM.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Migración de sim (Alert box)
+    Private Sub BTN_migrarSim_Click(sender As Object, e As EventArgs) Handles BTN_migrarSim.Click
+        aux.MigrarSim(valorSeleccionado)
+    End Sub
+    'Estilos al datagridview
+    Private Sub PanelSIM_Paint(sender As Object, e As PaintEventArgs) Handles PanelSIM.Paint
+        DGV_Sim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Sim.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
 
+
+
+    ' ╔═══════════════════════════════════════════════ USUARIOS ═══════════════════════════════════════════════╗
+    Private Sub BTN_agregarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_agregarUsuario.Click
+        Me.Hide()
+        AgregarUsuario.Show()
+        AgregarUsuario.BackColor = ColorTranslator.FromHtml("#A7E0EA")
+    End Sub
+    ' Editar información de usuario
     Private Sub BTN_editarUsuario_Click(sender As Object, e As EventArgs) Handles BTN_editarUsuario.Click
         DGV_Usuarios.ReadOnly = False
         DGV_Usuarios.Columns("Nombre_U").ReadOnly = False
@@ -516,35 +565,7 @@ Public Class FormAdmin
         DGV_Usuarios.Columns("Nombre_U").ReadOnly = True
         DGV_Usuarios.Columns("Rol_U").ReadOnly = True
     End Sub
-
-    ' Funcionalidades de los botonoes eliminar
-
-    Private Sub BTN_eliminarActivos_Click(sender As Object, e As EventArgs) Handles BTN_eliminarActivos.Click
-        Try
-            Dim resultado = MessageBox.Show("¿Desea eliminar el activo " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If resultado = DialogResult.OK Then
-                If (controlador.EliminarActivo(valorSeleccionado)) Then
-                    MessageBox.Show("Se eliminó el activo con placa " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    TB_buscarActivos.Text = ""
-                End If
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-    Private Sub BTN_eliminarSim_Click(sender As Object, e As EventArgs) Handles BTN_eliminarSim.Click
-        Try
-            Dim resultado = MessageBox.Show("¿Desea eliminar la sim con icc " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If resultado = DialogResult.OK Then
-                If (controlador.EliminarSim(valorSeleccionado.ToString())) Then
-                    MessageBox.Show("Se eliminó la sim con icc " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    TB_buscarSim.Text = ""
-                End If
-            End If
-        Catch ex As Exception
-            MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
+    ' Eliminar registro  de usuario
     Private Sub BTN_eliminarUsuarios_Click(sender As Object, e As EventArgs) Handles BTN_eliminarUsuarios.Click
         Try
             Dim resultado = MessageBox.Show("¿Desea eliminar al usuario " & valorSeleccionado & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
@@ -558,70 +579,81 @@ Public Class FormAdmin
             MessageBox.Show("Algo inesperado ocurrió: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
-    ' Metodos para poder obtener el item de la primera columna de cada tabla
-    Private Sub DGV_clientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_clientes.CellClick
-        If DGV_clientes.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_clientes.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Activos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellClick
-        If DGV_Activos.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_Activos.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Equipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Equipos.CellClick
-        If DGV_Equipos.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_Equipos.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Sim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Sim.CellClick
-        If DGV_Sim.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_Sim.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Usuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellClick
-        If DGV_Usuarios.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_Usuarios.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Marcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Marcas.CellClick
-        If DGV_Marcas.SelectedRows.Count > 0 Then
-            valorSeleccionadoMarca = DGV_Marcas.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-    Private Sub DGV_Modelos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Modelos.CellClick
-        If DGV_Modelos.SelectedRows.Count > 0 Then
-            valorSeleccionado = DGV_Modelos.CurrentRow.Cells(0)?.Value
-        End If
-    End Sub
-
-    Private Sub PanelCliente_Paint(sender As Object, e As PaintEventArgs) Handles PanelCliente.Paint
-        DGV_clientes.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
-        DGV_clientes.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
-    End Sub
-
-    Private Sub PanelActivos_Paint(sender As Object, e As PaintEventArgs) Handles PanelActivos.Paint
-        DGV_Activos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
-        DGV_Activos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
-    End Sub
-
-    Private Sub PanelEquipos_Paint(sender As Object, e As PaintEventArgs) Handles PanelEquipos.Paint
-        DGV_Equipos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
-        DGV_Equipos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
-    End Sub
-
-    Private Sub PanelSIM_Paint(sender As Object, e As PaintEventArgs) Handles PanelSIM.Paint
-        DGV_Sim.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
-        DGV_Sim.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
-    End Sub
-
+    ' Estilos al datagridview
     Private Sub PanelUsuario_Paint(sender As Object, e As PaintEventArgs) Handles PanelUsuario.Paint
         DGV_Usuarios.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
         DGV_Usuarios.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
     End Sub
 
-    ' Busquedas en las tablas
+
+
+    ' ╔═══════════════════════════════════════════════ MODELOS Y MARCAS ═══════════════════════════════════════════════╗
+    ' Agregar marca (Alert box)
+    Private Sub BTN_agregarMarca_Click(sender As Object, e As EventArgs) Handles BTN_agregarMarca.Click
+        aux.agregarMarca()
+    End Sub
+    ' Agregar modelo
+    Private Sub BTN_agregarModelo_Click(sender As Object, e As EventArgs) Handles BTN_agregarModelo.Click
+        If valorSeleccionadoMarca <> "" Then
+            Dim resultado = MessageBox.Show("¿Desea agregar un nuevo modelo a la marca " & valorSeleccionadoMarca & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+            If resultado = DialogResult.OK Then
+                aux.agregarModelo(valorSeleccionadoMarca)
+            End If
+        Else
+            MessageBox.Show("No se ha seleccionado ninguna marca de la tabla para agregar un nuevo modelo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+    ' Estilos al datagridview
+    Private Sub PanelMarcaYModelos_Paint(sender As Object, e As PaintEventArgs) Handles PanelMarcaYModelos.Paint
+        DGV_Marcas.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Marcas.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+        DGV_Modelos.ColumnHeadersDefaultCellStyle.BackColor = ColorTranslator.FromHtml("#B3BEC5") ' Establecemos el color al encabezado del datagridview.
+        DGV_Modelos.EnableHeadersVisualStyles = False ' Inhabilitamos el visual styles del header para poder implementar el color aplicado anteriormente.
+    End Sub
+
+
+
+    '╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+    ' Metodos para poder obtener el item de la segunda columna de cada tabla
+    Private Sub DGV_clientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_clientes.CellClick
+        If DGV_clientes.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_clientes.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Activos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Activos.CellClick
+        If DGV_Activos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Activos.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Equipos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Equipos.CellClick
+        If DGV_Equipos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Equipos.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Sim_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Sim.CellClick
+        If DGV_Sim.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Sim.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Usuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Usuarios.CellClick
+        If DGV_Usuarios.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Usuarios.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Marcas_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Marcas.CellClick
+        If DGV_Marcas.SelectedRows.Count > 0 Then
+            valorSeleccionadoMarca = DGV_Marcas.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+    Private Sub DGV_Modelos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Modelos.CellClick
+        If DGV_Modelos.SelectedRows.Count > 0 Then
+            valorSeleccionado = DGV_Modelos.CurrentRow.Cells(1)?.Value
+        End If
+    End Sub
+
+
+
+    ' ╔═══════════════════════════════════════════════ Busquedas en las tablas ═══════════════════════════════════════════════╗
     Private Sub TB_buscarClientes_TextChanged(sender As Object, e As EventArgs) Handles TB_buscarClientes.TextChanged
         Dim searchText As String = TB_buscarClientes.Text.Trim().ToLower() ' Obtener el texto de búsqueda en minúsculas
 
@@ -633,7 +665,7 @@ Public Class FormAdmin
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (Nombre)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Then
@@ -656,8 +688,8 @@ Public Class FormAdmin
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (Placa o Chásis)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
-                Dim cellValue2 As String = row.Cells(1).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
+                Dim cellValue2 As String = row.Cells(2).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Or cellValue2.Contains(searchText) Then
@@ -680,7 +712,7 @@ Public Class FormAdmin
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (IMEI)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Then
@@ -703,8 +735,8 @@ Public Class FormAdmin
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera y segunda columna (Icc y numero)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
-                Dim cellValue2 As String = row.Cells(1).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
+                Dim cellValue2 As String = row.Cells(2).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Or cellValue2.Contains(searchText) Then
@@ -727,7 +759,7 @@ Public Class FormAdmin
             If row IsNot selectedRow Then
                 ' Verificar que no sea la fila de encabezado, que no sea la primera fila y que tenga al menos dos celdas
                 ' Obtener los valores de las celdas en la primera (Nombre de usuario)
-                Dim cellValue1 As String = row.Cells(0).Value.ToString().ToLower()
+                Dim cellValue1 As String = row.Cells(1).Value.ToString().ToLower()
 
                 ' Verificar si el texto de búsqueda está contenido en alguna de las celdas
                 If cellValue1.Contains(searchText) Then
@@ -739,25 +771,9 @@ Public Class FormAdmin
         Next
     End Sub
 
-    Private Sub BTN_bajaEquipos_Click(sender As Object, e As EventArgs) Handles BTN_bajaEquipos.Click
-        If controlador.DarBajaEquipo(valorSeleccionado) Then
-            MessageBox.Show("Se dió de baja al equipo " & valorSeleccionado, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            TB_buscarEquipos.Clear()
-        End If
-    End Sub
 
-    Private Sub BTN_agregarModelo_Click(sender As Object, e As EventArgs) Handles BTN_agregarModelo.Click
-        If valorSeleccionadoMarca <> "" Then
-            Dim resultado = MessageBox.Show("¿Desea agregar un nuevo modelo a la marca " & valorSeleccionadoMarca & "?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-            If resultado = DialogResult.OK Then
-                aux.agregarModelo(valorSeleccionadoMarca)
-            End If
-        Else
-            MessageBox.Show("No se ha seleccionado ninguna marca de la tabla para agregar un nuevo modelo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
-    End Sub
 
-    ' EXPORTAR TABLAS
+    ' ╔═══════════════════════════════════════════════ EXPORTAR TABLAS ═══════════════════════════════════════════════╗
     Private Sub BTN_exportarClientes_Click(sender As Object, e As EventArgs) Handles BTN_exportarClientes.Click
 
         Dim excelApp As New Excel.Application()

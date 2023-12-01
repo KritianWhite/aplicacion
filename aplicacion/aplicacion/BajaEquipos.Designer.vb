@@ -26,9 +26,10 @@ Partial Class BajaEquipos
         Me.BTN_regresar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.DGV_bajaEquipos = New System.Windows.Forms.DataGridView()
+        Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
+        Me.ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IMEI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TB_buscarBajaEquipo = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DGV_bajaEquipos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,13 +74,27 @@ Partial Class BajaEquipos
         Me.DGV_bajaEquipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_bajaEquipos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_bajaEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_bajaEquipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI, Me.fecha})
+        Me.DGV_bajaEquipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID, Me.IMEI, Me.fecha})
         Me.DGV_bajaEquipos.Location = New System.Drawing.Point(35, 52)
         Me.DGV_bajaEquipos.Name = "DGV_bajaEquipos"
         Me.DGV_bajaEquipos.ReadOnly = True
         Me.DGV_bajaEquipos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV_bajaEquipos.Size = New System.Drawing.Size(729, 275)
         Me.DGV_bajaEquipos.TabIndex = 40
+        '
+        'TB_buscarBajaEquipo
+        '
+        Me.TB_buscarBajaEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_buscarBajaEquipo.Location = New System.Drawing.Point(553, 14)
+        Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
+        Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 22)
+        Me.TB_buscarBajaEquipo.TabIndex = 39
+        '
+        'ID
+        '
+        Me.ID.HeaderText = "ID"
+        Me.ID.Name = "ID"
+        Me.ID.ReadOnly = True
         '
         'IMEI
         '
@@ -92,14 +107,6 @@ Partial Class BajaEquipos
         Me.fecha.HeaderText = "Fecha"
         Me.fecha.Name = "fecha"
         Me.fecha.ReadOnly = True
-        '
-        'TB_buscarBajaEquipo
-        '
-        Me.TB_buscarBajaEquipo.Font = New System.Drawing.Font("Vensim Sans Tamil", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TB_buscarBajaEquipo.Location = New System.Drawing.Point(553, 14)
-        Me.TB_buscarBajaEquipo.Name = "TB_buscarBajaEquipo"
-        Me.TB_buscarBajaEquipo.Size = New System.Drawing.Size(211, 22)
-        Me.TB_buscarBajaEquipo.TabIndex = 39
         '
         'BajaEquipos
         '
@@ -127,6 +134,7 @@ Partial Class BajaEquipos
     Friend WithEvents Panel1 As Panel
     Friend WithEvents DGV_bajaEquipos As DataGridView
     Friend WithEvents TB_buscarBajaEquipo As TextBox
+    Friend WithEvents ID As DataGridViewTextBoxColumn
     Friend WithEvents IMEI As DataGridViewTextBoxColumn
     Friend WithEvents fecha As DataGridViewTextBoxColumn
 End Class

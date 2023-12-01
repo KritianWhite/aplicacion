@@ -42,9 +42,6 @@ Partial Class FormAdmin
         Me.BTN_agregarClientes = New System.Windows.Forms.Button()
         Me.TB_buscarClientes = New System.Windows.Forms.TextBox()
         Me.DGV_clientes = New System.Windows.Forms.DataGridView()
-        Me.Nombre_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Telefono_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Correo_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelActivos = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -55,13 +52,6 @@ Partial Class FormAdmin
         Me.BTN_agregarActivos = New System.Windows.Forms.Button()
         Me.TB_buscarActivos = New System.Windows.Forms.TextBox()
         Me.DGV_Activos = New System.Windows.Forms.DataGridView()
-        Me.Placa_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Chasis_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Tipo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Color_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Anio_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PanelEquipos = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -71,9 +61,6 @@ Partial Class FormAdmin
         Me.BTN_agregarEquipos = New System.Windows.Forms.Button()
         Me.TB_buscarEquipos = New System.Windows.Forms.TextBox()
         Me.DGV_Equipos = New System.Windows.Forms.DataGridView()
-        Me.IMEI_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Modelo_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PanelSIM = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -84,12 +71,6 @@ Partial Class FormAdmin
         Me.BTN_agregarSIM = New System.Windows.Forms.Button()
         Me.TB_buscarSim = New System.Windows.Forms.TextBox()
         Me.DGV_Sim = New System.Windows.Forms.DataGridView()
-        Me.ICC_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Numero_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Propietario_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Vence_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Plan_Datos_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Compania_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.PanelUsuario = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -99,21 +80,47 @@ Partial Class FormAdmin
         Me.BTN_agregarUsuario = New System.Windows.Forms.Button()
         Me.TB_buscarUsuario = New System.Windows.Forms.TextBox()
         Me.DGV_Usuarios = New System.Windows.Forms.DataGridView()
-        Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PanelMarcaYModelos = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DGV_Modelos = New System.Windows.Forms.DataGridView()
-        Me.ModeloMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Marca2MyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BTN_agregarModelo = New System.Windows.Forms.Button()
         Me.BTN_agregarMarca = New System.Windows.Forms.Button()
         Me.DGV_Marcas = New System.Windows.Forms.DataGridView()
-        Me.MarcaMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.ID_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Telefono_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Correo_C = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Placa_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Chasis_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Tipo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modelo_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Color_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Anio_A = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IMEI_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modelo_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca_E = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ICC_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Numero_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Propietario_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Vence_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Plan_Datos_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Compania_S = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rol_U = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarcaMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ID2MyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ModeloMyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Marca2MyM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelCliente.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -299,7 +306,7 @@ Partial Class FormAdmin
         Me.DGV_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_clientes.BackgroundColor = System.Drawing.Color.White
         Me.DGV_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_C, Me.Telefono_C, Me.Correo_C})
+        Me.DGV_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_C, Me.Nombre_C, Me.Telefono_C, Me.Correo_C})
         Me.DGV_clientes.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_clientes.Location = New System.Drawing.Point(287, 61)
         Me.DGV_clientes.MultiSelect = False
@@ -309,24 +316,6 @@ Partial Class FormAdmin
         Me.DGV_clientes.Size = New System.Drawing.Size(623, 291)
         Me.DGV_clientes.StandardTab = True
         Me.DGV_clientes.TabIndex = 10
-        '
-        'Nombre_C
-        '
-        Me.Nombre_C.HeaderText = "Nombre"
-        Me.Nombre_C.Name = "Nombre_C"
-        Me.Nombre_C.ReadOnly = True
-        '
-        'Telefono_C
-        '
-        Me.Telefono_C.HeaderText = "Télefono"
-        Me.Telefono_C.Name = "Telefono_C"
-        Me.Telefono_C.ReadOnly = True
-        '
-        'Correo_C
-        '
-        Me.Correo_C.HeaderText = "Correo"
-        Me.Correo_C.Name = "Correo_C"
-        Me.Correo_C.ReadOnly = True
         '
         'Label1
         '
@@ -427,7 +416,7 @@ Partial Class FormAdmin
         Me.DGV_Activos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Activos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Activos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Placa_A, Me.Chasis_A, Me.Tipo_A, Me.Marca_A, Me.Modelo_A, Me.Color_A, Me.Anio_A})
+        Me.DGV_Activos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_A, Me.Placa_A, Me.Chasis_A, Me.Tipo_A, Me.Marca_A, Me.Modelo_A, Me.Color_A, Me.Anio_A})
         Me.DGV_Activos.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Activos.Location = New System.Drawing.Point(287, 61)
         Me.DGV_Activos.MultiSelect = False
@@ -437,48 +426,6 @@ Partial Class FormAdmin
         Me.DGV_Activos.Size = New System.Drawing.Size(623, 294)
         Me.DGV_Activos.StandardTab = True
         Me.DGV_Activos.TabIndex = 10
-        '
-        'Placa_A
-        '
-        Me.Placa_A.HeaderText = "Placa"
-        Me.Placa_A.Name = "Placa_A"
-        Me.Placa_A.ReadOnly = True
-        '
-        'Chasis_A
-        '
-        Me.Chasis_A.HeaderText = "Chásis"
-        Me.Chasis_A.Name = "Chasis_A"
-        Me.Chasis_A.ReadOnly = True
-        '
-        'Tipo_A
-        '
-        Me.Tipo_A.HeaderText = "Tipo"
-        Me.Tipo_A.Name = "Tipo_A"
-        Me.Tipo_A.ReadOnly = True
-        '
-        'Marca_A
-        '
-        Me.Marca_A.HeaderText = "Marca"
-        Me.Marca_A.Name = "Marca_A"
-        Me.Marca_A.ReadOnly = True
-        '
-        'Modelo_A
-        '
-        Me.Modelo_A.HeaderText = "Modelo"
-        Me.Modelo_A.Name = "Modelo_A"
-        Me.Modelo_A.ReadOnly = True
-        '
-        'Color_A
-        '
-        Me.Color_A.HeaderText = "Color"
-        Me.Color_A.Name = "Color_A"
-        Me.Color_A.ReadOnly = True
-        '
-        'Anio_A
-        '
-        Me.Anio_A.HeaderText = "Año"
-        Me.Anio_A.Name = "Anio_A"
-        Me.Anio_A.ReadOnly = True
         '
         'Label2
         '
@@ -569,7 +516,7 @@ Partial Class FormAdmin
         Me.DGV_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Equipos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IMEI_E, Me.Modelo_E, Me.Marca_E})
+        Me.DGV_Equipos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_E, Me.IMEI_E, Me.Modelo_E, Me.Marca_E})
         Me.DGV_Equipos.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Equipos.Location = New System.Drawing.Point(287, 61)
         Me.DGV_Equipos.MultiSelect = False
@@ -579,24 +526,6 @@ Partial Class FormAdmin
         Me.DGV_Equipos.Size = New System.Drawing.Size(623, 291)
         Me.DGV_Equipos.StandardTab = True
         Me.DGV_Equipos.TabIndex = 10
-        '
-        'IMEI_E
-        '
-        Me.IMEI_E.HeaderText = "IMEI"
-        Me.IMEI_E.Name = "IMEI_E"
-        Me.IMEI_E.ReadOnly = True
-        '
-        'Modelo_E
-        '
-        Me.Modelo_E.HeaderText = "Modelo"
-        Me.Modelo_E.Name = "Modelo_E"
-        Me.Modelo_E.ReadOnly = True
-        '
-        'Marca_E
-        '
-        Me.Marca_E.HeaderText = "Marca"
-        Me.Marca_E.Name = "Marca_E"
-        Me.Marca_E.ReadOnly = True
         '
         'Label3
         '
@@ -696,7 +625,7 @@ Partial Class FormAdmin
         Me.DGV_Sim.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Sim.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Sim.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Sim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ICC_S, Me.Numero_S, Me.Propietario_S, Me.Vence_S, Me.Plan_Datos_S, Me.Compania_S})
+        Me.DGV_Sim.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_S, Me.ICC_S, Me.Numero_S, Me.Propietario_S, Me.Vence_S, Me.Plan_Datos_S, Me.Compania_S})
         Me.DGV_Sim.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Sim.Location = New System.Drawing.Point(287, 61)
         Me.DGV_Sim.MultiSelect = False
@@ -706,42 +635,6 @@ Partial Class FormAdmin
         Me.DGV_Sim.Size = New System.Drawing.Size(623, 288)
         Me.DGV_Sim.StandardTab = True
         Me.DGV_Sim.TabIndex = 10
-        '
-        'ICC_S
-        '
-        Me.ICC_S.HeaderText = "ICC"
-        Me.ICC_S.Name = "ICC_S"
-        Me.ICC_S.ReadOnly = True
-        '
-        'Numero_S
-        '
-        Me.Numero_S.HeaderText = "Numero"
-        Me.Numero_S.Name = "Numero_S"
-        Me.Numero_S.ReadOnly = True
-        '
-        'Propietario_S
-        '
-        Me.Propietario_S.HeaderText = "Propietario"
-        Me.Propietario_S.Name = "Propietario_S"
-        Me.Propietario_S.ReadOnly = True
-        '
-        'Vence_S
-        '
-        Me.Vence_S.HeaderText = "Vence"
-        Me.Vence_S.Name = "Vence_S"
-        Me.Vence_S.ReadOnly = True
-        '
-        'Plan_Datos_S
-        '
-        Me.Plan_Datos_S.HeaderText = "Plan de datos"
-        Me.Plan_Datos_S.Name = "Plan_Datos_S"
-        Me.Plan_Datos_S.ReadOnly = True
-        '
-        'Compania_S
-        '
-        Me.Compania_S.HeaderText = "Compañia"
-        Me.Compania_S.Name = "Compania_S"
-        Me.Compania_S.ReadOnly = True
         '
         'Label4
         '
@@ -832,7 +725,7 @@ Partial Class FormAdmin
         Me.DGV_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Usuarios.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre_U, Me.Rol_U})
+        Me.DGV_Usuarios.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_U, Me.Nombre_U, Me.Rol_U})
         Me.DGV_Usuarios.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Usuarios.Location = New System.Drawing.Point(287, 61)
         Me.DGV_Usuarios.MultiSelect = False
@@ -842,18 +735,6 @@ Partial Class FormAdmin
         Me.DGV_Usuarios.Size = New System.Drawing.Size(623, 308)
         Me.DGV_Usuarios.StandardTab = True
         Me.DGV_Usuarios.TabIndex = 9
-        '
-        'Nombre_U
-        '
-        Me.Nombre_U.HeaderText = "Nombre"
-        Me.Nombre_U.Name = "Nombre_U"
-        Me.Nombre_U.ReadOnly = True
-        '
-        'Rol_U
-        '
-        Me.Rol_U.HeaderText = "Rol"
-        Me.Rol_U.Name = "Rol_U"
-        Me.Rol_U.ReadOnly = True
         '
         'Label5
         '
@@ -921,7 +802,7 @@ Partial Class FormAdmin
         Me.DGV_Modelos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Modelos.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Modelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Modelos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ModeloMyM, Me.Marca2MyM})
+        Me.DGV_Modelos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID2MyM, Me.ModeloMyM, Me.Marca2MyM})
         Me.DGV_Modelos.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Modelos.Location = New System.Drawing.Point(543, 80)
         Me.DGV_Modelos.MultiSelect = False
@@ -931,18 +812,6 @@ Partial Class FormAdmin
         Me.DGV_Modelos.Size = New System.Drawing.Size(367, 289)
         Me.DGV_Modelos.StandardTab = True
         Me.DGV_Modelos.TabIndex = 13
-        '
-        'ModeloMyM
-        '
-        Me.ModeloMyM.HeaderText = "Modelo"
-        Me.ModeloMyM.Name = "ModeloMyM"
-        Me.ModeloMyM.ReadOnly = True
-        '
-        'Marca2MyM
-        '
-        Me.Marca2MyM.HeaderText = "Marca"
-        Me.Marca2MyM.Name = "Marca2MyM"
-        Me.Marca2MyM.ReadOnly = True
         '
         'BTN_agregarModelo
         '
@@ -971,7 +840,7 @@ Partial Class FormAdmin
         Me.DGV_Marcas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGV_Marcas.BackgroundColor = System.Drawing.Color.White
         Me.DGV_Marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV_Marcas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.MarcaMyM})
+        Me.DGV_Marcas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDMyM, Me.MarcaMyM})
         Me.DGV_Marcas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DGV_Marcas.Location = New System.Drawing.Point(287, 80)
         Me.DGV_Marcas.MultiSelect = False
@@ -981,12 +850,6 @@ Partial Class FormAdmin
         Me.DGV_Marcas.Size = New System.Drawing.Size(236, 289)
         Me.DGV_Marcas.StandardTab = True
         Me.DGV_Marcas.TabIndex = 9
-        '
-        'MarcaMyM
-        '
-        Me.MarcaMyM.HeaderText = "Marca"
-        Me.MarcaMyM.Name = "MarcaMyM"
-        Me.MarcaMyM.ReadOnly = True
         '
         'Label6
         '
@@ -998,6 +861,192 @@ Partial Class FormAdmin
         Me.Label6.TabIndex = 4
         Me.Label6.Text = "MARCAS Y MODELOS"
         '
+        'ID_C
+        '
+        Me.ID_C.HeaderText = "ID"
+        Me.ID_C.Name = "ID_C"
+        Me.ID_C.ReadOnly = True
+        '
+        'Nombre_C
+        '
+        Me.Nombre_C.HeaderText = "Nombre"
+        Me.Nombre_C.Name = "Nombre_C"
+        Me.Nombre_C.ReadOnly = True
+        '
+        'Telefono_C
+        '
+        Me.Telefono_C.HeaderText = "Télefono"
+        Me.Telefono_C.Name = "Telefono_C"
+        Me.Telefono_C.ReadOnly = True
+        '
+        'Correo_C
+        '
+        Me.Correo_C.HeaderText = "Correo"
+        Me.Correo_C.Name = "Correo_C"
+        Me.Correo_C.ReadOnly = True
+        '
+        'ID_A
+        '
+        Me.ID_A.HeaderText = "ID"
+        Me.ID_A.Name = "ID_A"
+        Me.ID_A.ReadOnly = True
+        '
+        'Placa_A
+        '
+        Me.Placa_A.HeaderText = "Placa"
+        Me.Placa_A.Name = "Placa_A"
+        Me.Placa_A.ReadOnly = True
+        '
+        'Chasis_A
+        '
+        Me.Chasis_A.HeaderText = "Chásis"
+        Me.Chasis_A.Name = "Chasis_A"
+        Me.Chasis_A.ReadOnly = True
+        '
+        'Tipo_A
+        '
+        Me.Tipo_A.HeaderText = "Tipo"
+        Me.Tipo_A.Name = "Tipo_A"
+        Me.Tipo_A.ReadOnly = True
+        '
+        'Marca_A
+        '
+        Me.Marca_A.HeaderText = "Marca"
+        Me.Marca_A.Name = "Marca_A"
+        Me.Marca_A.ReadOnly = True
+        '
+        'Modelo_A
+        '
+        Me.Modelo_A.HeaderText = "Modelo"
+        Me.Modelo_A.Name = "Modelo_A"
+        Me.Modelo_A.ReadOnly = True
+        '
+        'Color_A
+        '
+        Me.Color_A.HeaderText = "Color"
+        Me.Color_A.Name = "Color_A"
+        Me.Color_A.ReadOnly = True
+        '
+        'Anio_A
+        '
+        Me.Anio_A.HeaderText = "Año"
+        Me.Anio_A.Name = "Anio_A"
+        Me.Anio_A.ReadOnly = True
+        '
+        'ID_E
+        '
+        Me.ID_E.HeaderText = "ID"
+        Me.ID_E.Name = "ID_E"
+        Me.ID_E.ReadOnly = True
+        '
+        'IMEI_E
+        '
+        Me.IMEI_E.HeaderText = "IMEI"
+        Me.IMEI_E.Name = "IMEI_E"
+        Me.IMEI_E.ReadOnly = True
+        '
+        'Modelo_E
+        '
+        Me.Modelo_E.HeaderText = "Modelo"
+        Me.Modelo_E.Name = "Modelo_E"
+        Me.Modelo_E.ReadOnly = True
+        '
+        'Marca_E
+        '
+        Me.Marca_E.HeaderText = "Marca"
+        Me.Marca_E.Name = "Marca_E"
+        Me.Marca_E.ReadOnly = True
+        '
+        'ID_S
+        '
+        Me.ID_S.HeaderText = "ID"
+        Me.ID_S.Name = "ID_S"
+        Me.ID_S.ReadOnly = True
+        '
+        'ICC_S
+        '
+        Me.ICC_S.HeaderText = "ICC"
+        Me.ICC_S.Name = "ICC_S"
+        Me.ICC_S.ReadOnly = True
+        '
+        'Numero_S
+        '
+        Me.Numero_S.HeaderText = "Numero"
+        Me.Numero_S.Name = "Numero_S"
+        Me.Numero_S.ReadOnly = True
+        '
+        'Propietario_S
+        '
+        Me.Propietario_S.HeaderText = "Propietario"
+        Me.Propietario_S.Name = "Propietario_S"
+        Me.Propietario_S.ReadOnly = True
+        '
+        'Vence_S
+        '
+        Me.Vence_S.HeaderText = "Vence"
+        Me.Vence_S.Name = "Vence_S"
+        Me.Vence_S.ReadOnly = True
+        '
+        'Plan_Datos_S
+        '
+        Me.Plan_Datos_S.HeaderText = "Plan de datos"
+        Me.Plan_Datos_S.Name = "Plan_Datos_S"
+        Me.Plan_Datos_S.ReadOnly = True
+        '
+        'Compania_S
+        '
+        Me.Compania_S.HeaderText = "Compañia"
+        Me.Compania_S.Name = "Compania_S"
+        Me.Compania_S.ReadOnly = True
+        '
+        'ID_U
+        '
+        Me.ID_U.HeaderText = "ID"
+        Me.ID_U.Name = "ID_U"
+        Me.ID_U.ReadOnly = True
+        '
+        'Nombre_U
+        '
+        Me.Nombre_U.HeaderText = "Nombre"
+        Me.Nombre_U.Name = "Nombre_U"
+        Me.Nombre_U.ReadOnly = True
+        '
+        'Rol_U
+        '
+        Me.Rol_U.HeaderText = "Rol"
+        Me.Rol_U.Name = "Rol_U"
+        Me.Rol_U.ReadOnly = True
+        '
+        'IDMyM
+        '
+        Me.IDMyM.HeaderText = "ID"
+        Me.IDMyM.Name = "IDMyM"
+        Me.IDMyM.ReadOnly = True
+        '
+        'MarcaMyM
+        '
+        Me.MarcaMyM.HeaderText = "Marca"
+        Me.MarcaMyM.Name = "MarcaMyM"
+        Me.MarcaMyM.ReadOnly = True
+        '
+        'ID2MyM
+        '
+        Me.ID2MyM.HeaderText = "ID"
+        Me.ID2MyM.Name = "ID2MyM"
+        Me.ID2MyM.ReadOnly = True
+        '
+        'ModeloMyM
+        '
+        Me.ModeloMyM.HeaderText = "Modelo"
+        Me.ModeloMyM.Name = "ModeloMyM"
+        Me.ModeloMyM.ReadOnly = True
+        '
+        'Marca2MyM
+        '
+        Me.Marca2MyM.HeaderText = "Marca"
+        Me.Marca2MyM.Name = "Marca2MyM"
+        Me.Marca2MyM.ReadOnly = True
+        '
         'FormAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1005,12 +1054,12 @@ Partial Class FormAdmin
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1091, 671)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelEquipos)
+        Me.Controls.Add(Me.PanelMarcaYModelos)
         Me.Controls.Add(Me.PanelUsuario)
+        Me.Controls.Add(Me.PanelSIM)
         Me.Controls.Add(Me.PanelActivos)
         Me.Controls.Add(Me.PanelCliente)
-        Me.Controls.Add(Me.PanelMarcaYModelos)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormAdmin"
@@ -1080,9 +1129,6 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarClientes As Button
     Friend WithEvents TB_buscarClientes As TextBox
     Friend WithEvents DGV_clientes As DataGridView
-    Friend WithEvents Nombre_C As DataGridViewTextBoxColumn
-    Friend WithEvents Telefono_C As DataGridViewTextBoxColumn
-    Friend WithEvents Correo_C As DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTN_asignarEquipo_Activos As Button
     Friend WithEvents BTN_eliminarActivos As Button
@@ -1090,22 +1136,12 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarActivos As Button
     Friend WithEvents TB_buscarActivos As TextBox
     Friend WithEvents DGV_Activos As DataGridView
-    Friend WithEvents Placa_A As DataGridViewTextBoxColumn
-    Friend WithEvents Chasis_A As DataGridViewTextBoxColumn
-    Friend WithEvents Tipo_A As DataGridViewTextBoxColumn
-    Friend WithEvents Marca_A As DataGridViewTextBoxColumn
-    Friend WithEvents Modelo_A As DataGridViewTextBoxColumn
-    Friend WithEvents Color_A As DataGridViewTextBoxColumn
-    Friend WithEvents Anio_A As DataGridViewTextBoxColumn
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BTN_asignarSIM_Equipos As Button
     Friend WithEvents BTN_bajaEquipos As Button
     Friend WithEvents BTN_agregarEquipos As Button
     Friend WithEvents TB_buscarEquipos As TextBox
     Friend WithEvents DGV_Equipos As DataGridView
-    Friend WithEvents IMEI_E As DataGridViewTextBoxColumn
-    Friend WithEvents Modelo_E As DataGridViewTextBoxColumn
-    Friend WithEvents Marca_E As DataGridViewTextBoxColumn
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BTN_migrarSim As Button
     Friend WithEvents BTN_eliminarSim As Button
@@ -1113,20 +1149,12 @@ Partial Class FormAdmin
     Friend WithEvents BTN_agregarSIM As Button
     Friend WithEvents TB_buscarSim As TextBox
     Friend WithEvents DGV_Sim As DataGridView
-    Friend WithEvents ICC_S As DataGridViewTextBoxColumn
-    Friend WithEvents Numero_S As DataGridViewTextBoxColumn
-    Friend WithEvents Propietario_S As DataGridViewTextBoxColumn
-    Friend WithEvents Vence_S As DataGridViewTextBoxColumn
-    Friend WithEvents Plan_Datos_S As DataGridViewTextBoxColumn
-    Friend WithEvents Compania_S As DataGridViewTextBoxColumn
     Friend WithEvents Panel5 As Panel
     Friend WithEvents BTN_eliminarUsuarios As Button
     Friend WithEvents BTN_editarUsuario As Button
     Friend WithEvents BTN_agregarUsuario As Button
     Friend WithEvents TB_buscarUsuario As TextBox
     Friend WithEvents DGV_Usuarios As DataGridView
-    Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
-    Friend WithEvents Rol_U As DataGridViewTextBoxColumn
     Friend WithEvents InformeDeActivosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PanelMarcaYModelos As Panel
     Friend WithEvents Panel7 As Panel
@@ -1136,9 +1164,6 @@ Partial Class FormAdmin
     Friend WithEvents Label6 As Label
     Friend WithEvents MarcasYModelosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DGV_Modelos As DataGridView
-    Friend WithEvents MarcaMyM As DataGridViewTextBoxColumn
-    Friend WithEvents ModeloMyM As DataGridViewTextBoxColumn
-    Friend WithEvents Marca2MyM As DataGridViewTextBoxColumn
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents BTN_exportarClientes As Button
@@ -1146,4 +1171,35 @@ Partial Class FormAdmin
     Friend WithEvents BTN_exportarEquipos As Button
     Friend WithEvents BTN_exportarSim As Button
     Friend WithEvents BTN_exportarUsuarios As Button
+    Friend WithEvents ID_C As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre_C As DataGridViewTextBoxColumn
+    Friend WithEvents Telefono_C As DataGridViewTextBoxColumn
+    Friend WithEvents Correo_C As DataGridViewTextBoxColumn
+    Friend WithEvents ID_A As DataGridViewTextBoxColumn
+    Friend WithEvents Placa_A As DataGridViewTextBoxColumn
+    Friend WithEvents Chasis_A As DataGridViewTextBoxColumn
+    Friend WithEvents Tipo_A As DataGridViewTextBoxColumn
+    Friend WithEvents Marca_A As DataGridViewTextBoxColumn
+    Friend WithEvents Modelo_A As DataGridViewTextBoxColumn
+    Friend WithEvents Color_A As DataGridViewTextBoxColumn
+    Friend WithEvents Anio_A As DataGridViewTextBoxColumn
+    Friend WithEvents ID_E As DataGridViewTextBoxColumn
+    Friend WithEvents IMEI_E As DataGridViewTextBoxColumn
+    Friend WithEvents Modelo_E As DataGridViewTextBoxColumn
+    Friend WithEvents Marca_E As DataGridViewTextBoxColumn
+    Friend WithEvents ID_S As DataGridViewTextBoxColumn
+    Friend WithEvents ICC_S As DataGridViewTextBoxColumn
+    Friend WithEvents Numero_S As DataGridViewTextBoxColumn
+    Friend WithEvents Propietario_S As DataGridViewTextBoxColumn
+    Friend WithEvents Vence_S As DataGridViewTextBoxColumn
+    Friend WithEvents Plan_Datos_S As DataGridViewTextBoxColumn
+    Friend WithEvents Compania_S As DataGridViewTextBoxColumn
+    Friend WithEvents ID_U As DataGridViewTextBoxColumn
+    Friend WithEvents Nombre_U As DataGridViewTextBoxColumn
+    Friend WithEvents Rol_U As DataGridViewTextBoxColumn
+    Friend WithEvents ID2MyM As DataGridViewTextBoxColumn
+    Friend WithEvents ModeloMyM As DataGridViewTextBoxColumn
+    Friend WithEvents Marca2MyM As DataGridViewTextBoxColumn
+    Friend WithEvents IDMyM As DataGridViewTextBoxColumn
+    Friend WithEvents MarcaMyM As DataGridViewTextBoxColumn
 End Class
