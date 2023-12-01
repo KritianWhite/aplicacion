@@ -29,7 +29,7 @@ Public Class Conexion
         host = Conectividad.host
 
         'MsgBox("datasource=localhost;port=" & puerto & ";username=" & username & ";password=;database=" & database & ";ConvertZeroDateTime=True")
-        connection.ConnectionString = "datasource=" & host & ";port=" & puerto & ";username=" & username & ";password=;database=" & database & ";ConvertZeroDateTime=True"
+        connection.ConnectionString = "datasource=" & host & ";port=" & puerto & ";username=" & username & ";password=" & password & ";database=" & database & ";ConvertZeroDateTime=True"
         connection.Open()
     End Sub
 
